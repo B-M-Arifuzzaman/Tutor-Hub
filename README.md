@@ -1,7 +1,7 @@
 # Tutor-Hub
 
 ## Project Description
-#### The purpose of “Get a Tutor online” app is a tool to assist the students/parents to find private tutors in an interactive manner. It aims to complement the efforts of a student to find a desirable tutor and choose a safe and secure tutoring option.
+#### The purpose of *Tutor Hub* app is a tool to assist the students/parents to find private tutors in an interactive manner. It aims to complement the efforts of a student to find a desirable tutor and choose a safe and secure tutoring option.
 
 #### *Tutor Hub* is an idea to bring together all students and tutors under one digital platform to provide an interactive platform to ease their needs. This Interactive System will be a Web Browser based application. This will be a multi user control system based application namely-Tutor and Students. Where Students will be allowed to make a request to get tutor from their nearby areas, will be able to see pre-existing posts authored by tutors and tutors will be also allowed to find students based on their educational qualification.
 
