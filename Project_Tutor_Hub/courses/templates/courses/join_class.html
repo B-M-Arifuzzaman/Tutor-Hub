@@ -1,0 +1,22 @@
+{% extends 'home/homepage.html' %}
+
+{% block content %}
+    <form class="form-contact contact_form" action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control" name="class_code" id="class_code" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Class Code'" placeholder="Enter Class Code">
+        </div>
+        {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{messages}}
+            </div>
+        {% endfor %}
+            <div class="form-group mt-3">
+                <button type="submit" class="button button-contactForm boxed-btn">Join Class</button>
+            </div>
+    </form>
+
+
+
+
+{% endblock content %}
