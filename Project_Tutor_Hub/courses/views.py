@@ -33,3 +33,10 @@ def join_class(request):
             messages.info(request, "Invalid Class Code")
     context = {}
     return render(request, 'courses/join_class.html', context)
+
+
+def student_dashboard(request):
+    student = request.user.student
+    classes = Class.objects.filter(students=student)
+    context = {'classes': classes}
+    return render(request, 'courses/student_dashboard.html', context)

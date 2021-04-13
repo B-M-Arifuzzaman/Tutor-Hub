@@ -1,0 +1,129 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="{% static 'courses/css/gribflex.css'%}">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header-content">
+            <div class="button-nav">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <div class="logo">
+                <img src="{% static 'courses/images/classroom_logo.png'%}" alt="logo" height="50" width="50"> 
+                <label for="">Online Classroom</label> 
+            </div>
+            <div class="menu-header"> 
+                <ul class="plus-menu">
+                    <li>
+                        <span class="addClass"></span>
+                        <div class="drop-downmenu">
+                            <ul>
+                                <li> <a href="#createClass">Create Class</a></li>
+                                <li><a href="#JoinClass">Join Class</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul class="menu-classroom"> 
+                    <li class="c-class"><a href="#">Create Class</a></li>
+                    <li class="j-class"><a href="#">Join Class</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="body-content">
+            <div class="content-menu btnOpen">
+                <div class="img-prof">
+                    <div class="img-profile">
+                        <span class="profile-picture"></span>
+                    </div>
+                    <div class="profile-info">
+                        <ul>
+                            <li class="menu-profile-name">
+                                <label>Juan Dela Cruz</label></li>
+                            <li class="color-info"><label> Information Technology</label></li>
+                            <li class="color-info"><label> 4th Year</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="profile-buttons">
+                    <div class="edit-btn">
+                        <button>Edit profile</button>
+                    </div>
+                    <div class="logout-btn">
+                        <button>Logout</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-items">
+               <div class="courses-and-rooms">
+                   {% for i in classes %}
+                        <div class="class1">
+                            <div class="class-rooms">
+                                <div class="class-room-title class-room-title-2">
+                                    <div>
+                                        <label class="subject">{{i.title}}</label>
+                                        <label>{{i.tutor}}</label>
+                                    </div>
+                                    <span class="classroom-profile-pic"></span>
+                                    </div>
+                                <div class="class-room-discription">
+                                    <label>Every Monday</label>
+                                    <label >Upcoming Assignments</label>
+                                    </div>
+                            </div>
+                        </div>
+                   {%endfor%}
+                        <div class="class1">
+                            <div class="class-rooms">
+                            
+                                <div class="class-room-title class-room-title-2">
+                                    <div>
+                                        <label class="subject">SWF 101</label>
+                                        <label>Teacher, Mark Joseph</label>
+                                    </div>
+                                    <span class="classroom-profile-pic"></span>
+                                    </div>
+                                <div class="class-room-discription">
+                                    <label>Every Monday</label>
+                                    <label >Upcoming Assignments</label>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+            <div class="informations"> 
+                <div>
+
+                     new incoming documents
+                </div>
+                <div>
+                    'assignment #3.docs'
+                </div> 
+
+            </div>
+        </div>
+        <div class="footer-content">
+            <div class="copyright-page">CopyRight&copy;2020</div>
+            <div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#question">Ask question</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'courses/js/classroom.js' %}"></script>
+</body>
+</html>
