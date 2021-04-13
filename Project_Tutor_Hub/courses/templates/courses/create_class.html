@@ -1,0 +1,24 @@
+{% extends 'home/homepage.html' %}
+
+{% block content %}
+
+    <form class="form-contact contact_form" action="" method="POST">
+        {% csrf_token %}
+
+            {{form.as_p}}
+
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{message}}
+                </div>
+            {% endfor %}
+            <div class="form-group mt-3">
+                <button type="submit" class="button button-contactForm boxed-btn">Create Class</button>
+            </div>
+    </form>
+
+
+{% endblock content %}
+
+
+
