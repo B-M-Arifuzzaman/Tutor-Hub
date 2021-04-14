@@ -1,6 +1,4 @@
 
-
-
 * {
     box-sizing: border-box;
 }
@@ -15,8 +13,8 @@ html, body {
 }
 
 .header-content {
-    background-color: rgb(255, 254, 176);  
-    box-shadow: 0px 3px 6px 0px #bb3f3fb5;
+    background-color: rgb(216,216,216);  
+    box-shadow: 0px 3px 6px 0px #a2a2a2b5;
     padding: 5px; 
     display: flex;
     flex-direction: row;
@@ -60,20 +58,18 @@ html, body {
      text-decoration: none;
  }
 .body-content { 
-    width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 15% 3fr;
+    grid-template-rows: auto 250px ;
     grid-gap: 1em;
     padding: 1em;
-   margin-left: 10%;
-    flex-direction: column;
-    justify-content: center;
 }
 .courses-and-rooms {
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
 }
-.content-items{
-    justify-content: center;
-}
+
 .class1 {
     padding: 10px;
     
@@ -90,8 +86,6 @@ html, body {
 .class-rooms {
     display: flex;
     flex-direction: column; 
-    height: 100%;
-    width: 80%;
     color: rgb(76 76 76);
     box-shadow: -2px 5px 4px #afafaf;
     border-radius: 5px;
@@ -153,6 +147,10 @@ html, body {
     padding: 10px;
     border-radius: 5px;
 }
+.subject-title-classview {
+    text-decoration: none;
+    color: inherit;
+}
 .content-menu {
      grid-row: 1/ span 2;
      height: 80vh; 
@@ -173,7 +171,7 @@ html, body {
     width: 150px;
     background-color: rgb(189 189 189);
     border-radius: 50%;
-    background: url('../images/profilepic.png') ;  
+    background: url('../images/profilepic.png');
     background-repeat: no-repeat;
     background-size: cover; 
 }
