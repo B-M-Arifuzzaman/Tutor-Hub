@@ -40,3 +40,9 @@ def student_dashboard(request):
     classes = Class.objects.filter(students=student)
     context = {'classes': classes}
     return render(request, 'courses/student_dashboard.html', context)
+
+def tutor_dashboard(request):
+    tutor = request.user.tutor
+    classes = Class.objects.filter(tutor=tutor)
+    context = {'classes': classes}
+    return render(request, 'courses/tutor_dashboard.html', context)
