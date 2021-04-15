@@ -48,10 +48,18 @@ def tutor_dashboard(request):
     context = {'classes': classes}
     return render(request, 'courses/tutor_dashboard.html', context)
 
-
-def LectureListView(request, class_code):
+'''
+ def LectureListView(request, class_code):
     # student = request.user.student
     class_object = Class.objects.get(class_code=class_code)
+    lectures = class_object.lessons.all()
+    context = {'lectures': lectures, 'class': class_object}
+    return render(request, 'courses/lecture_list_view.html', context)
+'''
+
+def LectureListView(request, slug):
+    # student = request.user.student
+    class_object = Class.objects.get(slug=slug)
     lectures = class_object.lessons.all()
     context = {'lectures': lectures, 'class': class_object}
     return render(request, 'courses/lecture_list_view.html', context)

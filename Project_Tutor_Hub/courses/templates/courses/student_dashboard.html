@@ -72,7 +72,7 @@
                             <div class="class-rooms">
                                 <div class="class-room-title">
                                     <div>
-                                        <label class="subject"><a class = "subject-title-classview"  href="{% url 'lecture_list_view' class.class_code %}" >{{class.title}} </a></label>
+                                        <label class="subject"><a class = "subject-title-classview"  href="{% url 'lecture_list_view' class.slug %}" >{{class.title}} </a></label>
                                         <label>Teacher, {{class.tutor.user.first_name}} {{class.tutor.user.last_name}}</label>
                                     </div>
                                     <span class="classroom-profile-pic"></span>
