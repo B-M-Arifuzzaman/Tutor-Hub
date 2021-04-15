@@ -8,7 +8,7 @@ from courses.models import Class,Lecture
 
 class CreateClassForm(ModelForm):
     title = forms.CharField(label='Course Name', max_length=100)
-    description = forms.Textarea()
+    description = forms.CharField(widget=forms.Textarea(attrs={'rows':3}))
 
     class Meta:
         model = Class

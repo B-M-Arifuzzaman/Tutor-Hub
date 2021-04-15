@@ -17,7 +17,7 @@ def create_class(request):
             new_class = form.save()
             new_class.tutor = request.user.tutor
             new_class.save()
-            return redirect('teacher_dashboard')
+            return redirect('tutor_dashboard')
     context = {'form': form}
     return render(request, 'courses/create_class.html', context)
 
