@@ -8,5 +8,6 @@ urlpatterns = [
     path('joinClass/',views.join_class, name='join_class'),
     path('studentDashboard/',views.student_dashboard, name='student_dashboard'),
     path('tutorDashboard/',views.tutor_dashboard, name='tutor_dashboard'),
+    path('student/class/<str:class_code>/',views.LectureListView, name='lecture_list_view'),
     
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

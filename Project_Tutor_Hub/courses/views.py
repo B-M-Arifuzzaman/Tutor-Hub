@@ -7,6 +7,7 @@ from django.contrib.auth.models import Group
 from courses.forms  import  CreateClassForm
 from courses.models import Class,Lecture
 from home.models import Tutor,Student
+from django.views.generic import TemplateView,DetailView,ListView,FormView,CreateView,UpdateView,DeleteView
 
 def create_class(request):
     form = CreateClassForm()
@@ -46,3 +47,11 @@ def tutor_dashboard(request):
     classes = Class.objects.filter(tutor=tutor)
     context = {'classes': classes}
     return render(request, 'courses/tutor_dashboard.html', context)
+
+
+def LectureListView(request, class_code):
+    # student = request.user.student
+    class_object = Class.objects.get(class_code=class_code)
+    lectures = class_object.lessons.all()
+    context = {'lectures': lectures, 'class': class_object}
+    return render(request, 'courses/lecture_list_view.html', context)
