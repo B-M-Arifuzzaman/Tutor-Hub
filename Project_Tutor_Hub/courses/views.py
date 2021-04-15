@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import Group
-from courses.forms  import  CreateClassForm
+from courses.forms  import  CreateClassForm,CreateLectureForm
 from courses.models import Class,Lecture
 from home.models import Tutor,Student
 from django.views.generic import TemplateView,DetailView,ListView,FormView,CreateView,UpdateView,DeleteView
@@ -57,9 +57,25 @@ def tutor_dashboard(request):
     return render(request, 'courses/lecture_list_view.html', context)
 '''
 
-def LectureListView(request, slug):
+def lecture_list_View(request, slug):
     # student = request.user.student
     class_object = Class.objects.get(slug=slug)
     lectures = class_object.lessons.all()
     context = {'lectures': lectures, 'class': class_object}
     return render(request, 'courses/lecture_list_view.html', context)
+
+
+'''
+def create_lecture_view(request,slug):
+    form = CreateLectureForm()
+    if request.method == 'POST':
+        form = CreateClassForm(request.POST)
+        if form.is_valid():
+            new_lectures = form.save()
+            new_class.teacher = request.user.teacher
+            new_class.save()
+            return redirect('teacherDashboard')
+    context = {'form': form}
+    return render(request, 'createClass.html', context)
+
+'''

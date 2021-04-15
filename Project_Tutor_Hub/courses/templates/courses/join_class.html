@@ -1,22 +1,65 @@
-{% extends 'home/homepage.html' %}
+{% load static %}
 
-{% block content %}
-    <form class="form-contact contact_form" action="" method="POST">
-        {% csrf_token %}
-        <div class="form-group">
-            <input class="form-control" name="class_code" id="class_code" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Class Code'" placeholder="Enter Class Code">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="{% static 'courses/css/joinclass.css'%}">
+    
+</head>
+<body>
+    <div class="main-container">
+        <div class="header-content">
+            <div class="button-nav">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <div class="logo">
+                <img src="{% static 'courses/images/classroom_logo.png'%}" alt="logo" height="50" width="50"> 
+                <label for="">Online Classroom</label> 
+            </div>
+            <div class="menu-header"> 
+                <ul class="plus-menu">
+                    <li>
+                        <span class="addClass"></span>
+                        <div class="drop-downmenu">
+                            <ul>
+                                <li> <a href="#createClass">Create Class</a></li>
+                                <li><a href="#JoinClass">Join Class</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul class="menu-classroom"> 
+                    <li class="c-class"><a href="#">Create Class</a></li>
+                    <li class="j-class"><a href="#">Join Class</a></li>
+                </ul>
+            </div>
         </div>
-        {% for message in messages %}
-            <div class="alert alert-danger" role="alert">
-                {{messages}}
-            </div>
-        {% endfor %}
-            <div class="form-group mt-3">
-                <button type="submit" class="button button-contactForm boxed-btn">Join Class</button>
-            </div>
-    </form>
 
+        <div class="body-content">
+            
+            <div class="centered">
+                <div class="join-class-container">
+                    <div class="container__item">
+                        <form class="form" method="POST">
+                            {% csrf_token %}
+                            <input type="input" class="form__field" name="class_code" id="class_code" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter class code '" placeholder="Enter Class Code" />
+                            <button type="submit" class="btn btn--primary btn--inside uppercase">Join Class</button>
+                        </form>
 
-
-
-{% endblock content %}
+                        {% for message in messages %}
+                            <div class="alert alert-danger" role="alert">{{messages}}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <script src="{% static 'courses/js/classroom.js'%}"></script>
+</body>
+</html>

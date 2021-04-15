@@ -14,3 +14,9 @@ class CreateClassForm(ModelForm):
         model = Class
         fields = ['title', 'description']
 
+class CreateLectureForm(forms.ModelForm):
+    class Meta:
+        model = Lecture
+        fields = ('lecture_id','name','position','video','ppt','notes')
+
+
