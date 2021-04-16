@@ -13,10 +13,10 @@ def createPostView(request):
     else:
         try: 
             form = Ad_Student_Form(request.POST)
-            newAd= form.save(commit=False)
-            newAd.user = request.user
-            newAd.save()
-            return redirect('ad/home.html')
+            # newAd= form.save(commit=False)
+            # newAd.user = request.user
+            form.save()
+            return redirect('home')
         except ValueError:
             return render(request, 'ad/post_ad.html', {'form': Ad_Student_Form(), 'error': 'Limit is Crossed' })
 
