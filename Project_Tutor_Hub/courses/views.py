@@ -77,14 +77,15 @@ def tutor_lecture_list_View(request, slug):
 
 def create_lecture_view(request,slug):
     form = CreateLectureForm()
+    class_object = Class.objects.get(slug=slug)
     if request.method == 'POST':
-        form = CreateClassForm(request.POST)
+        form = CreateLectureForm(request.POST)
         if form.is_valid():
             new_lecture = form.save(commit=False)
             new_lecture.created_by = request.user.tutor
             new_lecture.class_content=Class.objects.get(slug=slug)
             new_lecture.save()
             return redirect('tutor_dashboard')
-    context = {'form': form}
-    return render(request, 'courses/create_class.html', context)
+    context = {'form': form, 'class':class_object }
+    return render(request, 'courses/create_lecture.html', context)
 
