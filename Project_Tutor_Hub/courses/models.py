@@ -3,7 +3,7 @@ from django.template.defaultfilters import slugify
 from home.models import Tutor,Student
 from django.db.models.signals import pre_save
 #from tutor_hub.utils import unique_slug_generator
-from courses.utils import unique_course_code_generator,unique_slug_generator
+from courses.utils import unique_course_code_generator,unique_slug_generator,unique_lecture_id_generator
 import os
 
 
@@ -14,6 +14,7 @@ def save_class_image(instance,filename):
     if instance.title:
         filename = 'Class_Pictures/{}.{}'.format(instance.title,ext)
     return os.path.join(upload_to, filename)
+
 class Class(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
     class_code = models.CharField(max_length=100, blank=True)
@@ -26,15 +27,15 @@ class Class(models.Model):
     def __str__(self):
         return self.title
 
-def course_code_generator(sender,instance,*aegs,**kwargs):
-    if not instance.slug:
-        instance.slug = unique_slug_generator(instance)
+def course_code_generator(sender,instance,*args,**kwargs):
+    if not instance.class_code:
+        instance.class_code = unique_course_code_generator(instance)
 
 pre_save.connect(course_code_generator,sender = Class)
 
-def slug_generator(sender,instance,*aegs,**kwargs):
-    if not instance.class_code:
-        instance.class_code = unique_course_code_generator(instance)
+def slug_generator(sender,instance,*args,**kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance)
 
 pre_save.connect(slug_generator,sender = Class)
 
@@ -75,3 +76,9 @@ class Lecture(models.Model):
 
     #def get_absolute_url(self):
         #return reverse("curriculum:lesson_list", kwargs={'slug':self.subject.slug, 'standard':self.standard.slug})
+
+def lecture_id_generator(sender,instance,*args,**kwargs):
+    if not instance.lecture_id:
+        instance.lecture_id = unique_lecture_id_generator(instance)
+
+pre_save.connect(lecture_id_generator,sender = Lecture)
