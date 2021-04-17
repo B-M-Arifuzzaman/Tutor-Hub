@@ -57,25 +57,34 @@ def tutor_dashboard(request):
     return render(request, 'courses/lecture_list_view.html', context)
 '''
 
-def lecture_list_View(request, slug):
+def student_lecture_list_View(request, slug):
     # student = request.user.student
     class_object = Class.objects.get(slug=slug)
     lectures = class_object.lessons.all()
     context = {'lectures': lectures, 'class': class_object}
-    return render(request, 'courses/lecture_list_view.html', context)
+    return render(request, 'courses/student_lecture_list_view.html', context)
+
+def tutor_lecture_list_View(request, slug):
+    # student = request.user.student
+    class_object = Class.objects.get(slug=slug)
+    lectures = class_object.lessons.all()
+    context = {'lectures': lectures, 'class': class_object}
+    return render(request, 'courses/tutor_lecture_list_view.html', context)
 
 
-'''
+
+
+
 def create_lecture_view(request,slug):
     form = CreateLectureForm()
     if request.method == 'POST':
         form = CreateClassForm(request.POST)
         if form.is_valid():
-            new_lectures = form.save()
-            new_class.teacher = request.user.teacher
-            new_class.save()
-            return redirect('teacherDashboard')
+            new_lecture = form.save(commit=False)
+            new_lecture.created_by = request.user.tutor
+            new_lecture.class_content=Class.objects.get(slug=slug)
+            new_lecture.save()
+            return redirect('tutor_dashboard')
     context = {'form': form}
-    return render(request, 'createClass.html', context)
+    return render(request, 'courses/create_class.html', context)
 
-'''

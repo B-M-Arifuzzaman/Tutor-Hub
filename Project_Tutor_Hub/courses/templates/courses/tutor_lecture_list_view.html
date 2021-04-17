@@ -1,0 +1,16 @@
+{% extends 'home/homepage.html' %}
+
+{% block content %}
+
+    {% for lecture in lectures %}
+        <a href="#"><p>{{lecture.name}}</p></a>
+    {%endfor%}
+
+
+{% endblock content %}
+
+
+
+
+
+

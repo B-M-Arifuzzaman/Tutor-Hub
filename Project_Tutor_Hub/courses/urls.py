@@ -8,6 +8,8 @@ urlpatterns = [
     path('joinClass/',views.join_class, name='join_class'),
     path('studentDashboard/',views.student_dashboard, name='student_dashboard'),
     path('tutorDashboard/',views.tutor_dashboard, name='tutor_dashboard'),
-    path('student/class/<slug:slug>/',views.lecture_list_View, name='lecture_list_view'),
+    path('student/class/<slug:slug>/',views.student_lecture_list_View, name='student_lecture_list_view'),
+    path('tutor/class/<slug:slug>/',views.tutor_lecture_list_View, name='tutor_lecture_list_view'),
+    path('tutor/class/<slug:slug>/newLecture',views.create_lecture_view, name='create_lecture_view'),
     
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
