@@ -1,3 +1,7 @@
+'''
+This program is used to take the data from the model to the templates. 
+It controls the data, and returns to the template to show necessary output.
+'''
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -6,6 +10,11 @@ from .models import Ad_Student
 from .forms import Ad_Student_Form
 
 def createPostView(request):
+    '''
+    This will redirect the url to the create page, where a user can post an add to find tutor
+    :type request: HttpResponse
+    :param request: Takes the request to show post_ad.html
+    '''
     User = get_user_model()
     users = User.objects.all()
     if request.method == 'GET':
@@ -22,5 +31,11 @@ def createPostView(request):
 
 
 def home(request):
+    '''
+    This will redirect the url to the home page, where the user can see all the posts that have published so far
+    :type request: HttpResponse
+    :param request: Takes the request to show home.html
+    
+    '''
     ads = Ad_Student.objects.order_by('-ad_created')
     return render(request, 'ad/home.html', {'ads': ads})
