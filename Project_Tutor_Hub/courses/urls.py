@@ -11,6 +11,7 @@ urlpatterns = [
     path('student/class/<slug:slug>/',views.student_lecture_list_View, name='student_lecture_list_view'),
     path('tutor/class/<slug:slug>/',views.tutor_lecture_list_View, name='tutor_lecture_list_view'),
     path('tutor/class/<slug:slug>/newLecture',views.create_lecture_view, name='create_lecture'),
+    path('tutor/class/<slug:slug>/enrolledStudents',views.enrolled_students, name='enrolled_students'),
     #path('tutor/createLecture',views.create_lecture_view, name='create_lecture'),
     
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

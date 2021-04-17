@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponseRedirect
 from django.shortcuts import  redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -8,6 +8,7 @@ from courses.forms  import  CreateClassForm,CreateLectureForm
 from courses.models import Class,Lecture
 from home.models import Tutor,Student
 from django.views.generic import TemplateView,DetailView,ListView,FormView,CreateView,UpdateView,DeleteView
+from django.urls import reverse_lazy
 
 def create_class(request):
     form = CreateClassForm()
@@ -74,7 +75,6 @@ def tutor_lecture_list_View(request, slug):
 
 
 
-
 def create_lecture_view(request,slug):
     form = CreateLectureForm()
     class_object = Class.objects.get(slug=slug)
@@ -89,3 +89,9 @@ def create_lecture_view(request,slug):
     context = {'form': form, 'class':class_object }
     return render(request, 'courses/create_lecture.html', context)
 
+def enrolled_students(request, slug):
+    # teacher = request.user.teacher
+    class_object = Class.objects.get(slug=slug)
+    students = class_object.students.all()
+    context = {'students': students, 'class': class_object}
+    return render(request, 'courses/enrolled_students.html', context)

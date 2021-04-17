@@ -1,0 +1,15 @@
+{% extends 'home/homepage.html' %}
+
+{% block content %}
+
+    {% for i in students %}
+                        <tr>
+                            <td class="column1">{{i.user.first_name}}</td>
+                            <td class="column2">{{i.user.last_name}}</td>
+                            <td class="column3">{{i.user.username}}</td>
+                            <td class="column4">{{i.user.email}}</td>
+                        </tr>
+                        {% endfor %}
+
+
+{% endblock content %}

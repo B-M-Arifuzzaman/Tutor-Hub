@@ -6,6 +6,7 @@
         <a href="#"><p>{{lecture.name}}</p></a>
     {%endfor%}
     <a href="{% url 'create_lecture' slug=class.slug %}"> Add new Lecture</a>
+    <a href="{% url 'enrolled_students' slug=class.slug %}"> View Enrolled Students</a>
 
 {% endblock content %}
 
