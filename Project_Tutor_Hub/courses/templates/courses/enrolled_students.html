@@ -1,15 +1,77 @@
-{% extends 'home/homepage.html' %}
 
-{% block content %}
 
-    {% for i in students %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="{% static 'courses/css/enrolledStudent.css'%}">
+    
+</head>
+<body>
+    <div class="main-container">
+        <div class="header-content">
+            <div class="button-nav">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <div class="logo">
+                <img src="{% static 'courses/images/classroom_logo.png'%}" alt="logo" height="50" width="50"> 
+                <label for="">Online Classroom</label> 
+            </div>
+            <div class="menu-header"> 
+                <ul class="plus-menu">
+                    <li>
+                        <span class="addClass"></span>
+                        <div class="drop-downmenu">
+                            <ul>
+                                <li> <a href="#createClass">Create Class</a></li>
+                                <li><a href="#JoinClass">Join Class</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul class="menu-classroom"> 
+                    <li class="c-class"><a href="#">Create Class</a></li>
+                    <li class="j-class"><a href="#">Join Class</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="body-content">
+           <div class="centered"> 
+                <h2>List of Enrolled Students:</h2>
+                <table>
+                    <thead>
                         <tr>
-                            <td class="column1">{{i.user.first_name}}</td>
-                            <td class="column2">{{i.user.last_name}}</td>
-                            <td class="column3">{{i.user.username}}</td>
-                            <td class="column4">{{i.user.email}}</td>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Date of Birth</th>
+
                         </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in students %}
+                            <tr>
+                                <td>{{i.user.first_name}}</td>
+                                <td>{{i.user.last_name}}</td>
+                                <td>(+88) {{i.user.student.phone}}</td>
+                                <td><a href="#">{{i.user.email}}</a></td>
+                                <td>{{i.user.student.class_level}}</td>
+                            </tr>
                         {% endfor %}
-
-
-{% endblock content %}
+                    </tbody>
+                </table>  
+            </div> 
+        </div>
+    </div>
+    <script src="{% static 'courses/js/classroom.js'%}"></script>
+</body>
+</html>
