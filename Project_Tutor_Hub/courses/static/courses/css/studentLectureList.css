@@ -390,7 +390,7 @@ html, body {
     text-decoration: none;
     color: inherit;
     font-weight: bold;
-    font-size: large;
+    font-size: medium;
 }
 .right-div
 {
@@ -419,3 +419,61 @@ html, body {
        max-width: 100%;
     }
 }
+
+ /* Start Main Button */
+ .cont{
+     text-align: center;
+     margin-top: 0.5%;
+     margin-left: -15%;
+     
+ }
+ .fe{
+     display: inline-block;
+ }
+ .fe a{
+     text-decoration: none;
+     color: inherit;
+ }
+.cont .btn{
+    position: relative;
+    width: 100%;
+    height: 35%;
+    cursor: pointer;
+    color: #0082d0;
+    font-size: 20px;
+    font-weight: medium;
+    background: none;
+    border: 3px solid #0082d0;
+    transition: all 0.4s linear;
+  }
+
+  
+  .btn:hover{ color: #fff; }
+  
+  .btn:before,
+  .btn:after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    background: #0082d0;
+    transition: all 0.4s linear;
+  }
+  /* End Main Button */
+  
+  /* Start Button One */
+  .one:before{ top: 0; left: 0; }
+  
+  .one:hover:before{ width: 100%; }
+  /* End Button One */
+  
+  /* Start Button Tow */
+  .tow:before{ top: 0; left: 0; }
+  .tow:after{ top: 0; right: 0; }
+  
+  .tow:hover:before,
+  .tow:hover:after{ width: 50%; }
+  /* End Button Tow */
+  
+  
