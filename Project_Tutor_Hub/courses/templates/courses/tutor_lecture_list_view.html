@@ -64,7 +64,7 @@
             <div class="container">
                 {% for lecture in lectures %}
                 <div class="left-div left-text">
-                    <a href="#">Lecture - {{lecture.position}}: {{lecture.name}}</a>                
+                    <a href="{% url 'tutor_lecture_details' class_slug=class.slug  slug=lecture.slug%}">Lecture - {{lecture.position}}: {{lecture.name}}</a>                
                 </div>
                 {%endfor%}
             </div>

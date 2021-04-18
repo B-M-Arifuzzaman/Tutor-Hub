@@ -1,0 +1,17 @@
+{% extends 'home/homepage.html' %}
+
+{% block content %}
+
+    {% for lecture in lectures %}
+                <div class="left-div left-text">
+                    {{lecture.name}} <br>
+                    {{lecture.created_by}}   <br>
+                    {{lecture.created_at}}     <br> 
+                    {{lecture.description}}         
+                </div>
+                {%endfor%}
+
+{% endblock content %}
+
+
+

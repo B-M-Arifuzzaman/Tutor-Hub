@@ -95,3 +95,10 @@ def enrolled_students(request, slug):
     students = class_object.students.all()
     context = {'students': students, 'class': class_object}
     return render(request, 'courses/enrolled_students.html', context)
+
+def tutor_lecture_detail_View(request,class_slug,slug):
+    # student = request.user.student
+    class_object = Class.objects.get(slug=class_slug)
+    lectures = class_object.lessons.filter(slug=slug)
+    context = {'lectures': lectures, 'class': class_object}
+    return render(request, 'courses/tutor_lecture_detail_view.html', context)
