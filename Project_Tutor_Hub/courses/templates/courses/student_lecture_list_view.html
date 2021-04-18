@@ -1,15 +1,61 @@
-{% extends 'home/homepage.html' %}
-
-{% block content %}
-
-    {% for lecture in lectures %}
-        <a href="#"><p>{{lecture.name}}</p></a>
-    {%endfor%}
 
 
-{% endblock content %}
+{% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="{% static 'courses/css/studentLectureList.css'%}">
+    
+</head>
+<body>
+    <div class="main-container">
+        <div class="header-content">
+            <div class="button-nav">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <div class="logo">
+                <img src="{% static 'courses/images/classroom_logo.png'%}" alt="logo" height="50" width="50"> 
+                <label for="">Online Classroom</label> 
+            </div>
+            <div class="menu-header"> 
+                <ul class="plus-menu">
+                    <li>
+                        <span class="addClass"></span>
+                        <div class="drop-downmenu">
+                            <ul>
+                                <li> <a href="#createClass">Create Class</a></li>
+                                <li><a href="#JoinClass">Join Class</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul class="menu-classroom"> 
+                    <li class="c-class"><a href="#">Create Class</a></li>
+                    <li class="j-class"><a href="#">Join Class</a></li>
+                </ul>
+            </div>
+        </div>
 
+        <div class="body-content">
+            <div class="container">
+                {% for lecture in lectures %}
+                <div class="left-div left-text">
+                    <a href="#">Lecture - {{lecture.position}}: {{lecture.name}}</a>                
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'courses/js/classroom.js'%}"></script>
+</body>
+</html>
 
 
 
