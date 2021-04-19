@@ -39,6 +39,10 @@ def signup(request):
             user.groups.add(group)
             if group_name == 'student':
                 Student.objects.create(user=user)
+                
+                messages.success(request, 'Account Successfully Created !')
+                return redirect('signin')
+            
             else:
                 Tutor.objects.create(user=user)
 
