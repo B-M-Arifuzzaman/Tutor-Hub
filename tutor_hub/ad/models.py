@@ -74,11 +74,11 @@ class Ad_Tutor(models.Model):
     
     
     def __str__(self):
-            '''
-            This will take the self value of this function. 
-            :type self: string
-            :param self: Takes the object representation in string format.
-            '''
+        '''
+        This will take the self value of this function. 
+        :type self: string
+        :param self: Takes the object representation in string format.
+        '''
         return self.title
     
     
