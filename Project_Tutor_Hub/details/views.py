@@ -23,3 +23,12 @@ def view_more(request, pk):
     return render(request, 'view_more.html', {'ad': ad})
 
 
+@login_required
+def home(request):
+    '''
+    This will redirect the url to the home page
+    :type request: HttpResponse
+    :param request: Takes the request to show home.html
+    '''
+    ads = Ad_Student.objects.order_by('-ad_created')
+    return render(request, 'home.html', {'ads': ads})
