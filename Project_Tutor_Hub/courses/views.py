@@ -11,6 +11,15 @@ from django.views.generic import TemplateView,DetailView,ListView,FormView,Creat
 from django.urls import reverse_lazy
 
 def create_class(request):
+    '''
+    This will redirect the url to the create_class page, where a logged in tutor can create a new class and after successful class creation tutor will be redirected to tutor dashboard
+    
+    :param request: Takes the request to show create_class.html
+    :type request: HttpResponse
+    :return: returns arequest for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
+    
+    '''
     form = CreateClassForm()
     if request.method == 'POST':
         form = CreateClassForm(request.POST)
@@ -24,6 +33,15 @@ def create_class(request):
 
 
 def join_class(request):
+    '''
+    This will redirect the url to the join_class page, where a logged in student can join a new class and after successful class join student will be redirected to student dashboard
+
+    :param request: Takes the request to show join_class.html
+    :type request: HttpResponse
+    :return: returns arequest for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
+
+    '''
     if request.method == 'POST':
         class_code = request.POST.get('class_code')
         try:
@@ -38,12 +56,30 @@ def join_class(request):
 
 
 def student_dashboard(request):
+    '''
+    This will redirect the url to the student_dashboard page, where a logged in student can view all of the class he/she joined
+    
+    :param request: Takes the request to show student_dashboard.html
+    :type request: HttpResponse
+    :return: returns arequest for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
+    
+    '''
     student = request.user.student
     classes = Class.objects.filter(students=student)
     context = {'classes': classes}
     return render(request, 'courses/student_dashboard.html', context)
 
 def tutor_dashboard(request):
+    '''
+    This will redirect the url to the tutor_dashboard page, where a logged in tutor can view all of the class he/she created
+    
+    :param request: Takes the request to show tutor_dashboard.html
+    :type request: HttpResponse
+    :return: returns arequest for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
+    
+    '''
     tutor = request.user.tutor
     classes = Class.objects.filter(tutor=tutor)
     context = {'classes': classes}
@@ -59,6 +95,17 @@ def tutor_dashboard(request):
 '''
 
 def student_lecture_list_View(request, slug):
+    '''
+    This will redirect the url to the student_lecture_list page, where a logged in student can view all of the lectures in a list view of a specific class
+    
+    :param request: Takes the request to show student_lecture_list_view.html
+    :type request: HttpResponse
+    :param slug: Takes the class slug from url to slect a particular class from class model
+    :type slug: Slug
+    :return: returns arequest for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
+    
+    '''
     # student = request.user.student
     class_object = Class.objects.get(slug=slug)
     lectures = class_object.lessons.all()
@@ -66,6 +113,17 @@ def student_lecture_list_View(request, slug):
     return render(request, 'courses/student_lecture_list_view.html', context)
 
 def tutor_lecture_list_View(request, slug):
+    '''
+    This will redirect the url to the tutor_lecture_list page, where a logged in tutor can view all of the lectures in a list view of a specific class
+    
+    :param request: Takes the request to show tutor_lecture_list_view.html
+    :type request: HttpResponse
+    :param slug: Takes the class slug from url to slect a particular class from class model
+    :type slug: Slug
+    :return: returns arequest for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
+    
+    '''
     # student = request.user.student
     class_object = Class.objects.get(slug=slug)
     lectures = class_object.lessons.all()
@@ -76,6 +134,17 @@ def tutor_lecture_list_View(request, slug):
 
 
 def create_lecture_view(request,slug):
+    '''
+    This will redirect the url to the create_lecture page, where a logged in tutor can fillup a form to create a lecture of a specific class
+    
+    :param request: Takes the request to show create_lecture.html
+    :type request: HttpResponse
+    :param slug: Takes the class slug from url to slect a particular class from class model
+    :type slug: Slug
+    :return: returns arequest for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
+    
+    '''
     form = CreateLectureForm()
     class_object = Class.objects.get(slug=slug)
     if request.method == 'POST':
@@ -90,6 +159,17 @@ def create_lecture_view(request,slug):
     return render(request, 'courses/create_lecture.html', context)
 
 def enrolled_students(request, slug):
+    '''
+    This will redirect the url to the enrolled_student page, where a logged in tutor can view list of enrolled students
+    
+    :param request: Takes the request to show enrolled_students.html
+    :type request: HttpResponse
+    :param slug: Takes the class slug from url to slect a particular class from class model
+    :type slug: Slug
+    :return: returns arequest for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
+    
+    '''
     # teacher = request.user.teacher
     class_object = Class.objects.get(slug=slug)
     students = class_object.students.all()
@@ -97,6 +177,19 @@ def enrolled_students(request, slug):
     return render(request, 'courses/enrolled_students.html', context)
 
 def tutor_lecture_detail_View(request,class_slug,slug):
+    '''
+    This will redirect the url to the lecture_detaails page, where a logged in tutor can view lecture details of a specific lecture of a certain course
+    
+    :param request: Takes the request to show enrolled_students.html
+    :type request: HttpResponse
+    :param class_slug: Takes the class slug from url to slect a particular class from class model
+    :type slug: Slug
+    :param slug: Takes the lecture slug of a specific class from url to slect a particular lecture from Lecture model
+    :type slug: Slug
+    :return: returns arequest for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
+    
+    '''
     # student = request.user.student
     class_object = Class.objects.get(slug=class_slug)
     lectures = class_object.lessons.filter(slug=slug)
