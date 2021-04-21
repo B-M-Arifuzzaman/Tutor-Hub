@@ -8,6 +8,17 @@ import os
 
 
 def save_class_image(instance,filename):
+    '''
+    This will save class image for a specific class when, class image is uploaded by the creator of the class
+
+    :param instance: Takes instances of a Class object as argument to save class image
+    :type request: Class
+    :param filename: takes the file name of the uploaded image for class
+    :type filename: string
+    :return: returns a path of uploaded folder and modified filename
+    :rtype: path, string
+
+    '''
     upload_to = 'images'
     ext = filename.split('.')[-1]
     #get filename
@@ -16,6 +27,12 @@ def save_class_image(instance,filename):
     return os.path.join(upload_to, filename)
 
 class Class(models.Model):
+    """
+    This is a conceptual Database representation of Class table for all the courses that to be used in the project.
+    :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel
+    :type ModelForm: model.Model
+
+    """
     title = models.CharField(max_length=100, null=True, blank=True)
     class_code = models.CharField(max_length=100, blank=True)
     slug = models.SlugField(null=True,blank=True)
@@ -41,6 +58,17 @@ pre_save.connect(slug_generator,sender = Class)
 
 
 def save_lecture_files(instance,filename):
+    '''
+    This will save lecture files for a specific class when, class lectures are uploaded by the creator of the class
+
+    :param instance: Takes instances of a lecture object as argument to save lecture files
+    :type request: Lecture
+    :param filename: takes the file name of the uploaded files for lecture
+    :type filename: string
+    :return: returns a path of uploaded folder and modified filename
+    :rtype: path, string
+
+    '''
     upload_to = 'images'
     ext = filename.split('.')[-1]
     #get filename
@@ -52,6 +80,12 @@ def save_lecture_files(instance,filename):
     return os.path.join(upload_to, filename)
 
 class Lecture(models.Model):
+    """
+    This is a conceptual Database representation of `Lectur` table for all the courses taht to be used in the project.
+    :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel
+    :type ModelForm: model.Model
+
+    """
     lecture_id = models.CharField(max_length=100,null=True,blank=True)
     name = models.CharField(max_length=150)
     class_content= models.ForeignKey(Class, on_delete=models.CASCADE, related_name='lessons')
