@@ -44,47 +44,46 @@
         </div>
 
         <div class="body-content">
-            
-            <div class="centered">
+       
+            <div class="new-lecture">
                 <form  action="" method="POST">
                     {% csrf_token %}
-                <div class="row">
-                    {{form.name}}
-                    <label for="fancy-text">Name</label>
-                </div>
-                <div class="row">
-                    {{form.position}}
-                    <label for="fancy-text">Lecture No</label>
-                </div>
-                <div class="row">
-                    {{form.description}}
-                    <label for="fancy-text">Description</label>
-                </div>
-
-                <div class="row">
-                    {{form.video}}
-                    <label for="fancy-textarea">Video</label>
-                </div>
-
-                <div class="row">
-                    {{form.ppt}}
-                    <label for="fancy-textarea">Ppt</label>
-                </div>
-                <div class="row">
-                    {{form.notes}}
-                    <label for="fancy-textarea">Notes</label>
-                </div>
-  
-                <button type="submit" tabindex="0">Create Lecture</button>
-
-                    {% for message in messages %}
-                        <div class="alert alert-danger" role="alert">{{messages}}</div>
-                    {% endfor %}
-                </form>
-                       
+                    <div class="row">
+                        {{form.name}}
+                        <label for="fancy-text">Name</label>
                     </div>
-                </div>
-            </div>    
+                    <div class="row">
+                        {{form.position}}
+                        <label for="fancy-text">Lecture No</label>
+                    </div>
+                    <div class="row">
+                        {{form.description}}
+                        <label for="fancy-text">Description</label>
+                    </div>
+
+                    <div class="row">
+                        {{form.video}}
+                        <label for="fancy-textarea">Video</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="custom-input">
+                        {{form.ppt}}
+                        </div>
+                        <label for="fancy-textarea">Ppt</label>
+                    </div>
+                    <div class="row">
+                        {{form.notes}}
+                        <label for="fancy-textarea">Notes</label>
+                    </div>
+        
+                    <button type="submit" tabindex="0">Create Lecture</button>
+
+                        {% for message in messages %}
+                            <div class="alert alert-danger" role="alert">{{messages}}</div>
+                        {% endfor %}
+                </form>
+            <div>
         </div>
     </div>
     <script src="{% static 'courses/js/classroom.js'%}"></script>

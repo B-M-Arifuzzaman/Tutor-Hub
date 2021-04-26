@@ -59,221 +59,14 @@ html, body {
  }
 .body-content { 
     width: 100%;
-    display: flex;
-    grid-gap: 1em;
     padding: 1em;
    margin-left: 10%;
-    flex-direction: column;
+
     justify-content: center;
 }
-.courses-and-rooms {
-    
-}
+
 .content-items{
     justify-content: center;
-}
-.class1 {
-    padding: 10px;
-    
-}
-.class2 {
-    background-color: darkseagreen;
-}
-.class3 {
-    background-color: darkturquoise;
-}
-.class4{
-    background-color: darkgrey;
-}
-.class-rooms {
-    display: flex;
-    flex-direction: column; 
-    height: 100%;
-    width: 80%;
-    color: rgb(76 76 76);
-    box-shadow: -2px 5px 4px #afafaf;
-    border-radius: 5px;
-}
-.class-rooms:hover {
-    box-shadow: -2px 5px 11px #afafaf;
-    cursor: pointer;
-}
-
-.class-room-title{
-    background-color: #24a587;
-    background: url('./images/png-jpg-gif-featured-image.jpg');
-    background-size: cover; 
-    background-repeat: no-repeat;
-    height: 20vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.class-room-title-2{
-    background: url('./images/socialpeople.png');
-    background-size: cover; 
-    background-repeat: no-repeat;
-}
-
-.class-room-title .subject {
-    font-weight: bold;
-    font-size: 20px;
-}
-.class-room-title div {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    order: 2; 
-    font-size: 15px;
-}
-.class-room-title div label {
-    display: flex;
-    justify-content: flex-end; 
-}
-.classroom-profile-pic {
-    order: 1;
-    height: 75px;
-    width: 75px;
-    background-color: rgb(189 189 189);
-    border-radius: 50%;
-    background: url('./images/profilepic.png');
-    background-repeat: no-repeat;
-    background-size: cover; 
-}
-.class-room-discription {
-    height: 10vh;
-    display: flex;
-    flex-direction: column;
-}
-.class-room-title,
-.class-room-discription {
-    padding: 10px;
-    border-radius: 5px;
-}
-.content-menu {
-     grid-row: 1/ span 2;
-     height: 80vh; 
-     padding: 10px;
-     background-color: rgb(216,216,216);  
-     border-radius: 5px;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     box-shadow: 2px 2px 3px #a9a9a9ee;
-}
-.img-profile {
-    display: flex; 
-    justify-content: center;
-}
-.profile-picture {
-    height: 150px;
-    width: 150px;
-    background-color: rgb(189 189 189);
-    border-radius: 50%;
-    background: url('./images/profilepic.png');
-    background-repeat: no-repeat;
-    background-size: cover; 
-}
-.menu-profile-name{
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-.profile-info {
-    padding-left: 1em;
-    margin-top: 5px;
-}
-.profile-info ul {
-    color: rgb(76 76 76);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.profile-info ul li {
-    margin-top: 3px;
-}
-.color-info { 
-    margin-bottom: 5px;
-    color: #6d6d6d;
-} 
-.menu-items { 
-    height: 100%;
-}   
-.informations{ 
-    background-color: rgb(216,216,216);
-    box-shadow: rgba(169, 169, 169, 0.933) 2px 2px 3px;
-    border-radius: 5px;
-}
-
-.profile-info ul li label {
-    vertical-align: top
-}
-.footer-content {  
-    background-color: rgb(154 154 154);
-    color: rgb(241 241 241);
-    padding: 12px;  
-}
-.footer-content ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-.footer-content .copyright-page {
-    display: flex;
-    justify-content: center;
-    color: #5f5f5fee;
-    margin-left: 3em;
-}
-.footer-content ul li a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #5a5a5a;
-}
-.edit-btn > button {
-    background-color: #969696;
-    border: 0;
-    color: #eeee;
-    outline: 0;
-    cursor: pointer;
-}
-.logout-btn > button {
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    color: #716969;
-}
-.logout-btn > button:active {
-    background-color: #ffffffd9
-}
-
-.edit-btn > button:active {
-    background-color: #b3b1b1;
-}
-.edit-btn > button,
-.logout-btn > button{
-    padding: 1em;
-    width: 100%;
-    margin-top: 5px;
-    text-transform: uppercase;
-}
-
-.addClass{
-    display: flex;
-    background: url('./images/iconfinder_plus_925914.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 15px;
-    width: 15px;
-    cursor: pointer;
- } 
- .plus-menu {
-    display: none;
 }
 @media screen and (max-width: 1423px) {
     .courses-and-rooms {
@@ -365,75 +158,11 @@ html, body {
 }
 
 
-:root {
-    background: #f5f6fa;
-    color: #9c9c9c;
-    font: 1rem "PT Sans", sans-serif;
-}
-html, body, .container {
-    height: 100%;
-}
-a {
-    color: inherit;
-}
-a:hover {
-    color: #7f8ff4;
-}
-.join-classcontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.uppercase {
-    text-transform: uppercase;
-}
-.btn {
-    display: inline-block;
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    border: 0;
-    outline: 0;
-    padding: 0;
-    transition: all 200ms ease-in;
-    cursor: pointer;
-}
-.btn--primary {
-    background: #7f8ff4;
-    color: #fff;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
-    border-radius: 2px;
-    padding: 12px 36px;
-}
-.btn--primary:hover {
-    background: #6c7ff2;
-}
-.btn--primary:active {
-    background: #7f8ff4;
-    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2);
-}
-.btn--inside {
-    margin-left: -96px;
-}
-.form__field {
-    width: 360px;
-    background: #fff;
-    color: #a3a3a3;
-    font: inherit;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
-    border: 0;
-    outline: 0;
-    padding: 22px 18px;
-}
 
-.centered {
-    position: fixed;
-    top: 40%;
-    left: 40%;
-    margin-top: -50px;
-    margin-left: -100px;
-  }
+ .new-lecture{
+     align-items: flex-start;
+     
+ }
 
 
 
@@ -671,3 +400,5 @@ form button:hover:before, form button:focus:before {
     transform: scale(1);
     transition: all 0.3s cubic-bezier(1, 0.1, 0, 0.9);
 }
+
+

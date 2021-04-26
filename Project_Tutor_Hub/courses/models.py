@@ -99,6 +99,7 @@ class Lecture(models.Model):
     notes = models.FileField(upload_to=save_lecture_files,verbose_name='notes',blank=True)
 
     class Meta:
+        
         ordering = ['position']
     
     def __str__(self):
