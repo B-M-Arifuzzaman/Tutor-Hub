@@ -46,7 +46,7 @@
         <div class="body-content">
        
             <div class="new-lecture">
-                <form  action="" method="POST">
+                <form  action="" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="row">
                         {{form.name}}
@@ -67,9 +67,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="custom-input">
-                        {{form.ppt}}
-                        </div>
+                        
+                            {{form.ppt}}
+                    
                         <label for="fancy-textarea">Ppt</label>
                     </div>
                     <div class="row">

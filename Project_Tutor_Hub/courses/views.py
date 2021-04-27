@@ -22,7 +22,7 @@ def create_class(request):
     '''
     form = CreateClassForm()
     if request.method == 'POST':
-        form = CreateClassForm(request.POST)
+        form = CreateClassForm(request.POST,request.FILES)
         if form.is_valid():
             new_class = form.save()
             new_class.tutor = request.user.tutor
@@ -148,7 +148,7 @@ def create_lecture_view(request,slug):
     form = CreateLectureForm()
     class_object = Class.objects.get(slug=slug)
     if request.method == 'POST':
-        form = CreateLectureForm(request.POST)
+        form = CreateLectureForm(request.POST,request.FILES)
         if form.is_valid():
             new_lecture = form.save(commit=False)
             new_lecture.created_by = request.user.tutor

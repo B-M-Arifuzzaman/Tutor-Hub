@@ -19,7 +19,7 @@ def save_class_image(instance,filename):
     :rtype: path, string
 
     '''
-    upload_to = 'images'
+    upload_to = 'images/'
     ext = filename.split('.')[-1]
     #get filename
     if instance.title:
@@ -69,14 +69,14 @@ def save_lecture_files(instance,filename):
     :rtype: path, string
 
     '''
-    upload_to = 'images'
+    upload_to = 'images/'
     ext = filename.split('.')[-1]
     #get filename
     if instance.lecture_id:
-        filename = 'lecture_files/{}/{}/{}.{}'.format(instance.class_content.slug,instance.lecture_id,instance.lecture_id ,ext)
+        filename = 'lecture_files/{}/{}/{}.{}'.format(instance.class_content.slug,instance.position,instance.position,ext)
         if os.path.exists(filename):
-            new_name = str(instance.lecture_id) + str('1')
-            filename = 'lecture_files/{}/{}/{}.{}'.format(instance.class_content.slug,instance.lecture_id, new_name,ext)
+            new_name = str(instance.position) + str('1')
+            filename = 'lecture_files/{}/{}/{}.{}'.format(instance.class_content.slug,instance.position, new_name,ext)
     return os.path.join(upload_to, filename)
 
 class Lecture(models.Model):
