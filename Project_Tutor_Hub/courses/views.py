@@ -218,12 +218,30 @@ def student_lecture_detail_View(request,class_slug,slug):
 
 
 class LectureUpdateView(UpdateView):
+    '''
+    This will redirect the url to the lecture_list page, where a logged in tutor can view all the lecture list of a specific class
+    
+    :param UpdateView: Takes the request to show update_lecture.html
+    :type UpdateView: UpdateView
+    :return: returns arequest for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
+    
+    '''
     fields =('name','position','description','video','ppt','notes')
     model=Lecture
     template_name='courses/lecture_update.html'
    
 
 class LectureDeleteView(DeleteView):
+    '''
+    This will redirect the url to the lecture_list page, where a logged in tutor can view all the lecture list of a specific class
+    
+    :param DeleteView: Takes the request to show delete_lecture.html
+    :type UpdateView: UpdateView
+    :return: returns arequest for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
+    
+    '''
     model=Lecture
     template_name='courses/lecture_delete.html'
 
