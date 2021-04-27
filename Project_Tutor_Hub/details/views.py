@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 from .models import Ad_Student
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.db.models import Q
 
 
 @login_required
@@ -31,4 +32,18 @@ def home(request):
     :param request: Takes the request to show home.html
     '''
     ads = Ad_Student.objects.order_by('-ad_created')
-    return render(request, 'home.html', {'ads': ads})
+    context = {}
+    context["ads"] = ads
+    if "area" in request.GET:
+        a = request.GET["area"]
+        s = request.GET["salary"]
+        sub = request.GET["subject"]
+        g = request.GET["gender"]
+        # result = Ad_Student.objects.filter(area__icontains=a)
+        result = Ad_Student.objects.filter(
+            Q(area__icontains=a) & Q(salary__gte=s)
+            & Q(subject__icontains=sub) & Q(gender=g))
+        context["ads"] = result
+        context["search"] = "search"
+
+    return render(request, 'home.html', context)

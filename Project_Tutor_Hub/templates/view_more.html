@@ -6,7 +6,7 @@
   crossorigin="anonymous"
 />
 <title>View More Details of Ad</title>
-{% endblock %} {% block myblock %} {% block navlinks %}
+{% endblock %} {% block body %} {% block navlinks %}
 <li><a href="{% url 'home' %}">Home</a></li>
 <li><a href="#">Log Out</a></li>
 {% endblock %}
@@ -16,17 +16,18 @@
         <div class="card shadow-sm">
           <div class="card-header bg-transparent border-0">
             <h3 class="mb-0">
-              <i class="far fa-clone pr-1"></i>Details
+              <i class="fas fa-clone pr-1">Details:</i>
             </h3>
+            <div class="row text-center"><h2>{{ ad.title }}</h2></div>
           </div>
           <div class="card-body pt-0">
             <table class="table table-bordered">
-              <tr>
+              <!-- <tr>
                 <th width="30%">Title</th>
                 <td width="2%">:</td>
                 <td>{{ ad.title }}</td>
               </tr>
-              <tr>
+              <tr> -->
                 <th width="30%">Area</th>
                 <td width="2%">:</td>
                 <td>{{ ad.area }}</td>
