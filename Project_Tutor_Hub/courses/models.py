@@ -4,6 +4,7 @@ from home.models import Tutor,Student
 from django.db.models.signals import pre_save
 #from tutor_hub.utils import unique_slug_generator
 from courses.utils import unique_course_code_generator,unique_slug_generator,unique_lecture_id_generator
+from django.urls import reverse
 import os
 
 
@@ -90,7 +91,7 @@ class Lecture(models.Model):
     name = models.CharField(max_length=150)
     class_content= models.ForeignKey(Class, on_delete=models.CASCADE, related_name='lessons')
     description = models.TextField(max_length=550,null=True,blank=True)
-    created_by = models.ForeignKey(Tutor,on_delete=models.CASCADE)
+    created_by = models.ForeignKey(Tutor,on_delete=models.CASCADE, related_name="teachers")
     created_at = models.DateTimeField(auto_now_add=True)
     position = models.PositiveSmallIntegerField(verbose_name= 'Lecture No')
     slug = models.SlugField(null=True,blank=True)
@@ -109,8 +110,8 @@ class Lecture(models.Model):
         self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
-    #def get_absolute_url(self):
-        #return reverse("curriculum:lesson_list", kwargs={'slug':self.subject.slug, 'standard':self.standard.slug})
+    def get_absolute_url(self):
+        return reverse("tutor_lecture_list_view", kwargs={ 'slug':self.class_content.slug})
 
 def lecture_id_generator(sender,instance,*args,**kwargs):
     if not instance.lecture_id:

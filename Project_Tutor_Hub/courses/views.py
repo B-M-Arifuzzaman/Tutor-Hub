@@ -215,3 +215,10 @@ def student_lecture_detail_View(request,class_slug,slug):
     lectures = class_object.lessons.filter(slug=slug)
     context = {'lectures': lectures, 'class': class_object}
     return render(request, 'courses/tutor_lecture_detail_view.html', context)
+
+
+class LectureUpdateView(UpdateView):
+    fields =('name','position','description','video','ppt','notes')
+    model=Lecture
+    template_name='courses/lecture_update.html'
+   

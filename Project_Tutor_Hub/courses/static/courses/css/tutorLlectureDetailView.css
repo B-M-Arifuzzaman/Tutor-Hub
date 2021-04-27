@@ -475,7 +475,6 @@ html, body {
   .tow:hover:before,
   .tow:hover:after{ width: 50%; }
   /* End Button Tow */
-  
   .content-item {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     padding-left: 3.5%;

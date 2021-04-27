@@ -42,20 +42,32 @@
         </div>
 
         <div class="body-content">
-                {% for lecture in lectures %}
-                <div class="content-item" >
-                    <div class="pic">
+            {% for lecture in lectures %}
+            <div class="content-item" >
+                <div class="pic">
                     <p><h3> Lecture : {{lecture.name}} </h3></p>
                     <h5>Created By: {{lecture.created_by.user.first_name}} {{lecture.created_by.user.last_name}} &nbsp;&nbsp;&nbsp; Created at: {{lecture.created_at}} <h5> 
-
-
                     <h3>Lecture Desciption: </h3>
                     <p>{{lecture.description}}</p>
                 </div>
                 
             </div>
+            <div class="cont">
+                <!--  Start First Button  -->
+                <div class="fe">
+                    <button class="btn one"><a href="{% url 'tutor_lecture_update' class_slug=class.slug  slug=lecture.slug%}"> Update Lecture</a></button>
+                
+                </div>
+                <!--  End First Button  -->
 
-                {%endfor%}
+                <!--  Start Second Button  -->
+                <div class="fe">
+                    <button class="btn tow"><a href="#">Delete Lecture</a></button>
+                </div>
+                <!--  End Second Button  -->
+            </div>
+            {%endfor%}
+            
         </div>
     </div>
     <script src="{% static 'courses/js/classroom.js'%}"></script>
