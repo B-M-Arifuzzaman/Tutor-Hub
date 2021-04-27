@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice</title>
-    <link rel="stylesheet" href="{% static 'courses/css/studentLectureList.css'%}">
+    <link rel="stylesheet" href="{% static 'courses/css/tutorLlectureDetailView.css'%}">
     
 </head>
 <body>
@@ -42,18 +42,26 @@
         </div>
 
         <div class="body-content">
-            <div class="container">
                 {% for lecture in lectures %}
-                <div class="left-div left-text">     
-                    <a href="{% url 'student_lecture_details' class_slug=class.slug  slug=lecture.slug%}">Lecture - {{lecture.position}}: {{lecture.name}}</a>                        
+                <div class="content-item" >
+                    <div class="pic">
+                    <p><h3> Lecture : {{lecture.name}} </h3></p>
+                    <h5>Created By: {{lecture.created_by.user.first_name}} {{lecture.created_by.user.last_name}} &nbsp;&nbsp;&nbsp; Created at: {{lecture.created_at}} <h5> 
+
+
+                    <h3>Lecture Desciption: </h3>
+                    <p>{{lecture.description}}</p>
                 </div>
-                {%endfor%}
+                
             </div>
+
+                {%endfor%}
         </div>
     </div>
     <script src="{% static 'courses/js/classroom.js'%}"></script>
 </body>
 </html>
+
 
 
 
