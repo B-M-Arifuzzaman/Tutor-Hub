@@ -222,3 +222,12 @@ class LectureUpdateView(UpdateView):
     model=Lecture
     template_name='courses/lecture_update.html'
    
+
+class LectureDeleteView(DeleteView):
+    model=Lecture
+    template_name='courses/lecture_delete.html'
+
+    def get_success_url(self):
+        Class= self.object.class_content.slug
+        Lecture = self.object.slug
+        return reverse_lazy('tutor_lecture_list_view',kwargs={'slug':self.object.class_content.slug})

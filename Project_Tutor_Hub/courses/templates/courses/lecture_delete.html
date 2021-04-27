@@ -1,0 +1,12 @@
+{% extends 'home/homepage.html' %}
+
+{% block content %}
+    <h3>Please Confirm to delete the Lecture;</h3>
+    <form  action="" method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+         <input type="submit" name="" value="Delete"> 
+            <a href="{% url 'tutor_lecture_details' class_slug=lecture.class_content.slug  slug=lecture.slug%}">Cancel Delete</a>
+    </form>
+    
+
+{% endblock content %}

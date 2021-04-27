@@ -62,7 +62,7 @@
 
                 <!--  Start Second Button  -->
                 <div class="fe">
-                    <button class="btn tow"><a href="#">Delete Lecture</a></button>
+                    <button class="btn tow"><a href="{% url 'tutor_lecture_delete' class_slug=class.slug  slug=lecture.slug%}">Delete Lecture</a></button>
                 </div>
                 <!--  End Second Button  -->
             </div>
