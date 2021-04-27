@@ -1,17 +1,68 @@
-{% extends 'home/homepage.html' %}
+{% load static %}
 
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="{% static 'courses/css/tutorLlectureDetailView.css'%}">
+    
+</head>
+<body>
+    <div class="main-container">
+        <div class="header-content">
+            <div class="button-nav">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <div class="logo">
+                <img src="{% static 'courses/images/classroom_logo.png'%}" alt="logo" height="50" width="50"> 
+                <label for="">Online Classroom</label> 
+            </div>
+            <div class="menu-header"> 
+                <ul class="plus-menu">
+                    <li>
+                        <span class="addClass"></span>
+                        <div class="drop-downmenu">
+                            <ul>
+                                <li> <a href="#createClass">Create Class</a></li>
+                                <li><a href="#JoinClass">Join Class</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul class="menu-classroom"> 
+                    <li class="c-class"><a href="#">Create Class</a></li>
+                    <li class="j-class"><a href="#">Join Class</a></li>
+                </ul>
+            </div>
+        </div>
 
-    {% for lecture in lectures %}
-                <div class="left-div left-text">
-                    {{lecture.name}} <br>
-                    {{lecture.created_by}}   <br>
-                    {{lecture.created_at}}     <br> 
-                    {{lecture.description}}         
+        <div class="body-content">
+                {% for lecture in lectures %}
+                <div class="content-item" >
+                    <div class="pic">
+                    <p><h3> Lecture : {{lecture.name}} </h3></p>
+                    <h5>Created By: {{lecture.created_by.user.first_name}} {{lecture.created_by.user.last_name}} &nbsp;&nbsp;&nbsp; Created at: {{lecture.created_at}} <h5> 
+
+
+                    <h3>Lecture Desciption: </h3>
+                    <p>{{lecture.description}}</p>
                 </div>
-                {%endfor%}
+                
+            </div>
 
-{% endblock content %}
+                {%endfor%}
+        </div>
+    </div>
+    <script src="{% static 'courses/js/classroom.js'%}"></script>
+</body>
+</html>
+
+
 
 
 
