@@ -36,7 +36,7 @@ class Ad_Tutor(models.Model):
     subject = models.CharField(max_length=150, null=True, blank=True)
     class_level = models.CharField(max_length=150, null=True, blank=True)
     days = models.DecimalField(decimal_places=0, max_digits=7)
-    expected_salary = models.DecimalField(decimal_places=1000, max_digits=50000)
+    expected_salary = models.DecimalField(decimal_places=0, max_digits=10)
     male ='male'
     female = 'female'
     other = 'other'

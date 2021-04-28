@@ -43,3 +43,9 @@ def home(request):
     studentAds = Ad_Student.objects.order_by('-ad_created')
     tutorAds = Ad_Tutor.objects.order_by('-ad_created')
     return render(request, 'ad/home.html', {'studentAds': studentAds, 'tutorAds': tutorAds})
+
+@login_required
+def myAd(request):
+    myStudentAds = Ad_Student.objects.filter(user=request.user).order_by('-ad_created')
+    myTutorAds = Ad_Tutor.objects.filter(user=request.user).order_by('-ad_created')
+    return render(request, 'ad/myad.html', {'myStudentAds': myStudentAds, 'myTutorAds': myTutorAds})

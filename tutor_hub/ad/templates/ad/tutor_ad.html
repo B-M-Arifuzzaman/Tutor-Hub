@@ -16,6 +16,7 @@
     <input id="nav-toggle" type="checkbox">
     <div class="app_name">Tutor Hub</div>
     <ul>
+        <li><a href="{% url 'myad' %}">My Ad</a></li>
         <li><a href="{% url 'home' %}">Back to Home</a></li>
     </ul>
     <label for="nav-toggle" class="three_lines">
@@ -53,20 +54,20 @@
             </div>
             <div class="form-group">
                 <label for="id_subject">Subject:</label> 
-                <input type="text" class="form-control" name="subject" maxlength="150" id="id_subject">
+                <input type="text" class="form-control" name="subject" placeholder="CSE 115" maxlength="150" id="id_subject">
             </div>
             <div class="form-group">
                 <label for="id_class_level">Class level:</label> 
-                <input type="text" class="form-control" name="class_level" maxlength="150" id="id_class_level">
+                <input type="text" class="form-control" name="class_level" placeholder="BSc." maxlength="150" id="id_class_level">
             </div>
             <div class="form-group">
                 <label for="id_days">Days:</label> 
-                <input type="number" class="form-control" name="days" step="1" required id="id_days">
+                <input type="number" class="form-control" name="days" placeholder="3" step="1" required id="id_days">
                 <small class="text-muted ml-3">Per Week</small>
             </div>
             <div class="form-group">
                 <label for="id_expected_salary">Expected salary:</label> 
-                <input type="number" name="expected_salary" class="form-control"  step="1e-1000" required id="id_expected_salary">
+                <input type="number" name="expected_salary" class="form-control" placeholder="3000"  step="1e-1000" required id="id_expected_salary">
                 <small class="text-muted ml-3"> Taka </small>
             </div>
             <div class="form-group">
@@ -79,7 +80,7 @@
             </div>
             <div class="form-group">
                 <label for="id_description">Description:</label> 
-                <textarea name="description" class="form-control" cols="40" rows="10" id="id_description"></textarea>
+                <textarea name="description" class="form-control" cols="40" placeholder="Write briefly about this ad or any special requirements" rows="10" id="id_description"></textarea>
             </div>
             <button type="submit" class="btn btn-primary align-self">Post Ad</button>
         </form>
