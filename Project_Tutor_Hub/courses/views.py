@@ -214,7 +214,7 @@ def student_lecture_detail_View(request,class_slug,slug):
     class_object = Class.objects.get(slug=class_slug)
     lectures = class_object.lessons.filter(slug=slug)
     context = {'lectures': lectures, 'class': class_object}
-    return render(request, 'courses/tutor_lecture_detail_view.html', context)
+    return render(request, 'courses/student_lecture_detail_view.html', context)
 
 
 class LectureUpdateView(UpdateView):

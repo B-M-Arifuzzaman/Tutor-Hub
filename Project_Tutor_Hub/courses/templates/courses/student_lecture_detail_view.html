@@ -51,6 +51,33 @@
 
                     <h3>Lecture Desciption: </h3>
                     <p>{{lecture.description}}</p>
+
+                    {% if lecture.video %}
+                        <div id="player-overlay">
+                            <video controls>
+                                <source src="{{lecture.video.url}}"  type="video/mp4">
+                            </video>
+                        </div>
+                    {% endif %}
+
+                    {% if lecture.video %}
+                        <a href="{{lecture.video.url}}" > Get Video</a>
+                        {%else%}
+                        <a href="#" >No Video Available</a>
+                    {% endif %}
+
+                    {% if lecture.ppt %}
+                        <a href="{{lecture.ppt.url}}"> Get Presentation</a>
+                        {%else%}
+                        <a href="#" >No Presentation Available</a>
+                    {% endif %}
+
+                    {% if lecture.notes %}
+                        <a href="{{lecture.notes.url}}"> Get Notes</a>
+                        {%else%}
+                        <a href="#" >No Notes Available</a>
+                    {% endif %}
+                    
                 </div>
                 
             </div>
