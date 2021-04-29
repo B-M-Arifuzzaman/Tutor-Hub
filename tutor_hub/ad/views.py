@@ -7,6 +7,7 @@ from .forms import Ad_Student_Form, Ad_Tutor_Form
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 from home.models import Student,Tutor
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 
 @login_required
@@ -40,8 +41,29 @@ def tutor_Ad(request):
 
 @login_required
 def home(request):
-    studentAds = Ad_Student.objects.order_by('-ad_created')
-    tutorAds = Ad_Tutor.objects.order_by('-ad_created')
+    studentAd_list = Ad_Student.objects.order_by('-ad_created')
+    tutorAd_list = Ad_Tutor.objects.order_by('-ad_created')
+    
+    #Paginator for Student Posts
+    paginator = Paginator(studentAd_list, 5)
+    page = request.GET.get('page')
+    try:
+        studentAds = paginator.page(page)
+    except PageNotAnInteger:
+        studentAds = paginator.page(1)
+    except EmptyPage:
+        studentAds = paginator.page(paginator.num_pages)
+    
+    #Paginator for Tutor Posts
+    paginator = Paginator(tutorAd_list, 5)
+    page = request.GET.get('page')
+    try:
+        tutorAds = paginator.page(page)
+    except PageNotAnInteger:
+        tutorAds = paginator.page(1)
+    except EmptyPage:
+        tutorAds = paginator.page(paginator.num_pages)
+        
     return render(request, 'ad/home.html', {'studentAds': studentAds, 'tutorAds': tutorAds})
 
 @login_required

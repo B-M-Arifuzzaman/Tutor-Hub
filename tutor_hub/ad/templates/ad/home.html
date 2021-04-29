@@ -36,7 +36,7 @@
 </nav>
       
       <div class="container home">
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-8">
 
             {% if request.user|has_group:"tutor" %} 
@@ -60,6 +60,27 @@
               </div>
               {% endfor %}
 
+              <div aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  {% if studentAds.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page={{studentAds.previous_page_number}}">&laquo;</a></li>
+                  {% endif %}
+                  
+                  {% for page in studentAds.paginator.page_range %}
+                    {% if studentAds.number == page %}
+                    <li class="page-item active"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+                    {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+                    {% endif %}
+                  {%endfor%}
+
+                  {% if studentAds.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{studentAds.next_page_number}}">&raquo;</a></li>
+                  {% endif %}
+                  
+                </ul>
+              </div>
+
             {% else %}
 
               {% for ad in tutorAds %}
@@ -80,10 +101,35 @@
                   </div>
                 </div>
                 {% endfor %}
+
+                <div aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+                    {% if tutorAds.has_previous %}
+                      <li class="page-item"><a class="page-link" href="?page={{tutorAds.previous_page_number}}">&laquo;</a></li>
+                    {% endif %}
+                    
+                    {% for page in tutorAds.paginator.page_range %}
+                      {% if tutorAds.number == page %}
+                      <li class="page-item active"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+                      {% else %}
+                      <li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+                      
+                      {% endif %}
+                    {%endfor%}
+  
+                    {% if tutorAds.has_next %}
+                      <li class="page-item"><a class="page-link" href="?page={{tutorAds.next_page_number}}">&raquo;</a></li>
+                    {% endif %}
+                    
+                  </ul>
+      
+                </div>
             {% endif %}
             
-          </div>
 
+            
+          </div>
+          
           
 
 
