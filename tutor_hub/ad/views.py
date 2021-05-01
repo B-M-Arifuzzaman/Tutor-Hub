@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
@@ -71,3 +71,24 @@ def myAd(request):
     myStudentAds = Ad_Student.objects.filter(user=request.user).order_by('-ad_created')
     myTutorAds = Ad_Tutor.objects.filter(user=request.user).order_by('-ad_created')
     return render(request, 'ad/myad.html', {'myStudentAds': myStudentAds, 'myTutorAds': myTutorAds})
+
+
+@login_required
+def delete_post(request,post_pk):
+    '''
+    This will redirect the url to the delete page
+    :type request: HttpResponse
+    :param request: Takes the request to show delete_post.html
+    :param post_pk: Gets value of id of the selected ad
+    '''
+    student_post = Ad_Student.objects.get(id=post_pk)
+    if request.method == 'POST':
+        student_post.delete()
+        return redirect('myAd')
+    return render(request, 'ad/delete_post.html', {'student_post': student_post})
+
+    tutor_post = Ad_Tutor.objects.get(id=post_pk)
+    if request.method == 'POST':
+        tutor_post.delete()
+        return redirect('myAd')
+    return render(request, 'ad/delete_post.html', {'tutor_post': tutor_post})
