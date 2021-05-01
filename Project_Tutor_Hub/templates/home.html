@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} {% load group %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,147 +13,197 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="{% static 'css/search.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
     <title>Tutor Hub | Home</title>
   </head>
   <body>
-    <nav>
-      <input id="nav-toggle" type="checkbox" />
-      <div class="app_name">Tutor Hub</div>
-      <ul>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Create Post</a></li>
-        <li><a href="#">Sign Out</a></li>
-      </ul>
-      <label for="nav-toggle" class="three_lines">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </label>
+    <nav class="navbar nav navbar-expand-lg">
+      <div class="app_name" href="#">Tutor Hub</div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">{{ user.username }}'s Profile</a>
+          </li>
+          {% if request.user|has_group:"student" %}
+          <li class="nav-item">
+            <a class="nav-link" href="#">Create Ad</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="#">Create Ad</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Dashboard</a>
+          </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sign Out</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-
-    <div class="container-fluid mx-auto" id="content">
+    {% if search %}
+    <h1>Searched results:</h1>
+    {% endif %}
+    <div class="container justify-content-center">
       <div class="row">
-        <div class="col-md-12">
-        <form action="{% url 'home' %}">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-3">
+        <div class="col-md-9">
+          {% if request.user|has_group:"tutor" %} {% for ad in studentAds %}
+          <div class="course">
+            <div class="course-preview">
+              <h6>Student Name: {{ad.user}}</h6>
+              <h2>{{ ad.subject }}</h2>
+            </div>
+            <div class="course-info">
+              <h2>{{ ad.title }}</h2>
+              <h5>{{ ad.days }} Days Per Week</h5>
+              <h5>Salary: {{ ad.salary }} Taka</h5>
+              <span class="info-text">
+                Date Posted: {{ ad.ad_created|date:'H:i d-m-Y' }}
+              </span>
+              <a class="view_more" href="{% url 'view_more' ad.id %}"
+                >View More</a
+              >
+            </div>
+          </div>
+          {% endfor %}
+          <div aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              {% if studentAds.has_previous %}
+              <li class="page-item">
+                <a
+                  class="page-link"
+                  href="?page={{studentAds.previous_page_number}}"
+                  >&laquo;</a
+                >
+              </li>
+              {% endif %} {% for page in studentAds.paginator.page_range %} {%
+              if studentAds.number == page %}
+              <li class="page-item active">
+                <a class="page-link" href="?page={{page}}">{{page}}</a>
+              </li>
+              {% if area %} dd {% else %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{page}}">{{page}}</a>
+              </li>
+              {% endif %} {% endfor %} {% if studentAds.has_next %}
+              <li class="page-item">
+                <a
+                  class="page-link"
+                  href="?page={{studentAds.next_page_number}}"
+                  >&raquo;</a
+                >
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+          {% else %} {% for ad in tutorAds %}
+          <div class="course">
+            <div class="course-preview">
+              <h6>Tutor Name: {{ad.user}}</h6>
+              <h2>{{ ad.subject }}</h2>
+            </div>
+            <div class="course-info">
+              <h2>{{ ad.title }}</h2>
+              <h5>{{ ad.days }} Days Per Week</h5>
+              <h5>Salary Expecting: {{ ad.expected_salary }} Taka</h5>
+              <span class="info-text">
+                Date Posted: {{ ad.ad_created|date:'H:i d-m-Y' }}
+              </span>
+              <a class="view_more">View More</a>
+            </div>
+          </div>
+          {% endfor %}
+
+          <div aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              {% if tutorAds.has_previous %}
+              <li class="page-item">
+                <a
+                  class="page-link"
+                  href="?page={{tutorAds.previous_page_number}}"
+                  >&laquo;</a
+                >
+              </li>
+              {% endif %} {% for page in tutorAds.paginator.page_range %} {% if
+              tutorAds.number == page %}
+              <li class="page-item active">
+                <a class="page-link" href="?page={{page}}">{{page}}</a>
+              </li>
+              {% if salary %} ss {% else %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{page}}">{{page}}</a>
+              </li>
+
+              {% endif %} {% endfor %} {% if tutorAds.has_next %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{tutorAds.next_page_number}}"
+                  >&raquo;</a
+                >
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+
+        <div class="col-md-3">
+          <h3 class="text-center bg-info text-warning">Filter Search</h3>
+          <form action="{% url 'home' %}">
+            <div class="bg-dark border-right" id="sidebar-wrapper">
+              <div class="list-group list-group-flush">
                 <input
-                  type="text" name="area"
+                  type="text"
+                  name="area"
                   class="form-control"
                   placeholder="Enter area"
                 />
-              </div>
-              <div class="col-md-3">
                 <input
-                  type="text" name="salary"
+                  type="text"
+                  name="salary"
                   class="form-control"
                   placeholder="Enter minimum salary"
                 />
-              </div>
-              <div class="col-md-3">
                 <input
-                  type="text" name="subject"
+                  type="text"
+                  name="subject"
                   class="form-control"
                   placeholder="Enter subject"
                 />
-              </div>
-              <div class="col-md-3">
-                <label for="gender">Select Gender:</label>
-                <select name="gender" id="gender">
+                <select
+                  class="form-select"
+                  aria-label="Select Gender"
+                  name="gender"
+                  id="gender"
+                >
+                  <option selected>Select Gender</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="other">Other</option>
                 </select>
-              </div>
-            </div>
-            <div class="row text-center" style="margin-top: 20px;">
-              <div class="col-md-12">
-                <button type="submit" class="btn btn-success">Search</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-      </div>
-    </div>
-{% if search %}
-<h1>Searched results: ({{ads|length}}) matched</h1>
-{% endif %}
-    <div class="container home">
-      <div class="row">
-        <div class="col-8">
-          {% for ad in ads %}
-          <div class="advertise">
-            <div class="card text-left">
-              <div class="card-header bg-success">
-                <h1 class="text-center">{{ ad.title }}</h1>
-              </div>
-              <div class="card-body text-center">
-                <h3 class="card-title">{{ ad.subject }}</h3>
-                <p class="card-text">
-                  Days: {{ ad.days }} || Salary: {{ ad.salary }}
-                </p>
-                <p class="card-text">
-                  Gender: {{ ad.gender }} || Area: {{ ad.area }}
-                </p>
-                <a href="{% url 'view_more' ad.id %}" class="btn btn-info"
-                  >View More</a
+                <button
+                  type="submit"
+                  class="btn btn-success justify-content-center"
                 >
-              </div>
-              <div class="card-footer text-muted text-center mt-1">
-                Date Posted: {{ ad.ad_created|date:'H:i d-m-Y' }}
+                  Search
+                </button>
               </div>
             </div>
-          </div>
-          {% endfor %}
-        </div>
-
-        <div class="col-4">
-          <div class="bg-dark border-right" id="sidebar-wrapper">
-            <div class="list-group list-group-flush">
-              <a
-                href="#"
-                class="text-center list-group-item list-group-item-action bg-light"
-                >Button</a
-              >
-              <a
-                href="#"
-                class="text-center list-group-item list-group-item-action bg-light"
-                >Button</a
-              >
-              <a
-                href="#"
-                class="text-center list-group-item list-group-item-action bg-light"
-                >Button</a
-              >
-              <a
-                href="#"
-                class="text-center list-group-item list-group-item-action bg-light"
-                >Button</a
-              >
-              <a
-                href="#"
-                class="text-center list-group-item list-group-item-action bg-light"
-                >Button</a
-              >
-              <a
-                href="#"
-                class="text-center list-group-item list-group-item-action bg-light"
-                >Button</a
-              >
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
-
-    <!--         
-        <div class="container-fluid footer">
-          
-          <p>&copy; Tutor Hub <br> Group - 3</p>
-        </div> -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

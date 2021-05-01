@@ -14,3 +14,9 @@ class Ad_Student_Form(ModelForm):
     class Meta:
         model = Ad_Student
         fields = '__all__'
+
+
+class Ad_Tutor_Form(ModelForm):
+    class Meta:
+        model = Ad_Tutor
+        fields = '__all__'

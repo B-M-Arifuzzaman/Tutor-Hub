@@ -1,77 +1,60 @@
-{% extends 'base.html' %} {% load static %} {% block head %}
+{% extends 'base.html' %} {% load group %} {% load static %} {% block head %}
 <link
   rel="stylesheet"
   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
   integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
   crossorigin="anonymous"
 />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <title>View More Details of Ad</title>
 {% endblock %} {% block body %} {% block navlinks %}
 <li><a href="{% url 'home' %}">Home</a></li>
 <li><a href="#">Log Out</a></li>
 {% endblock %}
-<div class="view-more py-4" style="margin-top: 100px">
-  <div class="container">
-      <div class="col-lg-8">
-        <div class="card shadow-sm">
-          <div class="card-header bg-transparent border-0">
-            <h3 class="mb-0">
-              <i class="fas fa-clone pr-1">Details:</i>
-            </h3>
-            <div class="row text-center"><h2>{{ ad.title }}</h2></div>
-          </div>
-          <div class="card-body pt-0">
-            <table class="table table-bordered">
-              <!-- <tr>
-                <th width="30%">Title</th>
-                <td width="2%">:</td>
-                <td>{{ ad.title }}</td>
-              </tr>
-              <tr> -->
-                <th width="30%">Area</th>
-                <td width="2%">:</td>
-                <td>{{ ad.area }}</td>
-              </tr>
-              <tr>
-                <th width="30%">Subject</th>
-                <td width="2%">:</td>
-                <td>{{ ad.subject }}</td>
-              </tr>
-              <tr>
-                <th width="30%">Days</th>
-                <td width="2%">:</td>
-                <td>{{ ad.days }}</td>
-              </tr>
-              <tr>
-                <th width="30%">Class/Level</th>
-                <td width="2%">:</td>
-                <td>{{ ad.class_level }}</td>
-              </tr>
-              <tr>
-                <th width="30%">Salary</th>
-                <td width="2%">:</td>
-                <td>{{ ad.salary }}</td>
-              </tr>
-              <tr>
-                <th width="30%">Gender</th>
-                <td width="2%">:</td>
-                <td>{{ ad.gender }}</td>
-              </tr>
-              <tr>
-                <th width="30%">Date Posted</th>
-                <td width="2%">:</td>
-                <td>{{ ad.ad_created }}</td>
-              </tr>
-              <tr>
-                <th width="30%">Description</th>
-                <td width="2%">:</td>
-                <td>{{ ad.description }}</td>
-              </tr>
-            </table>
-          </div>
+<div class="container justify-content-center">
+  <div class="row">
+    <div class="col-md-9">
+      {% if request.user|has_group:"tutor" %}
+      <div class="course">
+        <div class="course-preview">
+          <h6>Student Name: {{stu_ad.user}}</h6>
+          <h2>{{ stu_ad.subject }}</h2>
+        </div>
+        <div class="course-info">
+          <h2>{{ stu_ad.title }}</h2>
+          <h4>Area of the tuition: {{ stu_ad.area }}</h4>
+          <h4>Need tuition {{ stu_ad.days }} Days Per Week</h4>
+          <h4>Salary: {{ stu_ad.salary }} Taka Per Month</h4>
+          <h4>Class/Level of the student: {{ stu_ad.class_level }}</h5>
+          <h4>Gender: {{ stu_ad.gender }}</h4>
+          <h4>Date Posted: {{ stu_ad.ad_created|date:'H:i d-m-Y' }}</h4>
+          <h4>Description: </h4> <br>
+          <span>{{ stu_ad.description }}</span>
         </div>
       </div>
+      {% else %}
+      <div class="course">
+        <div class="course-preview">
+          <h6>Tutor Name: {{tut_ad.user}}</h6>
+          <h2>{{ stu_ad.subject }}</h2>
+        </div>
+        <div class="course-info">
+          <h2>{{ tut_ad.title }}</h2>
+          <h4>Expected Area of the tuition: {{ tut_ad.expected_area }}</h4>
+          <h4>Will Teach {{ tut_ad.days }} Days Per Week</h4>
+          <h4>Expected Salary: {{ tut_ad.expected_salary }} Taka Per Month</h4>
+          <h4>Class/Level of the Student: {{ tut_ad.class_level }}</h5>
+          <h4>Gender: {{ tut_ad.gender }}</h4>
+          <h4>Date Posted: {{ tut_ad.ad_created|date:'H:i d-m-Y' }}</h4>
+          <h4>Description: </h4> <br>
+          <span>{{ tut_ad.description }}</span>
+        </div>
+      </div>
+      {% endif %}
     </div>
   </div>
 </div>
+
 {% endblock %}
