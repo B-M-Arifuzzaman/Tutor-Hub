@@ -42,7 +42,7 @@
             <div class="card">
               <div class="card-body">
                 <div class="d-flex flex-column align-items-center text-center">
-                  {% if user == "student" %}
+                  {% if request.user|has_group:"student" %}
                   <img src={{request.user.student.profile_pic.url}} class="rounded-circle" width="150">
                   {% else %}
                   <img src={{request.user.tutor.profile_pic.url}} class="rounded-circle" width="150">
@@ -58,6 +58,9 @@
                       <span class="fa fa-star"></span>
                       <span class="fa fa-star"></span>
                     </p>
+                    <hr>
+		                <a class="btn btn-primary" href="#"> Write Review</a>
+                    <a class="btn btn-primary" href="#"> Previous Review</a>
                     
                   </div>
                 </div>

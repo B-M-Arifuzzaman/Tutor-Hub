@@ -1,4 +1,3 @@
-
 {%  extends 'main.html' %}
 {% load static %}
 {% load group %}
@@ -30,7 +29,7 @@
         {% if request.user|has_group:"student" %}
         <img src={{request.user.student.profile_pic.url}} class="rounded-circle" width="200">
         {% else %}
-        <img src={{request.user.tutor.profile_pic.url}} class="rounded-circle" width="200">
+		<img src="{% static 'images/profile1.png' %}"  class="rounded-circle" width="200">
          {% endif %}
       
       </div>

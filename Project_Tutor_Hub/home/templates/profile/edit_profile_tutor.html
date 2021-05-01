@@ -37,7 +37,10 @@
 		 <table>
 			<form method="POST" action="" enctype="multipart/form-data">
 				{% csrf_token %}
+				{% if request.user|has_group:"student" %}
 				{{form| crispy}}
+				{% else %}
+				<a href="{% url 'delete_profile' %}"></a>
 			<input class="btn btn-primary" type="submit" name="Update Information">
 			</form>
     </table>
