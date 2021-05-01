@@ -74,7 +74,7 @@ def myAd(request):
 
 
 @login_required
-def delete_post(request,post_pk):
+def delete_post_Student(request,post_pk):
     '''
     This will redirect the url to the delete page
     :type request: HttpResponse
@@ -85,10 +85,18 @@ def delete_post(request,post_pk):
     if request.method == 'POST':
         student_post.delete()
         return redirect('myAd')
-    return render(request, 'ad/delete_post.html', {'student_post': student_post})
+    return render(request, 'ad/delete_post_student.html', {'student_post': student_post})
 
+@login_required
+def delete_post_Tutor(request,post_pk):
+    '''
+    This will redirect the url to the delete page
+    :type request: HttpResponse
+    :param request: Takes the request to show delete_post.html
+    :param post_pk: Gets value of id of the selected ad
+    '''
     tutor_post = Ad_Tutor.objects.get(id=post_pk)
     if request.method == 'POST':
         tutor_post.delete()
         return redirect('myAd')
-    return render(request, 'ad/delete_post.html', {'tutor_post': tutor_post})
+    return render(request, 'ad/delete_post_tutor.html', {'tutor_post': tutor_post})

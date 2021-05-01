@@ -50,12 +50,3 @@ nav{
     transition: all linear 0.4s;
 	background-color: #fff;
 }
-body {
-	background-image: linear-gradient(45deg, #333131, #131c4b);
-}
-label{
-    color: #fff;
-}
-.btn-primary{
-    margin-left: 35%;
-}

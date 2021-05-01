@@ -6,5 +6,6 @@ urlpatterns = [
     path('find-Student/', views.tutor_Ad, name='findStudent'),
     path('home/', views.home, name='home'),
     path('myAd/', views.myAd, name='myAd'),
-    path('myAd/delete/<int:post_pk>', views.delete_post, name='delete_post'),
+    path('myAd/delete/student/post/<int:post_pk>', views.delete_post_Student, name='delete_post_student'),
+    path('myAd/delete/tutor/post/<int:post_pk>', views.delete_post_Tutor, name='delete_post_tutor'),
 ]
