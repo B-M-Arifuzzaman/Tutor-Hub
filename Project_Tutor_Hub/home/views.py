@@ -102,6 +102,53 @@ def home(request):
     '''
     return render(request, 'home/home.html')
 
+@login_required
+def profile(request):
+    '''
+    This will redirect the url to the profile page
+    :type request: HttpResponse
+    :param request: Takes the request to show profile.html
+    '''
+    return render(request, 'profile/profile.html', {})
 
+
+def edit_profile_tutor(request):
+	tutor= request.user.tutor
+	form = EditForm_Tutor(instance=tutor)
+    
+
+	if request.method == 'POST':
+		form = EditForm_Tutor(request.POST, request.FILES,instance=tutor)
+		if form.is_valid():
+			form.save()
+
+
+	context = {'form':form}
+	return render(request, 'profile/edit_profile_tutor.html', context)
+
+
+def edit_profile_student(request):
+	student= request.user.student
+	form = EditForm_Student(instance=student)
+	if request.method == 'POST':
+		form = EditForm_Student(request.POST, request.FILES,instance=student)
+		if form.is_valid():
+			form.save()
+
+
+	context = {'form':form}
+	return render(request, 'profile/edit_profile_student.html', context)
+
+def delete_profile(request):
+    '''
+    This will redirect the url to the delete profile page
+    :type request: HttpResponse
+    :param request: Takes the request to show delete_profile.html
+    '''
+    user =  User.objects.get(id=request.user.id)
+    if request.method == "POST":
+        user.delete()
+   
+    return render(request, 'profile/delete_profile.html', {})
 
 
