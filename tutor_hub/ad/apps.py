@@ -1,13 +1,13 @@
 '''
-This program will create a visual database in Admin panel.
+This program will create a app in django project.
 '''
 from django.apps import AppConfig
 
 
 class AdConfig(AppConfig):
     '''
-    This is a Visual Database representation of all apps in Admin panel.
-    :param AppConfig: It configures the database in Admin panel.
+    This is a configuration file of newly created ap.
+    :param AppConfig: It configures the app in django project.
     :type AppConfig: string
     '''
     name = 'ad'
