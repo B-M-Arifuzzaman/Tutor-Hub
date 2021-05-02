@@ -88,8 +88,8 @@
                   >&laquo;</a
                 >
               </li>
-              {% endif %} {% for page in studentAds.paginator.page_range %} {%
-              if studentAds.number == page %}
+              {% endif %} {% for page in studentAds.paginator.page_range %} 
+	      {% if studentAds.number == page %}
               <li class="page-item active">
                 <a class="page-link" href="?page={{page}}">{{page}}</a>
               </li>
@@ -136,8 +136,8 @@
                   >&laquo;</a
                 >
               </li>
-              {% endif %} {% for page in tutorAds.paginator.page_range %} {% if
-              tutorAds.number == page %}
+              {% endif %} {% for page in tutorAds.paginator.page_range %} 
+	      {% if tutorAds.number == page %}
               <li class="page-item active">
                 <a class="page-link" href="?page={{page}}">{{page}}</a>
               </li>
