@@ -1,6 +1,5 @@
 '''
-This program is used to take the data from the model to the templates. 
-It controls the data, and returns to the template to show necessary output.
+This program is the controller that fetch data from models.py and send it to the template file. 
 '''
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -16,10 +15,13 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 @login_required
 def view_more(request, pk):
     '''
-    This will redirect the url to the view more page
-    :type request: HttpResponse
+    This will redirect the url to the view_more page, where a logged in user can see details of a post on which he clicks the link View More.
     :param request: Takes the request to show view_more.html
-    :param pk: Gets value of id of the selected ad
+    :type request: HttpResponse
+    :param pk: Gets value of the selected ad's id through a link
+    :type pk: int
+    :return: returns a request for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
     '''
     stu_ad = Ad_Student.objects.get(id=pk)
     tut_ad = Ad_Tutor.objects.get(id=pk)
@@ -60,9 +62,11 @@ def view_more(request, pk):
 @login_required
 def home(request):
     '''
-    This will redirect the url to the home page
-    :type request: HttpResponse
+    This will redirect the url to the home page, where a logged in user can see posts of other user.
     :param request: Takes the request to show home.html
+    :type request: HttpResponse
+    :return: returns a request for a html page with form data as dictonary format
+    :rtype: render request,html page,dictonary
     '''
     studentAd_list = Ad_Student.objects.order_by('-ad_created')
     tutorAd_list = Ad_Tutor.objects.order_by('-ad_created')
