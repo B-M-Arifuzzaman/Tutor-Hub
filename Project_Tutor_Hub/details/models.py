@@ -1,6 +1,5 @@
 '''
-This program is used to create a database table.
-Each of the variables will be a column of a table. 
+This program will create database file for Advertise feature.
 '''
 from django.db import models
 from django.contrib.auth.models import User
@@ -22,8 +21,9 @@ def path_and_rename(instance, filename):
 
 class Ad_Student(models.Model):
     '''
-    This class will create a table Ad_Student, where a student will fill the form to request for a tutor.
-    In that table the fields will be the variables, fields attributes are also defined here. 
+    This is a conceptual Database representation of Class table for student ads.
+    :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel.
+    :type models.Model: database model
     '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     usr_type = models.CharField(default='st', max_length=10)
@@ -49,25 +49,30 @@ class Ad_Student(models.Model):
 
     def __str__(self):
         '''
-        This will take the self value of this function. 
+        This will show the title of students's ad in the admin panel.
+        :param self: Takes the self's variable name. 
         :type self: string
-        :param self: Takes the object representation in string format.
+        :return: returns a reference to the instance object on which it was called.
+        :rtype: model variable name
         '''
         return self.title
 
     def get_absolute_url(self):
         '''
-        This will take the self value of this function. 
+        This will reverse a url to home page.
+        :param self: Takes the self's reverse url. 
         :type self: HttpResponse
-        :param self: Takes the request to show home.html
+        :return: returns a request for a reverse html page with form data as dictonary format
+        :rtype: reverse html
         '''
         return reverse('home.html')
 
 
 class Ad_Tutor(models.Model):
     '''
-    This class will create a table Ad_Tutor, where a tutor will fill the form to request for a student.
-    In that table the fields will be the variables, fields attributes are also defined here. 
+    This is a conceptual Database representation of Class table for tutor ads.
+    :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel.
+    :type models.Model: database model
     '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     usr_type = models.CharField(default='tt', max_length=10)
@@ -94,9 +99,11 @@ class Ad_Tutor(models.Model):
 
     def __str__(self):
         '''
-        This will take the self value of this function. 
+        This will show the title of tutor's ad in the admin panel.
+        :param self: Takes the self's variable name. 
         :type self: string
-        :param self: Takes the object representation in string format.
+        :return: returns a reference to the instance object on which it was called.
+        :rtype: self .model variable name
         '''
         return self.title
 
