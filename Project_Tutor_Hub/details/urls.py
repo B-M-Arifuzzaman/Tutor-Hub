@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 '''
-This program is used to create subpages of this web app.
+This program will create necessary html hyperlinks to show contents. 
 '''
 
 from django.urls import path
