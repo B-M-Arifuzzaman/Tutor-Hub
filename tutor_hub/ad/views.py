@@ -5,8 +5,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
-from .models import Ad_Student, Ad_Tutor
-from .forms import Ad_Student_Form, Ad_Tutor_Form
+from .models import AdStudent, AdTutor
+from .forms import AdStudentForm, AdTutorForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 from home.models import Student,Tutor
@@ -25,14 +25,14 @@ def student_ad(request):
     User = get_user_model()
     users = User.objects.all()
     if request.method == 'GET':
-        return render(request, 'ad/student_ad.html', {'form': Ad_Student_Form() })
+        return render(request, 'ad/student_ad.html', {'form': AdStudentForm() })
     else:
         try: 
-            form = Ad_Student_Form(request.POST)
+            form = AdStudentForm(request.POST)
             form.save()
             return redirect('home')
         except ValueError:
-            return render(request, 'ad/student_ad.html', {'form': Ad_Student_Form(), 'error': 'Limit is Crossed' })
+            return render(request, 'ad/student_ad.html', {'form': AdStudentForm(), 'error': 'Limit is Crossed' })
 
 
 @login_required
@@ -47,14 +47,14 @@ def tutor_ad(request):
     User = get_user_model()
     users = User.objects.all()
     if request.method == 'GET':
-        return render(request, 'ad/tutor_ad.html', {'form': Ad_Tutor_Form() })
+        return render(request, 'ad/tutor_ad.html', {'form': AdTutorForm() })
     else:
         try: 
-            form = Ad_Tutor_Form(request.POST)
+            form = AdTutorForm(request.POST)
             form.save()
             return redirect('home')
         except ValueError:
-            return render(request, 'ad/tutor_ad.html', {'form': Ad_Tutor_Form(), 'error': 'Limit is Crossed' })
+            return render(request, 'ad/tutor_ad.html', {'form': AdTutorForm(), 'error': 'Limit is Crossed' })
 
 @login_required
 def home(request):
@@ -65,30 +65,30 @@ def home(request):
     :return: returns a request for a html page with form data as dictonary format
     :rtype: render request,html page,dictonary
     '''
-    studentAd_list = Ad_Student.objects.order_by('-ad_created')
-    tutorAd_list = Ad_Tutor.objects.order_by('-ad_created')
+    student_ad_list = AdStudent.objects.order_by('-ad_created')
+    tutor_ad_list = AdTutor.objects.order_by('-ad_created')
     
     #Paginator for Student Posts
-    paginator = Paginator(studentAd_list, 5)
+    paginator = Paginator(student_ad_list, 5)
     page = request.GET.get('page')
     try:
-        studentAds = paginator.page(page)
+        student_ads = paginator.page(page)
     except PageNotAnInteger:
-        studentAds = paginator.page(1)
+        student_ads = paginator.page(1)
     except EmptyPage:
-        studentAds = paginator.page(paginator.num_pages)
+        student_ads = paginator.page(paginator.num_pages)
     
     #Paginator for Tutor Posts
-    paginator = Paginator(tutorAd_list, 5)
+    paginator = Paginator(tutor_ad_list, 5)
     page = request.GET.get('page')
     try:
-        tutorAds = paginator.page(page)
+        tutor_ads = paginator.page(page)
     except PageNotAnInteger:
-        tutorAds = paginator.page(1)
+        tutor_ads = paginator.page(1)
     except EmptyPage:
-        tutorAds = paginator.page(paginator.num_pages)
+        tutor_ads = paginator.page(paginator.num_pages)
         
-    return render(request, 'ad/home.html', {'studentAds': studentAds, 'tutorAds': tutorAds})
+    return render(request, 'ad/home.html', {'student_ads': student_ads, 'tutor_ads': tutor_ads})
 
 @login_required
 def my_ad(request):
