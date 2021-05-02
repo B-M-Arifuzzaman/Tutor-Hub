@@ -9,7 +9,7 @@ class AdStudent(models.Model):
     '''
     This is a conceptual Database representation of Class table for student ads.
     :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel.
-    :type ModelForm: model.Model
+    :type models.Model: database model
     '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=150, null=True, blank=True)
@@ -55,7 +55,7 @@ class AdTutor(models.Model):
     '''
     This is a conceptual Database representation of Class table for tutor ads.
     :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel.
-    :type ModelForm: model.Model
+    :type models.Model: database model
     '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=150, null=True, blank=True)
