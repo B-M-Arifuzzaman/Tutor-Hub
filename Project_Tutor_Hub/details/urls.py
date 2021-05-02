@@ -20,5 +20,7 @@ This program is used to create subpages of this web app.
 from django.urls import path
 from . import views
 urlpatterns = [
-    # path('view_more', views.view_more, name='view_more'),
+    path('view_more/<int:pk>/',
+         views.view_more, name='view_more'),
+    path('', views.home, name='home'),
 ]
