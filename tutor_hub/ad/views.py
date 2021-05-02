@@ -68,6 +68,11 @@ def home(request):
 
 @login_required
 def myAd(request):
+    '''
+    This will redirect the url to the myAd page
+    :type request: HttpResponse
+    :param request: Takes the request to show myad.html
+    '''
     myStudentAds = Ad_Student.objects.filter(user=request.user).order_by('-ad_created')
     myTutorAds = Ad_Tutor.objects.filter(user=request.user).order_by('-ad_created')
     return render(request, 'ad/myad.html', {'myStudentAds': myStudentAds, 'myTutorAds': myTutorAds})
@@ -100,3 +105,18 @@ def delete_post_Tutor(request,post_pk):
         tutor_post.delete()
         return redirect('myAd')
     return render(request, 'ad/delete_post_tutor.html', {'tutor_post': tutor_post})
+
+@login_required
+def ad_profile(request, user_pk):
+    '''
+    This will redirect the url to the profile page
+    :type request: HttpResponse
+    :param request: Takes the request to show ad_profile.html
+    :param user_pk: Gets value of user id of the specific user 
+    '''
+    User = get_user_model()
+    user = User.objects.get(id=user_pk)
+    return render(request, 'ad/ad_profile.html', {'user': user})
+    
+    
+    
