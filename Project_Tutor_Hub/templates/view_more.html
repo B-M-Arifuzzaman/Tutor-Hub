@@ -11,10 +11,14 @@
     />
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
-    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-    <title>Tutor Hub | Home</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <title>Tutor Hub | View More Details of The Ad</title>
   </head>
   <body>
     <nav class="navbar nav navbar-expand-lg">
@@ -32,72 +36,100 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">{{ user.username }}'s Profile</a>
+          <li class="nav-item">
+            {% if request.user|has_group:"student" %}
+            <a class="nav-link" href="{% url 'profile' %}">
+              <img
+                src="{{request.user.student.profile_pic.url}}"
+                class="rounded-circle"
+                width="20"
+              />
+              {{ user.username }}'s Profile
+            </a>
+            {% else %}
+            <a class="nav-link" href="{% url 'profile' %}">
+              <img
+                src="{{request.user.tutor.profile_pic.url}}"
+                class="rounded-circle"
+                width="20"
+              />
+              {{ user.username }}'s Profile
+            </a>
+            {% endif %}
           </li>
           {% if request.user|has_group:"student" %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Create Ad</a>
+            <a class="nav-link" href="{% url 'findTutor' %}">Create Ad</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Create Ad</a>
+            <a class="nav-link" href="{% url 'findStudent' %}">Create Ad</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Dashboard</a>
           </li>
           {% endif %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign Out</a>
+            <a class="nav-link" href="{% url 'signout' %}">Sign Out</a>
           </li>
         </ul>
       </div>
     </nav>
     <div class="container justify-content-center">
-      <div class="row">
-        <div class="col-md-9">
-          {% if request.user|has_group:"tutor" %}
-          <div class="course">
-            <div class="course-preview">
-              <h6>Student Name: {{stu_ad.user}}</h6>
-              <h2>{{ stu_ad.subject }}</h2>
+        <div class="row">
+          <div class="col-md-9">
+            {% if request.user|has_group:"tutor" %}
+            <div class="course">
+              <div class="course-preview">
+                <h6>Student Name: {{ad.user}}</h6>
+                <h2>{{ ad.subject }}</h2>
+              </div>
+              <div class="course-info">
+                <h2>{{ ad.title }}</h2>
+                <h4>Area of the tuition: {{ ad.area }}</h4>
+                <h4>Need tuition {{ ad.days }} Days Per Week</h4>
+                <h4>Salary: {{ ad.salary }} Taka Per Month</h4>
+                <h4>Class/Level of the student: {{ ad.class_level }}</h5>
+                <h4>Gender: {{ ad.gender }}</h4>
+                <h4>Date Posted: {{ ad.ad_created|date:'H:i d-m-Y' }}</h4>
+                <h4>Description: </h4> <br>
+                <span>{{ ad.description }}</span>
+              </div>
             </div>
-            <div class="course-info">
-              <h2>{{ stu_ad.title }}</h2>
-              <h4>Area of the tuition: {{ stu_ad.area }}</h4>
-              <h4>Need tuition {{ stu_ad.days }} Days Per Week</h4>
-              <h4>Salary: {{ stu_ad.salary }} Taka Per Month</h4>
-              <h4>Class/Level of the student: {{ stu_ad.class_level }}</h5>
-              <h4>Gender: {{ stu_ad.gender }}</h4>
-              <h4>Date Posted: {{ stu_ad.ad_created|date:'H:i d-m-Y' }}</h4>
-              <h4>Description: </h4> <br>
-              <span>{{ stu_ad.description }}</span>
+            {% else %}
+            <div class="course">
+              <div class="course-preview">
+                <h6>Tutor Name: {{ad.user}}</h6>
+                <h2>{{ ad.subject }}</h2>
+              </div>
+              <div class="course-info">
+                <h2>{{ ad.title }}</h2>
+                <h4>Expected Area of the tuition: {{ ad.expected_area }}</h4>
+                <h4>Will Teach {{ ad.days }} Days Per Week</h4>
+                <h4>Expected Salary: {{ ad.expected_salary }} Taka Per Month</h4>
+                <h4>Class/Level of the Student: {{ ad.class_level }}</h5>
+                <h4>Gender: {{ ad.gender }}</h4>
+                <h4>Date Posted: {{ ad.ad_created|date:'H:i d-m-Y' }}</h4>
+                <h4>Description: </h4> <br>
+                <span>{{ ad.description }}</span>
+              </div>
             </div>
+            {% endif %}
           </div>
-          {% else %}
-          <div class="course">
-            <div class="course-preview">
-              <h6>Tutor Name: {{tut_ad.user}}</h6>
-              <h2>{{ stu_ad.subject }}</h2>
-            </div>
-            <div class="course-info">
-              <h2>{{ tut_ad.title }}</h2>
-              <h4>Expected Area of the tuition: {{ tut_ad.expected_area }}</h4>
-              <h4>Will Teach {{ tut_ad.days }} Days Per Week</h4>
-              <h4>Expected Salary: {{ tut_ad.expected_salary }} Taka Per Month</h4>
-              <h4>Class/Level of the Student: {{ tut_ad.class_level }}</h5>
-              <h4>Gender: {{ tut_ad.gender }}</h4>
-              <h4>Date Posted: {{ tut_ad.ad_created|date:'H:i d-m-Y' }}</h4>
-              <h4>Description: </h4> <br>
-              <span>{{ tut_ad.description }}</span>
-            </div>
-          </div>
-          {% endif %}
         </div>
       </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
