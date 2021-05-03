@@ -1,3 +1,6 @@
+'''
+This program will be used to unittest test courses app's models.py
+'''
 from django.test import TestCase
 from django.urls import reverse
 from courses.models import Lecture,Class
@@ -7,7 +10,20 @@ from unittest import mock
 from django.core.files import File
 from unittest.mock import MagicMock
 class TestModels(TestCase):
+    '''
+        This is a conceptual Unittest child case for testing forms.py. 
+        :param TestCase: It inherits built-in child functionalities of django `unittest`, which handels all test cases.
+        :type SimpleTestCase: functions
+    '''
     def setUp(self):
+        '''
+        This will be used to initialize to create object of models for testing purpose
+        and this will be intialize before tetsting starts .
+        :param self: Takes the self content and pass. 
+        :type self: Boolean
+        :return: returns a nothing. 
+        :rtype: none.
+        '''
         #create permissions group
         group_name1 = "student"
         group_name2 = "tutor"
@@ -64,17 +80,45 @@ class TestModels(TestCase):
         self.lecture1.save()
 
     def test_class_slug_on_creation(self):
+        '''
+        This will test the class_slug function to initialize sulg_field .
+        :param self: Takes the self content and pass. 
+        :type self: Boolean
+        :return: returns a request to check the forms field. 
+        :rtype: assertEqual , bool
+        '''
         self.assertEquals(self.class1.slug, 'class1')
     
     def test_class_image_files(self):
+        '''
+        This will test the class_image_file function to store class image .
+        :param self: Takes the self content and pass. 
+        :type self: Boolean
+        :return: returns a request to check the forms field. 
+        :rtype: assertEqual , bool
+        '''
         file_mock = mock.MagicMock(spec=File, name='FileMock')
         self.class1.image=file_mock
         self.assertEqual(Class.objects.count(), 1)  
     
     def test_lecture_slug_on_creation(self):
+        '''
+        This will test the lecture_slug function to initialize sulg_field .
+        :param self: Takes the self content and pass. 
+        :type self: Boolean
+        :return: returns a request to check the forms field. 
+        :rtype: assertEqual , bool
+        '''
         self.assertEquals(self.lecture1.slug, 'lecture1')
 
     def test_lecture_files(self):
+        '''
+        This will test the lecture_files function to store lecture files .
+        :param self: Takes the self content and pass. 
+        :type self: Boolean
+        :return: returns a request to check the forms field. 
+        :rtype: assertEqual , bool
+        '''
         file_mock = mock.MagicMock(spec=File, name='FileMock')
         self.lecture1.video=file_mock
         self.assertEqual(Lecture.objects.count(), 1) 
