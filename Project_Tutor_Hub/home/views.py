@@ -113,11 +113,6 @@ def profile(request):
 
 
 def edit_profile_tutor(request):
- '''
-    This will redirect the url to the update profile page and there tutor can then update their profile 
-    :type request: HttpResponse
-    :param request: Takes the request to show edit_profile_tutor.html
-    '''   
 	tutor= request.user.tutor
 	form = EditForm_Tutor(instance=tutor)
     
@@ -133,11 +128,6 @@ def edit_profile_tutor(request):
 
 
 def edit_profile_student(request):
- '''
-    This will redirect the url to the update profile page and there student can then update their profile 
-    :type request: HttpResponse
-    :param request: Takes the request to show edit_profile_student.html
-    '''   
 	student= request.user.student
 	form = EditForm_Student(instance=student)
 	if request.method == 'POST':
