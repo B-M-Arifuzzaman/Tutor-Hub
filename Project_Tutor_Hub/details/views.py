@@ -23,9 +23,13 @@ def view_more(request, pk):
     :return: returns a request for a html page with form data as dictonary format
     :rtype: render request,html page,dictonary
     '''
-    stu_ad = Ad_Student.objects.get(id=pk)
-    tut_ad = Ad_Tutor.objects.get(id=pk)
-    return render(request, 'view_more.html', {'stu_ad': stu_ad, 'tut_ad': tut_ad})
+    if request.user.groups.filter(name='student').exists():
+        ad = Ad_Tutor.objects.get(id=pk)
+    else:
+        ad = Ad_Student.objects.get(id=pk)
+    # stu_ad = Ad_Student.objects.get(id=pk)
+    # ad = Ad_Tutor.objects.get(id=pk)
+    return render(request, 'view_more.html', {'ad': ad})
 
 
 # @login_required
