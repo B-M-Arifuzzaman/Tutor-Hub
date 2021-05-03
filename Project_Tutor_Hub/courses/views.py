@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponseRedirect
 from django.shortcuts import  redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate
@@ -54,7 +55,7 @@ def join_class(request):
     context = {}
     return render(request, 'courses/join_class.html', context)
 
-
+@login_required
 def student_dashboard(request):
     '''
     This will redirect the url to the student_dashboard page, where a logged in student can view all of the class he/she joined
@@ -69,7 +70,7 @@ def student_dashboard(request):
     classes = Class.objects.filter(students=student)
     context = {'classes': classes}
     return render(request, 'courses/student_dashboard.html', context)
-
+@login_required
 def tutor_dashboard(request):
     '''
     This will redirect the url to the tutor_dashboard page, where a logged in tutor can view all of the class he/she created
