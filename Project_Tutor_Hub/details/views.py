@@ -65,13 +65,6 @@ def view_more(request, pk):
 
 @login_required
 def home(request):
-    '''
-    This will redirect the url to the home page, where a logged in user can see posts of other user.
-    :param request: Takes the request to show home.html
-    :type request: HttpResponse
-    :return: returns a request for a html page with form data as dictonary format
-    :rtype: render request,html page,dictonary
-    '''
     studentAd_list = Ad_Student.objects.order_by('-ad_created')
     tutorAd_list = Ad_Tutor.objects.order_by('-ad_created')
     context = {}
@@ -89,8 +82,7 @@ def home(request):
             & Q(subject__icontains=sub) & Q(gender=g))
         studentAd_list = result_s
         tutorAd_list = result_t
-        context["search"] = "search"
-
+        context['search'] = "search"
     # Paginator for Student Posts
     paginator = Paginator(studentAd_list, 5)
     page = request.GET.get('page')
@@ -111,4 +103,7 @@ def home(request):
     except EmptyPage:
         tutorAds = paginator.page(paginator.num_pages)
 
-    return render(request, 'home.html', {'studentAds': studentAds, 'tutorAds': tutorAds}, context)
+    context['studentAds'] = studentAds
+    context['tutorAds'] = tutorAds
+
+    return render(request, 'ad/home.html', context)
