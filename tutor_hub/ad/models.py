@@ -11,13 +11,13 @@ class AdStudent(models.Model):
     :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel.
     :type models.Model: database model
     '''
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=150, null=True, blank=True)
     area = models.CharField(max_length=150, null=True, blank=True)
     subject = models.CharField(max_length=150, null=True, blank=True)
     class_level = models.CharField(max_length=150, null=True, blank=True)
-    days = models.DecimalField(decimal_places=0, max_digits=2)
-    salary = models.DecimalField(decimal_places=0, max_digits=10)
+    days = models.DecimalField(decimal_places=0, max_digits=2, default=2)
+    salary = models.DecimalField(decimal_places=0, max_digits=10, default=3000)
     male ='male'
     female = 'female'
     other = 'other'
@@ -57,13 +57,13 @@ class AdTutor(models.Model):
     :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel.
     :type models.Model: database model
     '''
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=150, null=True, blank=True)
     expected_area = models.CharField(max_length=150, null=True, blank=True)
     subject = models.CharField(max_length=150, null=True, blank=True)
     class_level = models.CharField(max_length=150, null=True, blank=True)
-    days = models.DecimalField(decimal_places=0, max_digits=7)
-    expected_salary = models.DecimalField(decimal_places=0, max_digits=10)
+    days = models.DecimalField(decimal_places=0, max_digits=7, default=2)
+    expected_salary = models.DecimalField(decimal_places=0, max_digits=10,default=3000)
     male ='male'
     female = 'female'
     other = 'other'
