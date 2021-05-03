@@ -17,7 +17,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
     <title>Tutor Hub | View More Details of The Ad</title>
   </head>
   <body>
@@ -77,44 +77,122 @@
     </nav>
     <div class="container justify-content-center">
         <div class="row">
-          <div class="col-md-9">
+          <div class="col-md-12">
             {% if request.user|has_group:"tutor" %}
-            <div class="course">
-              <div class="course-preview">
-                <h6>Student Name: {{ad.user}}</h6>
-                <h2>{{ ad.subject }}</h2>
+              <div class="course">
+                <div class="course-preview">
+                  <h6>Student Name: <br> {{ad.user.first_name}} {{ad.user.last_name}}</h6>
+                  <h4>Subject: </h4> <h2> {{ ad.subject }}</h2>
+                </div>
+                <div class="col-lg-8">
+                  <div class="card shadow-sm">
+                    <div class="card-header bg-transparent border-0">
+                    <div class="card-body pt-0">
+                      <h3 class="ad-title text-center">{{ ad.title }}</h3> <br>
+                      <table class="table table-bordered">
+                        <tr>
+                          <th width="30%">Area of the Student</th>
+                          <td width="2%">:</td>
+                          <td>{{ ad.area }}</td>
+                        </tr>
+                        <!-- <tr>
+                          <th width="30%">Subject</th>
+                          <td width="2%">:</td>
+                          <td>{{ ad.subject }}</td>
+                        </tr> -->
+                        <tr>
+                          <th width="30%">No. of Days</th>
+                          <td width="2%">:</td>
+                          <td>{{ ad.days }}</td>
+                        </tr>
+                        <tr>
+                          <th width="30%">Class/Level of the Student</th>
+                          <td width="2%">:</td>
+                          <td>{{ ad.class_level }}</td>
+                        </tr>
+                        <tr>
+                          <th width="30%">Salary Per Month</th>
+                          <td width="2%">:</td>
+                          <td>{{ ad.salary }} taka</td>
+                        </tr>
+                        <tr>
+                          <th width="30%">Gender</th>
+                          <td width="2%">:</td>
+                          <td>{{ ad.gender }}</td>
+                        </tr>
+                        <tr>
+                          <th width="30%">Date Posted</th>
+                          <td width="2%">:</td>
+                          <td>{{ ad.ad_created|date:'H:i d-m-Y' }}</td>
+                        </tr>
+                        <tr>
+                          <th width="30%">Description</th>
+                          <td width="2%">:</td>
+                          <td>{{ ad.description }}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="course-info">
-                <h2>{{ ad.title }}</h2>
-                <h4>Area of the tuition: {{ ad.area }}</h4>
-                <h4>Need tuition {{ ad.days }} Days Per Week</h4>
-                <h4>Salary: {{ ad.salary }} Taka Per Month</h4>
-                <h4>Class/Level of the student: {{ ad.class_level }}</h5>
-                <h4>Gender: {{ ad.gender }}</h4>
-                <h4>Date Posted: {{ ad.ad_created|date:'H:i d-m-Y' }}</h4>
-                <h4>Description: </h4> <br>
-                <span>{{ ad.description }}</span>
-              </div>
-            </div>
             {% else %}
             <div class="course">
               <div class="course-preview">
-                <h6>Tutor Name: {{ad.user}}</h6>
-                <h2>{{ ad.subject }}</h2>
+                <h6>Tutor Name: <br> {{ad.user.first_name}} {{ad.user.last_name}}</h6>
+                <h4>Subject: </h4> <h2> {{ ad.subject }}</h2>
               </div>
-              <div class="course-info">
-                <h2>{{ ad.title }}</h2>
-                <h4>Expected Area of the tuition: {{ ad.expected_area }}</h4>
-                <h4>Will Teach {{ ad.days }} Days Per Week</h4>
-                <h4>Expected Salary: {{ ad.expected_salary }} Taka Per Month</h4>
-                <h4>Class/Level of the Student: {{ ad.class_level }}</h5>
-                <h4>Gender: {{ ad.gender }}</h4>
-                <h4>Date Posted: {{ ad.ad_created|date:'H:i d-m-Y' }}</h4>
-                <h4>Description: </h4> <br>
-                <span>{{ ad.description }}</span>
+              <div class="col-lg-8">
+                <div class="card shadow-sm">
+                  <div class="card-header bg-transparent border-0">
+                  <div class="card-body pt-0">
+                    <h3 class="ad-title text-center">{{ ad.title }}</h3> <br>
+                    <table class="table table-bordered">
+                      <tr>
+                        <th width="30%">Expected Area</th>
+                        <td width="2%">:</td>
+                        <td>{{ ad.expected_area }}</td>
+                      </tr>
+                      <!-- <tr>
+                        <th width="30%">Subject to Teach</th>
+                        <td width="2%">:</td>
+                        <td>{{ ad.subject }}</td>
+                      </tr> -->
+                      <tr>
+                        <th width="30%">No. of Days</th>
+                        <td width="2%">:</td>
+                        <td>{{ ad.days }}</td>
+                      </tr>
+                      <tr>
+                        <th width="30%">Class/Level of the Student</th>
+                        <td width="2%">:</td>
+                        <td>{{ ad.class_level }}</td>
+                      </tr>
+                      <tr>
+                        <th width="30%">Expected Salary Per Month</th>
+                        <td width="2%">:</td>
+                        <td>{{ ad.expected_salary }} taka</td>
+                      </tr>
+                      <tr>
+                        <th width="30%">Gender</th>
+                        <td width="2%">:</td>
+                        <td>{{ ad.gender }}</td>
+                      </tr>
+                      <tr>
+                        <th width="30%">Date Posted</th>
+                        <td width="2%">:</td>
+                        <td>{{ ad.ad_created|date:'H:i d-m-Y' }}</td>
+                      </tr>
+                      <tr>
+                        <th width="30%">Description</th>
+                        <td width="2%">:</td>
+                        <td>{{ ad.description }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
-            {% endif %}
+          {% endif %}
           </div>
         </div>
       </div>
