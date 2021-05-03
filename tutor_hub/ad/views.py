@@ -12,7 +12,7 @@ from django.contrib.auth.models import Group
 from home.models import Student,Tutor
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
-
+# feature - 1
 @login_required
 def student_ad(request):
     '''
@@ -90,6 +90,7 @@ def home(request):
         
     return render(request, 'ad/home.html', {'student_ads': student_ads, 'tutor_ads': tutor_ads})
 
+# feature - 2
 @login_required
 def my_ad(request):
     '''
