@@ -22,7 +22,7 @@ class TestUrls(SimpleTestCase):
         :return: returns a request to check the url pattern. 
         :rtype: assertEqual resolve, url
         '''
-        url = reverse('view_more')
+        url = reverse('view_more', args[1])
         self.assertEqual(resolve(url).func, view_more)
 
     def test_home_url_resolves(self):
