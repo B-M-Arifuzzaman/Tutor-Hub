@@ -16,7 +16,7 @@ class TestUrls(SimpleTestCase):
 
     def test_view_more_url_resolves(self):
         '''
-        This will test the find_tutor url.
+        This will test the view_more url.
         :param self: Takes the self content and pass. 
         :type self: Boolean
         :return: returns a request to check the url pattern. 
@@ -27,7 +27,7 @@ class TestUrls(SimpleTestCase):
 
     def test_home_url_resolves(self):
         '''
-        This will test the find_tutor url.
+        This will test the home url.
         :param self: Takes the self content and pass. 
         :type self: Boolean
         :return: returns a request to check the url pattern. 
