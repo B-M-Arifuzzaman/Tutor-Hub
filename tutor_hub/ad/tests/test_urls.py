@@ -20,7 +20,7 @@ class TestUrls(SimpleTestCase):
         :return: returns a request to check the url pattern. 
         :rtype: assertEqual resolve, url
         '''
-        url = reverse('findTutor')
+        url = reverse('find_tutor')
         self.assertEqual(resolve(url).func, student_ad)
         
     def test_find_student_url_is_resolved(self):
@@ -31,7 +31,7 @@ class TestUrls(SimpleTestCase):
         :return: returns a request to check the url pattern. 
         :rtype: assertEqual resolve, url
         '''
-        url = reverse('findStudent')
+        url = reverse('find_student')
         self.assertEqual(resolve(url).func, tutor_ad)
         
     def test_home_url_is_resolved(self):
