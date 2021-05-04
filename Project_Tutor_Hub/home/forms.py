@@ -1,40 +1,41 @@
+'''
+This program will create a django model form.
+'''
+
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User, Group
 from django import forms
 from django.forms import ModelForm
 from home.models import Student,Tutor
 
-'''
-    This is a conceptual Form representation of Class table for Edit Form for the Tutor Profile
+class EditForm_Tutor(ModelForm):
+    '''
+    This is a conceptual Form representation of Class table for Tutor Profile
     :param ModelForm: It creates built-in html form of django, which handels all validations in django Admin panel.
     :type ModelForm: model, fields
     '''
-
-class EditForm_Tutor(ModelForm):
     class Meta:
         model = Tutor
         fields = '__all__'
         exclude = ['user']
-
-'''
-    This is a conceptual Form representation of Class table for Edit Form for the Student Profile
+        
+class EditForm_Student(ModelForm):
+    '''
+    This is a conceptual Form representation of Class table for Student Profile
     :param ModelForm: It creates built-in html form of django, which handels all validations in django Admin panel.
     :type ModelForm: model, fields
     '''
-        
-class EditForm_Student(ModelForm):
     class Meta:
         model = Student
         fields = '__all__'
         exclude = ['user']
 
-'''
-    This is a conceptual Form representation of Class table for the user signup
+class SignUpForm(UserCreationForm):
+    '''
+    This is a conceptual Form representation of Class table for user signup
     :param ModelForm: It creates built-in html form of django, which handels all validations in django Admin panel.
     :type ModelForm: model, fields
     '''
-
-class SignUpForm(UserCreationForm):
     first_name = forms.CharField(label='First Name', max_length=100)
     last_name = forms.CharField(label='Last Name', max_length=100)
     username = forms.CharField(label='Username', max_length=100)

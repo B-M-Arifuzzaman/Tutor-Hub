@@ -1,3 +1,7 @@
+'''
+This program is for mapping the views and URLs
+'''
+
 from django.urls import path
 from .import  views
 from django.contrib.auth import views as auth_views

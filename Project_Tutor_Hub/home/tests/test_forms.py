@@ -3,27 +3,25 @@ from django.test import TestCase
 from home.forms import EditForm_Tutor, EditForm_Student
 
 class TestForms(TestCase):
-    def test__EditForm_Tutor_valid_data(self):
+    def test_EditForm_Tutor_valid_data(self):
         tu1 = User.objects.create_user(username="David", email="david_malan@gmail.com", password="12254")
         form = EditForm_Tutor(data={
             'user': tu1, 
             'institutiom':'Harvard',
             'area': 'USA', 
             'subject': 'CSE', 
-            'class_level': 'Bsc',
             'salary': '60000',
             'gender': 'Male',
         })
         self.assertTrue(form.is_valid())
     
-    def test__EditForm_Student_valid_data(self):
-        st1 = User.objects.create_user(username="Bill", email="bill_010@gmail.com", password="1225441@")
-        form = EditForm_Student(data={
-            'user': st1, 
-            'institutiom':'SPSC',
-            'area': 'Bashundhara', 
-            'subject': 'math', 
-            'class_level': '5',
+    def test_EditForm_Student_valid_data(self):
+        stu1 = User.objects.create_user(username="Bill", email="bill_101n@gmail.com", password="12254")
+        form = EditForm_Tutor(data={
+            'user': stu1, 
+            'institutiom':'Harvard',
+            'area': 'USA', 
+            'address': '24 New York',
             'gender': 'Male',
         })
         self.assertTrue(form.is_valid())

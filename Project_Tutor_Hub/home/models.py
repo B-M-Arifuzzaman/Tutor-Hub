@@ -12,12 +12,14 @@ def path_and_rename(instance, filename):
         filename = 'User_profile_pictures/{}.{}'.format(instance.user.username, extension)
     
     return os.path.join(upload_to,filename)
-'''
-    This is a conceptual Form representation of student table of the project
-    param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel
-    :type ModelForm: model.Model
-    '''
+     
+
 class Student(models.Model):
+    '''
+    This is a conceptual Database representation of Class table for student
+    :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel.
+    :type models.Model: database model
+    '''
     user = models.OneToOneField(User, on_delete=models.CASCADE) 
 
     institution= models.CharField(max_length=150, null=True, blank=True)
@@ -44,13 +46,12 @@ class Student(models.Model):
     def __str__(self):
         return self.user.username
 
-'''
-    This is a conceptual Form representation of tutor table of the project
-    param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel
-    :type ModelForm: model.Model
-    '''
-
 class Tutor(models.Model):
+    '''
+    This is a conceptual Database representation of Class table for tutor
+    :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel.
+    :type models.Model: database model
+    '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     institution= models.CharField(max_length=150, null=True, blank=True)
