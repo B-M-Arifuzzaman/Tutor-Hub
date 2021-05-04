@@ -5,12 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice</title>
+    <title>Online Classroom | Tutor Dashboard</title>
     <link rel="stylesheet" href="{% static 'courses/css/gribflex.css'%}">
 </head>
 <body>
     <div class="main-container">
-        <div class="header-content">
+        <div class="header-content" style="background-color: #284DF2;">
             <div class="button-nav">
                 <span class="line"></span>
                 <span class="line"></span>
@@ -18,7 +18,7 @@
             </div>
             <div class="logo">
                 <img src="{% static 'courses/images/classroom_logo.png'%}" alt="logo" height="50" width="50"> 
-                <label for="">Online Classroom</label> 
+                <label for="" style="color: #fff;">Online Classroom</label> 
             </div>
             <div class="menu-header"> 
                 <ul class="plus-menu">
@@ -27,15 +27,15 @@
                         <div class="drop-downmenu">
                             <ul>
                                 <li> <a href="{% url 'create_class' %}">Create Class</a></li>
-                                <li><a href="#JoinClass">Join Class</a></li>
+                                <li><a href="{% url 'home' %}">Home</a></li>
                             </ul>
                         </div>
                     </li>
                 </ul>
                 
                 <ul class="menu-classroom"> 
-                    <li class="c-class"><a  href="{% url 'create_class' %}">Create Class</a></li>
-                    <li class="j-class"><a href="#">Join Class</a></li>
+                    <li class="c-class"><a style="color: #fff;" href="{% url 'create_class' %}">Create Class</a></li>
+                    <li class="j-class"><a style="color: #fff;" href="{% url 'home' %}"> Home</a></li>
                 </ul>
             </div>
         </div>
@@ -57,10 +57,10 @@
                 </div>
                 <div class="profile-buttons">
                     <div class="edit-btn">
-                        <button>Edit profile</button>
+                        <button><a style="text-decoration: none; color: black;" href="{% url 'edit_profile_tutor' %}">Edit Profile</a></button>
                     </div>
                     <div class="logout-btn">
-                        <button>Logout</button>
+                        <button><a style="text-decoration: none; color: black;" href="{% url 'signout' %}">Signout</a></button>
                     </div>
                 </div>
             </div>

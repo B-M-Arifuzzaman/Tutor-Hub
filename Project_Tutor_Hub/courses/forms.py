@@ -2,7 +2,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User, Group
 from django import forms
 from django.forms import ModelForm
-from home.models import Student,Tutor
+from home.models import Student,Tutor,ReviewAndComment
 from courses.models import Class,Lecture
 
 
@@ -32,3 +32,15 @@ class CreateLectureForm(forms.ModelForm):
         fields = ('name','position','description','video','ppt','notes')
 
 
+class ReviewAndCommentForm(forms.ModelForm):
+    """
+        This is a conceptual class representation of Create lecture Form for tutor to be used in template.
+        :param ModelForm: It inherits built-in functionalities of django `forms.ModelForm`, which handels all validations
+        :type ModelForm: `forms.ModelForm`
+        
+    """
+    comment = forms.CharField(label='subject', max_length=200, widget=forms.Textarea(
+        attrs={'class': "form-control", 'placeholder': "Write Subject"}))
+    class Meta:
+        model = ReviewAndComment
+        fields = ['comment','rate'] 

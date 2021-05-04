@@ -22,9 +22,12 @@ from django.conf import settings
 import home
 import courses
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('home.urls')),
+    path('', include('details.urls')),
+    path('', include('home.urls')),
+    path('', include('ad.urls')),
     path('',include('courses.urls')),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

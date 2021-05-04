@@ -1,13 +1,89 @@
-{% extends 'home/homepage.html' %}
+{% load static %}
 
-{% block content %}
-    <form  action="" method="POST" enctype="multipart/form-data">
-     {% csrf_token %}
-        {{form.as_p}}
-
-         <input type="submit" name="" value="submit"> 
-        <a href="#">Cancel Update</a>
-    </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Classroom | Lecture Update</title>
+    <link rel="stylesheet"  href="{% static 'courses/css/createLecture.css'%}">
     
+</head>
+<body>
+    <div class="main-container">
+        <div class="header-content" style="background-color: #284DF2;">
+            <div class="button-nav">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <div class="logo">
+                <img src="{% static 'courses/images/classroom_logo.png'%}" alt="logo" height="50" width="50"> 
+                <label for="" style="color: #fff;">Online Classroom</label> 
+            </div>
+            <div class="menu-header"> 
+                <ul class="plus-menu">
+                    <li>
+                        <span class="addClass"></span>
+                        <div class="drop-downmenu">
+                            <ul>
+                                <li> <a href="{% url 'create_class' %}">Create Class</a></li>
+                                <li><a href="{% url 'tutor_dashboard' %}">Dashboard</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul class="menu-classroom"> 
+                    <li class="c-class"><a style="color: #fff;" href="{% url 'create_class' %}">Create Class</a></li>
+                    <li class="j-class"><a style="color: #fff;" href="{% url 'tutor_dashboard' %}">Dashboard</a></li>
+                </ul>
+            </div>
+        </div>
 
-{% endblock content %}
+        <div class="body-content">
+            
+            <div class="new-lecture">
+                <form  action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        {{form.name}}
+                        <label for="fancy-text">Name</label>
+                    </div>
+                    <div class="row">
+                        {{form.position}}
+                        <label for="fancy-text">Lecture No</label>
+                    </div>
+                    <div class="row">
+                        {{form.description}}
+                        <label for="fancy-text">Description</label>
+                    </div>
+
+                    <div class="row">
+                        {{form.video}}
+                        <label for="fancy-textarea">Video</label>
+                    </div>
+
+                    <div class="row">
+                        
+                            {{form.ppt}}
+                    
+                        <label for="fancy-textarea">Ppt</label>
+                    </div>
+                    <div class="row">
+                        {{form.notes}}
+                        <label for="fancy-textarea">Notes</label>
+                    </div>
+        
+                    <button type="submit" tabindex="0">Update Lecture</button>
+
+                        {% for message in messages %}
+                            <div class="alert alert-danger" role="alert">{{messages}}</div>
+                        {% endfor %}
+                </form>
+            <div>
+        </div>
+    </div>
+    <script src="{% static 'courses/js/classroom.js'%}"></script>
+</body>
+</html>

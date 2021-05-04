@@ -1,13 +1,13 @@
 from django.shortcuts import render,HttpResponseRedirect
-from django.shortcuts import  redirect
+from django.shortcuts import  redirect,reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import Group
-from courses.forms  import  CreateClassForm,CreateLectureForm
+from courses.forms  import  CreateClassForm,CreateLectureForm,ReviewAndCommentForm
 from courses.models import Class,Lecture
-from home.models import Tutor,Student
+from home.models import Tutor,Student,ReviewAndComment,User
 from django.views.generic import TemplateView,DetailView,ListView,FormView,CreateView,UpdateView,DeleteView
 from django.urls import reverse_lazy
 
@@ -250,3 +250,30 @@ class LectureDeleteView(DeleteView):
         Class= self.object.class_content.slug
         Lecture = self.object.slug
         return reverse_lazy('tutor_lecture_list_view',kwargs={'slug':self.object.class_content.slug})
+
+def tutor_review(request, tutor_id):
+    form=ReviewAndCommentForm()
+    tutor_object=User.objects.get(id=tutor_id)
+    tutor_object=Tutor.objects.get(user=tutor_object)
+    if request.method =='POST':
+        form=ReviewAndCommentForm(request.POST)
+        if form.is_valid():
+            data=ReviewAndComment()
+            data.comment=form.cleaned_data['comment']
+            data.rate=int(form.cleaned_data['rate'])
+            data.ip=request.META.get('REMOTE_ADDR')
+            data.tutor=tutor_object
+            data.student=request.user.student
+            data.save()
+            messages.success(request,'Your review has been recorded!')
+            return HttpResponseRedirect(reverse('view_reviews', kwargs={'tutor_id':tutor_id}))
+    context={'form':form,'tutor':tutor_object}
+    return render(request,'profile/review.html',context)
+
+def view_tutor_review(request,tutor_id):
+    tutor_object=User.objects.get(id=tutor_id)
+    tutor_object=Tutor.objects.get(user=tutor_object)
+    reviews = ReviewAndComment.objects.filter(tutor=tutor_object,status='New')
+
+    context={'tutor':tutor_object,'reviews':reviews}
+    return render(request,'profile/review_show.html',context)
