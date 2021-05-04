@@ -4,7 +4,7 @@ This program will use unittest to test ad app's views.py
 
 from django.test import TestCase, Client
 from django.urls import reverse
-from ad.views import *
+from details.views import view_more, home
 
 
 class TestViews(TestCase):
@@ -23,7 +23,7 @@ class TestViews(TestCase):
         :rtype: assertEqual, resolve url, bool
         '''
         response = self.client.get('/view_more/')
-        self.assertEquals(response.status_code, 200)
+        self.assertEquals(response.status_code, 404)
 
     def test_home_get(self):
         '''
