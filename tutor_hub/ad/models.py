@@ -17,7 +17,7 @@ class AdStudent(models.Model):
     subject = models.CharField(max_length=150, null=True, blank=True)
     class_level = models.CharField(max_length=150, null=True, blank=True)
     days = models.DecimalField(decimal_places=0, max_digits=2, default=2)
-    salary = models.DecimalField(decimal_places=0, max_digits=10, default=3000)
+    salary = models.CharField(max_length=10,default=3000)
     male ='male'
     female = 'female'
     other = 'other'
@@ -63,7 +63,7 @@ class AdTutor(models.Model):
     subject = models.CharField(max_length=150, null=True, blank=True)
     class_level = models.CharField(max_length=150, null=True, blank=True)
     days = models.DecimalField(decimal_places=0, max_digits=7, default=2)
-    expected_salary = models.DecimalField(decimal_places=0, max_digits=10,default=3000)
+    expected_salary = models.CharField(max_length=10,default=3000)
     male ='male'
     female = 'female'
     other = 'other'
