@@ -40,16 +40,6 @@ class AdStudent(models.Model):
         :rtype: model variable name
         '''
         return self.title
-    
-    def get_absolute_url(self):
-        '''
-        This will reverse a url to home page.
-        :param self: Takes the self's reverse url. 
-        :type self: HttpResponse
-        :return: returns a request for a reverse html page with form data as dictonary format
-        :rtype: reverse html
-        '''
-        return reverse('ad/home.html')
 
 class AdTutor(models.Model):
     '''
