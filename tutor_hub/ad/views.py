@@ -13,7 +13,6 @@ from home.models import Student,Tutor
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # feature - 1
-@login_required
 def student_ad(request):
     '''
     This will redirect the url to the student_ad page, where a logged in student can create a new post to find a tutor.
@@ -35,7 +34,6 @@ def student_ad(request):
             return render(request, 'ad/student_ad.html', {'form': AdStudentForm(), 'error': 'Limit is Crossed' })
 
 
-@login_required
 def tutor_ad(request):
     '''
     This will redirect the url to the student_ad page, where a logged in tutor can create a new post to find a student.
@@ -56,7 +54,7 @@ def tutor_ad(request):
         except ValueError:
             return render(request, 'ad/tutor_ad.html', {'form': AdTutorForm(), 'error': 'Limit is Crossed' })
 
-@login_required
+
 def home(request):
     '''
     This will redirect the url to the home page, where a logged in user can see posts of other user.
