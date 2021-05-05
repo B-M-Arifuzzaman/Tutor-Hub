@@ -6,41 +6,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Classroom | Tutor Lecture List</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" >
     <link rel="stylesheet" href="{% static 'courses/css/studentLectureList.css'%}">
     
 </head>
 <body>
     <div class="main-container">
-        <div class="header-content" style="background-color: #284DF2;">
-            <div class="button-nav">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
+        <nav class="navbar nav navbar-expand-lg">
+            <div class="app_name">Online Class</div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'create_class' %}">Create Class</a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'tutor_dashboard' %}">Dashboard</a>
+                </li>
+              </ul>
             </div>
-            <div class="logo">
-                <img src="{% static 'courses/images/classroom_logo.png'%}" alt="logo" height="50" width="50"> 
-                <label for="" style="color: #fff;" >Online Classroom</label> 
-            </div>
-            <div class="menu-header"> 
-                <ul class="plus-menu">
-                    <li>
-                        <span class="addClass"></span>
-                        <div class="drop-downmenu">
-                            <ul>
-                                <li> <a href="{% url 'create_class' %}">Create Class</a></li>
-                                <li><a href="{% url 'tutor_dashboard' %}">Dashboard</a></li>
-
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-                
-                <ul class="menu-classroom"> 
-                    <li class="c-class"><a style="color: #fff;" href="{% url 'create_class' %}">Create Class</a></li>
-                    <li class="j-class"><a style="color: #fff;" href="{% url 'tutor_dashboard' %}">Dashboard</a></li>
-                </ul>
-            </div>
-        </div>
+          </nav>
 
         <div class="body-content">
             <div class="cont">
@@ -68,6 +58,9 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="{% static 'courses/js/classroom.js'%}"></script>
 </body>
 </html>
