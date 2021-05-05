@@ -98,8 +98,8 @@ def my_ad(request):
     :return: returns a request for a html page with form data as dictonary format
     :rtype: render request,html page,dictonary
     '''
-    myStudentAds = Ad_Student.objects.filter(user=request.user).order_by('-ad_created')
-    myTutorAds = Ad_Tutor.objects.filter(user=request.user).order_by('-ad_created')
+    myStudentAds = AdStudent.objects.filter(user=request.user).order_by('-ad_created')
+    myTutorAds = AdTutor.objects.filter(user=request.user).order_by('-ad_created')
     return render(request, 'ad/myad.html', {'myStudentAds': myStudentAds, 'myTutorAds': myTutorAds})
 
 
@@ -114,7 +114,7 @@ def delete_post_student(request,post_pk):
     :return: returns a request for a html page with form data as dictonary format
     :rtype: render request,html page,dictonary
     '''
-    student_post = Ad_Student.objects.get(id=post_pk)
+    student_post = AdStudent.objects.get(id=post_pk)
     if request.method == 'POST':
         student_post.delete()
         return redirect('myAd')
@@ -131,7 +131,7 @@ def delete_post_tutor(request,post_pk):
     :return: returns a request for a html page with form data as dictonary format
     :rtype: render request,html page,dictonary
     '''
-    tutor_post = Ad_Tutor.objects.get(id=post_pk)
+    tutor_post = AdTutor.objects.get(id=post_pk)
     if request.method == 'POST':
         tutor_post.delete()
         return redirect('myAd')
