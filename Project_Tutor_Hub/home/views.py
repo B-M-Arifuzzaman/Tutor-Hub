@@ -104,33 +104,44 @@ def profile(request):
 
 
 def edit_profile_tutor(request):
+    '''
+    This will redirect the url to update the profile if the user is tutor where they
+    can update their necessary informations which will be displayed on profile page after saving them
+    :type request: HttpResponse
+    :param request: Takes the request to show edit_profile_tutor.html
+    '''
 
-	tutor= request.user.tutor
-	form = EditForm_Tutor(instance=tutor)
+    tutor= request.user.tutor
+    form = EditForm_Tutor(instance=tutor)
     
 
-	if request.method == 'POST':
-		form = EditForm_Tutor(request.POST, request.FILES,instance=tutor)
-		if form.is_valid():
-			form.save()
+    if request.method == 'POST':
+     form = EditForm_Tutor(request.POST, request.FILES,instance=tutor)
+     if form.is_valid():
+	     form.save()
 
 
-	context = {'form':form}
-	return render(request, 'profile/edit_profile_tutor.html', context)
+    context = {'form':form}
+    return render(request, 'profile/edit_profile_tutor.html', context)
 
 
 def edit_profile_student(request):
-     
-	student= request.user.student
-	form = EditForm_Student(instance=student)
-	if request.method == 'POST':
-		form = EditForm_Student(request.POST, request.FILES,instance=student)
-		if form.is_valid():
-			form.save()
+     '''
+    This will redirect the url to update the profile if the user is student where they
+    can update their necessary informations which will be displayed on profile page after saving them
+    :type request: HttpResponse
+    :param request: Takes the request to show edit_profile_tutor.html
+    '''
+     student= request.user.student
+     form = EditForm_Student(instance=student)
+     if request.method == 'POST':
+         form = EditForm_Student(request.POST, request.FILES,instance=student)
+         if form.is_valid():
+             form.save()
 
 
-	context = {'form':form}
-	return render(request, 'profile/edit_profile_student.html', context)
+     context = {'form':form}
+     return render(request, 'profile/edit_profile_student.html', context)
 
 def delete_profile(request):
     '''
