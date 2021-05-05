@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'ad',
     'details',
     'courses.apps.CoursesConfig',
+    'mapbox.apps.MapboxConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

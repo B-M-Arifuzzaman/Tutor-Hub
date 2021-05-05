@@ -21,6 +21,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 import home
 import courses
+import mapbox
+import ad
 urlpatterns = [
     path('', include('details.urls')),
     path('', include('home.urls')),
@@ -28,6 +30,7 @@ urlpatterns = [
     path('',include('courses.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('',include('mapbox.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
