@@ -3,7 +3,7 @@ This program will use unittest to test ad app's forms.py.
 '''
 from django.contrib.auth.models import User
 from django.test import TestCase
-from ad.forms import AdStudentForm, Ad_Tutor_Form
+from ad.forms import AdStudentForm, AdTutorForm
 
 class TestForms(TestCase):
     '''
