@@ -14,7 +14,7 @@
 </head>
 <body>
 <nav class="navbar nav navbar-expand-lg">
-  <div class="app_name" href="#">Tutor Hub</div>
+  <div class="app_name">Tutor Hub</div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -57,10 +57,10 @@
   <div class="row">
     <div class="col-md-9">
       {% if request.user|has_group:"tutor" %}
-        {% for ad in tutor_ads %}
+        {% for ad in student_ads %}
           <div class="course">
             <div class="course-preview">
-                <a href="{% url 'profile_user' ad.user.id %}">
+                <a style="color: #fff;" href="{% url 'profile_user' ad.user.id %}">
                   <img src={{ad.user.student.profile_pic.url}} class="rounded-circle" width="50">
                   {{ad.user}}
                 </a>
@@ -99,7 +99,7 @@
         {% for ad in tutor_ads %}
           <div class="course">
             <div class="course-preview">
-              <a href="{% url 'profile_user' ad.user.id %}">
+              <a style="color: #fff;" href="{% url 'profile_user' ad.user.id %}">
                 <img src={{ad.user.tutor.profile_pic.url}} class="rounded-circle" width="50">
                 {{ad.user}}
               </a>

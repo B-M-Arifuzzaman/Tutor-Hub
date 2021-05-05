@@ -117,7 +117,7 @@ def delete_post_student(request,post_pk):
     student_post = AdStudent.objects.get(id=post_pk)
     if request.method == 'POST':
         student_post.delete()
-        return redirect('myAd')
+        return redirect('my_ad')
     return render(request, 'ad/delete_post_student.html', {'student_post': student_post})
 
 @login_required
@@ -134,7 +134,7 @@ def delete_post_tutor(request,post_pk):
     tutor_post = AdTutor.objects.get(id=post_pk)
     if request.method == 'POST':
         tutor_post.delete()
-        return redirect('myAd')
+        return redirect('my_ad')
     return render(request, 'ad/delete_post_tutor.html', {'tutor_post': tutor_post})
 
 @login_required
