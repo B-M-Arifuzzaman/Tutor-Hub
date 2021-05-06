@@ -2,14 +2,15 @@
 This program is the controller that fetch data from models.py and send it to the template file. 
 '''
 from django.shortcuts import render
-from django.http import HttpResponse
-# from .models import Profile
-from django.contrib.auth.models import User
-from .models import Ad_Student, Ad_Tutor
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.models import User, Group
+from django.contrib.auth import get_user_model
+from ad.models import AdStudent, AdTutor
+from ad.forms import AdStudentForm, AdTutorForm
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse
+from django.contrib.auth.models import Group
+from home.models import Student, Tutor
 from django.db.models import Q
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 
 @login_required
@@ -23,87 +24,12 @@ def view_more(request, pk):
     :return: returns a request for a html page with form data as dictonary format
     :rtype: render request,html page,dictonary
     '''
+    # usr = User.objects.get(username=request.user)
+    # ad = AdTutor.objects.get(id=pk)
     if request.user.groups.filter(name='student').exists():
-        ad = Ad_Tutor.objects.get(id=pk)
+        ad = AdTutor.objects.get(id=pk)
     else:
-        ad = Ad_Student.objects.get(id=pk)
+        ad = AdStudent.objects.get(id=pk)
     # stu_ad = Ad_Student.objects.get(id=pk)
     # ad = Ad_Tutor.objects.get(id=pk)
     return render(request, 'view_more.html', {'ad': ad})
-
-
-# @login_required
-# def home(request):
-#     '''
-#     This will redirect the url to the home page
-#     :type request: HttpResponse
-#     :param request: Takes the request to show home.html
-#     '''
-#     ads_s = Ad_Student.objects.order_by('-ad_created')
-#     ads_t = Ad_Tutor.objects.order_by('-ad_created')
-#     context = {}
-#     context["ads_s"] = ads_s
-#     context["ads_t"] = ads_t
-#     if "area" in request.GET:
-#         a = request.GET["area"]
-#         s = request.GET["salary"]
-#         sub = request.GET["subject"]
-#         g = request.GET["gender"]
-#         # result = Ad_Student.objects.filter(area__icontains=a)
-#         result_s = Ad_Student.objects.filter(
-#             Q(area__icontains=a) & Q(salary__gte=s)
-#             & Q(subject__icontains=sub) & Q(gender=g))
-#         result_t = Ad_Tutor.objects.filter(
-#             Q(expected_area__icontains=a) & Q(expected_salary__gte=s)
-#             & Q(subject__icontains=sub) & Q(gender=g))
-#         context["ads_s"] = result_s
-#         context["ads_t"] = result_t
-#         context["search"] = "search"
-#
-#   return render(request, 'home.html', context)
-
-
-@login_required
-def home(request):
-    studentAd_list = Ad_Student.objects.order_by('-ad_created')
-    tutorAd_list = Ad_Tutor.objects.order_by('-ad_created')
-    context = {}
-    if "area" in request.GET:
-        a = request.GET["area"]
-        s = request.GET["salary"]
-        sub = request.GET["subject"]
-        g = request.GET["gender"]
-        # result = Ad_Student.objects.filter(area__icontains=a)
-        result_s = Ad_Student.objects.filter(
-            Q(area__icontains=a) & Q(salary__gte=s)
-            & Q(subject__icontains=sub) & Q(gender=g))
-        result_t = Ad_Tutor.objects.filter(
-            Q(expected_area__icontains=a) & Q(expected_salary__gte=s)
-            & Q(subject__icontains=sub) & Q(gender=g))
-        studentAd_list = result_s
-        tutorAd_list = result_t
-        context['search'] = "search"
-    # Paginator for Student Posts
-    paginator = Paginator(studentAd_list, 5)
-    page = request.GET.get('page')
-    try:
-        studentAds = paginator.page(page)
-    except PageNotAnInteger:
-        studentAds = paginator.page(1)
-    except EmptyPage:
-        studentAds = paginator.page(paginator.num_pages)
-
-    # Paginator for Tutor Posts
-    paginator = Paginator(tutorAd_list, 5)
-    page = request.GET.get('page')
-    try:
-        tutorAds = paginator.page(page)
-    except PageNotAnInteger:
-        tutorAds = paginator.page(1)
-    except EmptyPage:
-        tutorAds = paginator.page(paginator.num_pages)
-
-    context['studentAds'] = studentAds
-    context['tutorAds'] = tutorAds
-
-    return render(request, 'ad/home.html', context)
