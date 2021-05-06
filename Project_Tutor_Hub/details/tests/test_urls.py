@@ -4,7 +4,7 @@ This program will use unittest to test details app's urls.py
 
 from django.test import SimpleTestCase
 from django.urls import resolve, reverse
-from details.views import view_more, home
+from details.views import view_more
 
 
 class TestUrls(SimpleTestCase):
@@ -22,16 +22,5 @@ class TestUrls(SimpleTestCase):
         :return: returns a request to check the url pattern. 
         :rtype: assertEqual resolve, url
         '''
-        url = reverse('view_more', args[1])
+        url = reverse('view_more', args=[1])
         self.assertEqual(resolve(url).func, view_more)
-
-    def test_home_url_resolves(self):
-        '''
-        This will test the home url.
-        :param self: Takes the self content and pass. 
-        :type self: Boolean
-        :return: returns a request to check the url pattern. 
-        :rtype: assertEqual resolve, url
-        '''
-        url = reverse('home')
-        self.assertEqual(resolve(url).func, home)
