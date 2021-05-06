@@ -9,10 +9,13 @@ from .models import AdStudent, AdTutor
 from .forms import AdStudentForm, AdTutorForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
-from home.models import Student,Tutor
+from home.models import Student, Tutor
+from django.db.models import Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # feature - 1
+
+
 def student_ad(request):
     '''
     This will redirect the url to the student_ad page, where a logged in student can create a new post to find a tutor.
@@ -24,14 +27,14 @@ def student_ad(request):
     User = get_user_model()
     users = User.objects.all()
     if request.method == 'GET':
-        return render(request, 'ad/student_ad.html', {'form': AdStudentForm() })
+        return render(request, 'ad/student_ad.html', {'form': AdStudentForm()})
     else:
-        try: 
+        try:
             form = AdStudentForm(request.POST)
             form.save()
             return redirect('home')
         except ValueError:
-            return render(request, 'ad/student_ad.html', {'form': AdStudentForm(), 'error': 'Limit is Crossed' })
+            return render(request, 'ad/student_ad.html', {'form': AdStudentForm(), 'error': 'Limit is Crossed'})
 
 
 def tutor_ad(request):
@@ -45,14 +48,14 @@ def tutor_ad(request):
     User = get_user_model()
     users = User.objects.all()
     if request.method == 'GET':
-        return render(request, 'ad/tutor_ad.html', {'form': AdTutorForm() })
+        return render(request, 'ad/tutor_ad.html', {'form': AdTutorForm()})
     else:
-        try: 
+        try:
             form = AdTutorForm(request.POST)
             form.save()
             return redirect('home')
         except ValueError:
-            return render(request, 'ad/tutor_ad.html', {'form': AdTutorForm(), 'error': 'Limit is Crossed' })
+            return render(request, 'ad/tutor_ad.html', {'form': AdTutorForm(), 'error': 'Limit is Crossed'})
 
 
 def home(request):
@@ -65,8 +68,24 @@ def home(request):
     '''
     student_ad_list = AdStudent.objects.order_by('-ad_created')
     tutor_ad_list = AdTutor.objects.order_by('-ad_created')
-    
-    #Paginator for Student Posts
+    context = {}
+    if "area" in request.GET:
+        a = request.GET["area"]
+        s = request.GET["salary"]
+        sub = request.GET["subject"]
+        g = request.GET["gender"]
+        # result = Ad_Student.objects.filter(area__icontains=a)
+        result_s = AdStudent.objects.filter(
+            Q(area__icontains=a) & Q(salary__gte=s)
+            & Q(subject__icontains=sub) & Q(gender=g))
+        result_t = AdTutor.objects.filter(
+            Q(expected_area__icontains=a) & Q(expected_salary__gte=s)
+            & Q(subject__icontains=sub) & Q(gender=g))
+        student_ad_list = result_s
+        tutor_ad_list = result_t
+        context['search'] = "search"
+
+    # Paginator for Student Posts
     paginator = Paginator(student_ad_list, 5)
     page = request.GET.get('page')
     try:
@@ -75,8 +94,8 @@ def home(request):
         student_ads = paginator.page(1)
     except EmptyPage:
         student_ads = paginator.page(paginator.num_pages)
-    
-    #Paginator for Tutor Posts
+
+    # Paginator for Tutor Posts
     paginator = Paginator(tutor_ad_list, 5)
     page = request.GET.get('page')
     try:
@@ -85,10 +104,15 @@ def home(request):
         tutor_ads = paginator.page(1)
     except EmptyPage:
         tutor_ads = paginator.page(paginator.num_pages)
-        
-    return render(request, 'ad/home.html', {'student_ads': student_ads, 'tutor_ads': tutor_ads})
+
+    context['student_ads'] = student_ads
+    context['tutor_ads'] = tutor_ads
+
+    return render(request, 'ad/home.html', context)
 
 # feature - 2
+
+
 @login_required
 def my_ad(request):
     '''
@@ -98,13 +122,15 @@ def my_ad(request):
     :return: returns a request for a html page with form data as dictonary format
     :rtype: render request,html page,dictonary
     '''
-    myStudentAds = AdStudent.objects.filter(user=request.user).order_by('-ad_created')
-    myTutorAds = AdTutor.objects.filter(user=request.user).order_by('-ad_created')
+    myStudentAds = AdStudent.objects.filter(
+        user=request.user).order_by('-ad_created')
+    myTutorAds = AdTutor.objects.filter(
+        user=request.user).order_by('-ad_created')
     return render(request, 'ad/myad.html', {'myStudentAds': myStudentAds, 'myTutorAds': myTutorAds})
 
 
 @login_required
-def delete_post_student(request,post_pk):
+def delete_post_student(request, post_pk):
     '''
     This will redirect the url to the delete_post_student page, where a student can delete his own posts.
     :param request: Takes the request to show delete_post_student.html
@@ -120,8 +146,9 @@ def delete_post_student(request,post_pk):
         return redirect('my_ad')
     return render(request, 'ad/delete_post_student.html', {'student_post': student_post})
 
+
 @login_required
-def delete_post_tutor(request,post_pk):
+def delete_post_tutor(request, post_pk):
     '''
     This will redirect the url to the delete_post_tutor page, where a tutor can delete his own posts.
     :param request: Takes the request to show delete_post_tutor.html
@@ -137,6 +164,7 @@ def delete_post_tutor(request,post_pk):
         return redirect('my_ad')
     return render(request, 'ad/delete_post_tutor.html', {'tutor_post': tutor_post})
 
+
 @login_required
 def ad_profile(request, user_pk):
     '''
@@ -151,6 +179,3 @@ def ad_profile(request, user_pk):
     User = get_user_model()
     user = User.objects.get(id=user_pk)
     return render(request, 'ad/ad_profile.html', {'user': user})
-    
-    
-    
