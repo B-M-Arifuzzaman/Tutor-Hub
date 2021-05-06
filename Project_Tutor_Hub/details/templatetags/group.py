@@ -1,6 +1,6 @@
 from django import template
 from django.contrib.auth.models import Group
-from details.models import Student, Tutor
+from home.models import Student, Tutor
 
 register = template.Library()
 
