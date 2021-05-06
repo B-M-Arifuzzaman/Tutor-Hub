@@ -1,4 +1,3 @@
-
 """
 Django settings for tutor_hub project.
 
@@ -17,7 +16,6 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -35,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'home',
     'ad',
+    'details',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
