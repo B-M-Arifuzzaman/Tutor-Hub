@@ -17,7 +17,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="{% static 'css/view_more.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
     <title>Tutor Hub | View More Details of The Ad</title>
   </head>
   <body>
@@ -59,11 +59,11 @@
           </li>
           {% if request.user|has_group:"student" %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'findTutor' %}">Create Ad</a>
+            <a class="nav-link" href="{% url 'find_tutor' %}">Create Ad</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'findStudent' %}">Create Ad</a>
+            <a class="nav-link" href="{% url 'find_student' %}">Create Ad</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Dashboard</a>
