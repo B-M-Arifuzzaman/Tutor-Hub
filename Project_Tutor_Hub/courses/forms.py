@@ -9,6 +9,7 @@ from courses.models import Class,Lecture
 class CreateClassForm(ModelForm):
     """
     This is a conceptual class representation of Create Class Form for tutor to be used in template.
+    
     :param ModelForm: It inherits built-in functionalities of django ModelForm, which handels all validations
     :type ModelForm: ModelForm
 
@@ -23,6 +24,7 @@ class CreateClassForm(ModelForm):
 class CreateLectureForm(forms.ModelForm):
     """
     This is a conceptual class representation of Create lecture Form for tutor to be used in template.
+    
     :param ModelForm: It inherits built-in functionalities of django `forms.ModelForm`, which handels all validations
     :type ModelForm: `forms.ModelForm`
     
@@ -35,6 +37,7 @@ class CreateLectureForm(forms.ModelForm):
 class ReviewAndCommentForm(forms.ModelForm):
     """
         This is a conceptual class representation of Create lecture Form for tutor to be used in template.
+        
         :param ModelForm: It inherits built-in functionalities of django `forms.ModelForm`, which handels all validations
         :type ModelForm: `forms.ModelForm`
         

@@ -17,6 +17,7 @@ from django.db.models import Q
 def view_more(request, pk):
     '''
     This will redirect the url to the view_more page, where a logged in user can see details of a post on which he clicks the link View More.
+    
     :param request: Takes the request to show view_more.html
     :type request: HttpResponse
     :param pk: Gets value of the selected ad's id through a link

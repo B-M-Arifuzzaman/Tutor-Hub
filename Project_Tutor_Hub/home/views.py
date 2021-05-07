@@ -12,6 +12,7 @@ from home.models import Student,Tutor
 def landing(request):
     '''
     This will redirect the url to the landing page
+    
     :type request: HttpResponse
     :param request: Takes the request to show home.html
     
@@ -23,6 +24,7 @@ def landing(request):
 def signup(request):
     '''
     This will redirect the url to the signup
+    
     :type request: HttpResponse
     :param request: Takes the request to show signup.html
     '''
@@ -58,6 +60,7 @@ def signup(request):
 def signin(request):
     '''
     This will redirect the url to the signin
+    
     :type request: HttpResponse
     :param request: Takes the request to show signin.html
     
@@ -84,6 +87,7 @@ def signin(request):
 def signout(request):
     '''
     This will logout the user & redirect to the landing page
+    
     :type request: HttpResponse
     :param request: Takes the request to show landing.html
     
@@ -97,6 +101,7 @@ def signout(request):
 def profile(request):
     '''
     This will redirect the url to the profile page
+    
     :type request: HttpResponse
     :param request: Takes the request to show profile.html
     '''
@@ -107,6 +112,7 @@ def edit_profile_tutor(request):
     '''
     This will redirect the url to update the profile if the user is tutor where they
     can update their necessary informations which will be displayed on profile page after saving them
+    
     :type request: HttpResponse
     :param request: Takes the request to show edit_profile_tutor.html
     '''
@@ -129,6 +135,7 @@ def edit_profile_student(request):
      '''
     This will redirect the url to update the profile if the user is student where they
     can update their necessary informations which will be displayed on profile page after saving them
+    
     :type request: HttpResponse
     :param request: Takes the request to show edit_profile_tutor.html
     '''
@@ -146,6 +153,7 @@ def edit_profile_student(request):
 def delete_profile(request):
     '''
     This will redirect the url to the delete profile page
+    
     :type request: HttpResponse
     :param request: Takes the request to show delete_profile.html
     '''

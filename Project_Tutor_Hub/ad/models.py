@@ -8,6 +8,7 @@ from django.urls import reverse
 class AdStudent(models.Model):
     '''
     This is a conceptual Database representation of Class table for student ads.
+    
     :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel.
     :type models.Model: database model
     '''
@@ -34,6 +35,7 @@ class AdStudent(models.Model):
     def __str__(self):
         '''
         This will show the title of students's ad in the admin panel.
+        
         :param self: Takes the self's variable name. 
         :type self: string
         :return: returns a reference to the instance object on which it was called.
@@ -44,6 +46,7 @@ class AdStudent(models.Model):
 class AdTutor(models.Model):
     '''
     This is a conceptual Database representation of Class table for tutor ads.
+    
     :param models.Model: It inherits built-in functionalities of django `models.Model`, which handels all validations in django Admin panel.
     :type models.Model: database model
     '''
@@ -71,6 +74,7 @@ class AdTutor(models.Model):
     def __str__(self):
         '''
         This will show the title of tutor's ad in the admin panel.
+        
         :param self: Takes the self's variable name. 
         :type self: string
         :return: returns a reference to the instance object on which it was called.

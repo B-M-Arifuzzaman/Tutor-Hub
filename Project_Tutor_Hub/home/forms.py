@@ -11,6 +11,7 @@ from home.models import Student,Tutor
 class EditForm_Tutor(ModelForm):
     '''
     This is a conceptual Form representation of Class table for Tutor Profile
+    
     :param ModelForm: It creates built-in html form of django, which handels all validations in django Admin panel.
     :type ModelForm: model, fields
     '''
@@ -22,6 +23,7 @@ class EditForm_Tutor(ModelForm):
 class EditForm_Student(ModelForm):
     '''
     This is a conceptual Form representation of Class table for Student Profile
+    
     :param ModelForm: It creates built-in html form of django, which handels all validations in django Admin panel.
     :type ModelForm: model, fields
     '''
@@ -33,6 +35,7 @@ class EditForm_Student(ModelForm):
 class SignUpForm(UserCreationForm):
     '''
     This is a conceptual Form representation of Class table for user signup
+    
     :param ModelForm: It creates built-in html form of django, which handels all validations in django Admin panel.
     :type ModelForm: model, fields
     '''

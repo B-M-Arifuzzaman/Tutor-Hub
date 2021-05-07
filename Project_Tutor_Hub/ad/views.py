@@ -19,6 +19,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 def student_ad(request):
     '''
     This will redirect the url to the student_ad page, where a logged in student can create a new post to find a tutor.
+    
     :param request: Takes the request to show student_ad.html
     :type request: HttpResponse
     :return: returns a request for a html page with form data as dictonary format
@@ -40,6 +41,7 @@ def student_ad(request):
 def tutor_ad(request):
     '''
     This will redirect the url to the student_ad page, where a logged in tutor can create a new post to find a student.
+    
     :param request: Takes the request to show tutor_ad.html
     :type request: HttpResponse
     :return: returns a request for a html page with form data as dictonary format
@@ -61,6 +63,7 @@ def tutor_ad(request):
 def home(request):
     '''
     This will redirect the url to the home page, where a logged in user can see posts of other user.
+    
     :param request: Takes the request to show home.html
     :type request: HttpResponse
     :return: returns a request for a html page with form data as dictonary format
@@ -117,6 +120,7 @@ def home(request):
 def my_ad(request):
     '''
     This will redirect the url to the myad page, where a user can see his own posts.
+    
     :param request: Takes the request to show myad.html
     :type request: HttpResponse
     :return: returns a request for a html page with form data as dictonary format
@@ -133,6 +137,7 @@ def my_ad(request):
 def delete_post_student(request, post_pk):
     '''
     This will redirect the url to the delete_post_student page, where a student can delete his own posts.
+    
     :param request: Takes the request to show delete_post_student.html
     :type request: HttpResponse
     :param post_pk: Takes the id of the post to delete exact post
@@ -151,6 +156,7 @@ def delete_post_student(request, post_pk):
 def delete_post_tutor(request, post_pk):
     '''
     This will redirect the url to the delete_post_tutor page, where a tutor can delete his own posts.
+    
     :param request: Takes the request to show delete_post_tutor.html
     :type request: HttpResponse
     :param post_pk: Takes the id of the post to delete exact post
@@ -169,6 +175,7 @@ def delete_post_tutor(request, post_pk):
 def ad_profile(request, user_pk):
     '''
     This will redirect the url to the ad_profile page, where a user can see other user's profile through ad.
+    
     :param request: Takes the request to show delete_post_tutor.html
     :type request: HttpResponse
     :param post_pk: Takes the id of the user to redirect exact user's profile.
