@@ -15,24 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from home import views
+from django.conf import settings
+from django.conf.urls.static import static
 from django.conf.urls import include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.conf.urls.static import static
-from django.conf import settings
 import home
 import courses
 import mapbox
 import ad
+
 urlpatterns = [
     path('', include('details.urls')),
     path('', include('home.urls')),
     path('', include('ad.urls')),
     path('',include('courses.urls')),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
     path('',include('mapbox.urls')),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),    
 ]
-
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
-    
