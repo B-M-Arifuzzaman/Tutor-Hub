@@ -7,7 +7,16 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
-  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css"/>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css"/>
+    <!-- Load the `mapbox-gl-geocoder` plugin. -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
+ 
+    <!-- Promise polyfill script is required -->
+    <!-- to use Mapbox GL Geocoder in IE 11. -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    
     <title>MapBox-Demo</title>
 </head>
 <body>
@@ -37,13 +46,19 @@
                 zoom: 12 // starting zoom
             });
             const nav = new mapboxgl.NavigationControl()
-            map.addControl(nav)
+            map.addControl(nav,"bottom-right")
 
             var directions = new MapboxDirections({
                 accessToken: mapboxgl.accessToken
             })
 
             map.addControl(directions, "top-left")
+            // Add the control to the map.
+            var geocoder =new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+            })
+            map.addControl(geocoder,"top-right")
+                
         
             {% for address in addresses_tutor %}
             var marker = new mapboxgl.Marker({ "color": "#b40219" })
