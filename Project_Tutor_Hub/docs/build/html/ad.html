@@ -1,0 +1,846 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Ad &mdash; Tutor Hub 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ad.migrations package" href="ad.migrations.html" />
+    <link rel="prev" title="home.tests package" href="home.tests.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Tutor Hub
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ad</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#created-by">Created By:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ad.migrations.html">ad.migrations package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ad.templatetags.html">ad.templatetags package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ad.tests.html">ad.tests package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ad.admin">ad admin.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ad.apps">ad apps.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ad.forms">ad forms.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ad.models">ad models.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ad.urls">ad urls.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ad.views">ad views.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="details.html">Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="courses.html">courses package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_us.html">About</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Tutor Hub</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Ad</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/ad.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ad">
+<h1>Ad<a class="headerlink" href="#ad" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="created-by">
+<h2>Created By:<a class="headerlink" href="#created-by" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">B. M. Arifuzzaman</div>
+<div class="line">ID: 1821264042</div>
+</div>
+<div class="section" id="subpackages">
+<h3>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ad.migrations.html">ad.migrations package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ad.templatetags.html">ad.templatetags package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ad.tests.html">ad.tests package</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-ad.admin">
+<span id="ad-admin-py"></span><h3>ad admin.py<a class="headerlink" href="#module-ad.admin" title="Permalink to this headline">¶</a></h3>
+<p>This program will create visual database pages in Admin panel.</p>
+</div>
+<div class="section" id="module-ad.apps">
+<span id="ad-apps-py"></span><h3>ad apps.py<a class="headerlink" href="#module-ad.apps" title="Permalink to this headline">¶</a></h3>
+<p>This program will create a app in django project.</p>
+<dl class="class">
+<dt id="ad.apps.AdConfig">
+<em class="property">class </em><code class="descclassname">ad.apps.</code><code class="descname">AdConfig</code><span class="sig-paren">(</span><em>app_name</em>, <em>app_module</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.apps.AdConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<p>This is a configuration file of newly created ap.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>AppConfig</strong> (<em>string</em>) – It configures the app in django project.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="ad.apps.AdConfig.name">
+<code class="descname">name</code><em class="property"> = 'ad'</em><a class="headerlink" href="#ad.apps.AdConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.forms">
+<span id="ad-forms-py"></span><h3>ad forms.py<a class="headerlink" href="#module-ad.forms" title="Permalink to this headline">¶</a></h3>
+<p>This program will create a django model form.</p>
+<dl class="class">
+<dt id="ad.forms.AdStudentForm">
+<em class="property">class </em><code class="descclassname">ad.forms.</code><code class="descname">AdStudentForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em>, <em>renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.forms.AdStudentForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<p>This is a conceptual Form representation of Class table for student ads.
+:param ModelForm: It creates built-in html form of django, which handels all validations in django Admin panel.
+:type ModelForm: model, fields</p>
+<dl class="class">
+<dt id="ad.forms.AdStudentForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="headerlink" href="#ad.forms.AdStudentForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="ad.forms.AdStudentForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#ad.forms.AdStudentForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.forms.AdStudentForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#ad.forms.AdStudentForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#ad.models.AdStudent" title="ad.models.AdStudent"><code class="xref py py-class docutils literal notranslate"><span class="pre">ad.models.AdStudent</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.forms.AdStudentForm.base_fields">
+<code class="descname">base_fields</code><em class="property"> = {'area': &lt;django.forms.fields.CharField object&gt;, 'class_level': &lt;django.forms.fields.CharField object&gt;, 'days': &lt;django.forms.fields.DecimalField object&gt;, 'description': &lt;django.forms.fields.CharField object&gt;, 'gender': &lt;django.forms.fields.TypedChoiceField object&gt;, 'request_confirmation': &lt;django.forms.fields.BooleanField object&gt;, 'salary': &lt;django.forms.fields.CharField object&gt;, 'subject': &lt;django.forms.fields.CharField object&gt;, 'title': &lt;django.forms.fields.CharField object&gt;, 'user': &lt;django.forms.models.ModelChoiceField object&gt;}</em><a class="headerlink" href="#ad.forms.AdStudentForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.forms.AdStudentForm.declared_fields">
+<code class="descname">declared_fields</code><em class="property"> = {}</em><a class="headerlink" href="#ad.forms.AdStudentForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.forms.AdStudentForm.media">
+<code class="descname">media</code><a class="headerlink" href="#ad.forms.AdStudentForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ad.forms.AdTutorForm">
+<em class="property">class </em><code class="descclassname">ad.forms.</code><code class="descname">AdTutorForm</code><span class="sig-paren">(</span><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em>, <em>use_required_attribute=None</em>, <em>renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.forms.AdTutorForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<p>This is a conceptual Form representation of Class table for tutor ads.
+:param ModelForm: It creates built-in html form of django, which handels all validations in django Admin panel.
+:type ModelForm: model, fields</p>
+<dl class="class">
+<dt id="ad.forms.AdTutorForm.Meta">
+<em class="property">class </em><code class="descname">Meta</code><a class="headerlink" href="#ad.forms.AdTutorForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="ad.forms.AdTutorForm.Meta.fields">
+<code class="descname">fields</code><em class="property"> = '__all__'</em><a class="headerlink" href="#ad.forms.AdTutorForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.forms.AdTutorForm.Meta.model">
+<code class="descname">model</code><a class="headerlink" href="#ad.forms.AdTutorForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#ad.models.AdTutor" title="ad.models.AdTutor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ad.models.AdTutor</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.forms.AdTutorForm.base_fields">
+<code class="descname">base_fields</code><em class="property"> = {'class_level': &lt;django.forms.fields.CharField object&gt;, 'days': &lt;django.forms.fields.DecimalField object&gt;, 'description': &lt;django.forms.fields.CharField object&gt;, 'expected_area': &lt;django.forms.fields.CharField object&gt;, 'expected_salary': &lt;django.forms.fields.CharField object&gt;, 'gender': &lt;django.forms.fields.TypedChoiceField object&gt;, 'request_confirmation': &lt;django.forms.fields.BooleanField object&gt;, 'subject': &lt;django.forms.fields.CharField object&gt;, 'title': &lt;django.forms.fields.CharField object&gt;, 'user': &lt;django.forms.models.ModelChoiceField object&gt;}</em><a class="headerlink" href="#ad.forms.AdTutorForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.forms.AdTutorForm.declared_fields">
+<code class="descname">declared_fields</code><em class="property"> = {}</em><a class="headerlink" href="#ad.forms.AdTutorForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.forms.AdTutorForm.media">
+<code class="descname">media</code><a class="headerlink" href="#ad.forms.AdTutorForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.models">
+<span id="ad-models-py"></span><h3>ad models.py<a class="headerlink" href="#module-ad.models" title="Permalink to this headline">¶</a></h3>
+<p>This program will create database file for Advertise feature.</p>
+<dl class="class">
+<dt id="ad.models.AdStudent">
+<em class="property">class </em><code class="descclassname">ad.models.</code><code class="descname">AdStudent</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.models.AdStudent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>This is a conceptual Database representation of Class table for student ads.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>models.Model</strong> (<em>database model</em>) – It inherits built-in functionalities of django <cite>models.Model</cite>, which handels all validations in django Admin panel.</td>
+</tr>
+</tbody>
+</table>
+<dl class="exception">
+<dt id="ad.models.AdStudent.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#ad.models.AdStudent.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="ad.models.AdStudent.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#ad.models.AdStudent.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.ad_created">
+<code class="descname">ad_created</code><a class="headerlink" href="#ad.models.AdStudent.ad_created" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.area">
+<code class="descname">area</code><a class="headerlink" href="#ad.models.AdStudent.area" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.class_level">
+<code class="descname">class_level</code><a class="headerlink" href="#ad.models.AdStudent.class_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.days">
+<code class="descname">days</code><a class="headerlink" href="#ad.models.AdStudent.days" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.description">
+<code class="descname">description</code><a class="headerlink" href="#ad.models.AdStudent.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.female">
+<code class="descname">female</code><em class="property"> = 'female'</em><a class="headerlink" href="#ad.models.AdStudent.female" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.gender">
+<code class="descname">gender</code><a class="headerlink" href="#ad.models.AdStudent.gender" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.genders">
+<code class="descname">genders</code><em class="property"> = [('male', 'male'), ('female', 'female'), ('other', 'other')]</em><a class="headerlink" href="#ad.models.AdStudent.genders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ad.models.AdStudent.get_gender_display">
+<code class="descname">get_gender_display</code><span class="sig-paren">(</span><em>*</em>, <em>field=&lt;django.db.models.fields.CharField: gender&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.models.AdStudent.get_gender_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ad.models.AdStudent.get_next_by_ad_created">
+<code class="descname">get_next_by_ad_created</code><span class="sig-paren">(</span><em>*</em>, <em>field=&lt;django.db.models.fields.DateTimeField: ad_created&gt;</em>, <em>is_next=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.models.AdStudent.get_next_by_ad_created" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ad.models.AdStudent.get_previous_by_ad_created">
+<code class="descname">get_previous_by_ad_created</code><span class="sig-paren">(</span><em>*</em>, <em>field=&lt;django.db.models.fields.DateTimeField: ad_created&gt;</em>, <em>is_next=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.models.AdStudent.get_previous_by_ad_created" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.id">
+<code class="descname">id</code><a class="headerlink" href="#ad.models.AdStudent.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.male">
+<code class="descname">male</code><em class="property"> = 'male'</em><a class="headerlink" href="#ad.models.AdStudent.male" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.objects">
+<code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#ad.models.AdStudent.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.other">
+<code class="descname">other</code><em class="property"> = 'other'</em><a class="headerlink" href="#ad.models.AdStudent.other" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.request_confirmation">
+<code class="descname">request_confirmation</code><a class="headerlink" href="#ad.models.AdStudent.request_confirmation" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.salary">
+<code class="descname">salary</code><a class="headerlink" href="#ad.models.AdStudent.salary" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.subject">
+<code class="descname">subject</code><a class="headerlink" href="#ad.models.AdStudent.subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.title">
+<code class="descname">title</code><a class="headerlink" href="#ad.models.AdStudent.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.user">
+<code class="descname">user</code><a class="headerlink" href="#ad.models.AdStudent.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdStudent.user_id">
+<code class="descname">user_id</code><a class="headerlink" href="#ad.models.AdStudent.user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ad.models.AdTutor">
+<em class="property">class </em><code class="descclassname">ad.models.</code><code class="descname">AdTutor</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.models.AdTutor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>This is a conceptual Database representation of Class table for tutor ads.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>models.Model</strong> (<em>database model</em>) – It inherits built-in functionalities of django <cite>models.Model</cite>, which handels all validations in django Admin panel.</td>
+</tr>
+</tbody>
+</table>
+<dl class="exception">
+<dt id="ad.models.AdTutor.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#ad.models.AdTutor.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="ad.models.AdTutor.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#ad.models.AdTutor.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.ad_created">
+<code class="descname">ad_created</code><a class="headerlink" href="#ad.models.AdTutor.ad_created" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.class_level">
+<code class="descname">class_level</code><a class="headerlink" href="#ad.models.AdTutor.class_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.days">
+<code class="descname">days</code><a class="headerlink" href="#ad.models.AdTutor.days" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.description">
+<code class="descname">description</code><a class="headerlink" href="#ad.models.AdTutor.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.expected_area">
+<code class="descname">expected_area</code><a class="headerlink" href="#ad.models.AdTutor.expected_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.expected_salary">
+<code class="descname">expected_salary</code><a class="headerlink" href="#ad.models.AdTutor.expected_salary" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.female">
+<code class="descname">female</code><em class="property"> = 'female'</em><a class="headerlink" href="#ad.models.AdTutor.female" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.gender">
+<code class="descname">gender</code><a class="headerlink" href="#ad.models.AdTutor.gender" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.genders">
+<code class="descname">genders</code><em class="property"> = [('male', 'male'), ('female', 'female'), ('other', 'other')]</em><a class="headerlink" href="#ad.models.AdTutor.genders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ad.models.AdTutor.get_gender_display">
+<code class="descname">get_gender_display</code><span class="sig-paren">(</span><em>*</em>, <em>field=&lt;django.db.models.fields.CharField: gender&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.models.AdTutor.get_gender_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ad.models.AdTutor.get_next_by_ad_created">
+<code class="descname">get_next_by_ad_created</code><span class="sig-paren">(</span><em>*</em>, <em>field=&lt;django.db.models.fields.DateTimeField: ad_created&gt;</em>, <em>is_next=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.models.AdTutor.get_next_by_ad_created" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ad.models.AdTutor.get_previous_by_ad_created">
+<code class="descname">get_previous_by_ad_created</code><span class="sig-paren">(</span><em>*</em>, <em>field=&lt;django.db.models.fields.DateTimeField: ad_created&gt;</em>, <em>is_next=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.models.AdTutor.get_previous_by_ad_created" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.id">
+<code class="descname">id</code><a class="headerlink" href="#ad.models.AdTutor.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.male">
+<code class="descname">male</code><em class="property"> = 'male'</em><a class="headerlink" href="#ad.models.AdTutor.male" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.objects">
+<code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#ad.models.AdTutor.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.other">
+<code class="descname">other</code><em class="property"> = 'other'</em><a class="headerlink" href="#ad.models.AdTutor.other" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.request_confirmation">
+<code class="descname">request_confirmation</code><a class="headerlink" href="#ad.models.AdTutor.request_confirmation" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.subject">
+<code class="descname">subject</code><a class="headerlink" href="#ad.models.AdTutor.subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.title">
+<code class="descname">title</code><a class="headerlink" href="#ad.models.AdTutor.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.user">
+<code class="descname">user</code><a class="headerlink" href="#ad.models.AdTutor.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ad.models.AdTutor.user_id">
+<code class="descname">user_id</code><a class="headerlink" href="#ad.models.AdTutor.user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.urls">
+<span id="ad-urls-py"></span><h3>ad urls.py<a class="headerlink" href="#module-ad.urls" title="Permalink to this headline">¶</a></h3>
+<p>This program will create necessary html hyperlinks to show contents.</p>
+<dl class="function">
+<dt id="ad.urls.path">
+<code class="descclassname">ad.urls.</code><code class="descname">path</code><span class="sig-paren">(</span><em>route</em>, <em>view</em>, <em>kwargs=None</em>, <em>name=None</em>, <em>*</em>, <em>Pattern=&lt;class 'django.urls.resolvers.RoutePattern'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.urls.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-ad.views">
+<span id="ad-views-py"></span><h3>ad views.py<a class="headerlink" href="#module-ad.views" title="Permalink to this headline">¶</a></h3>
+<p>This program is the controller that fetch data from models.py and send it to the template file.</p>
+<dl class="function">
+<dt id="ad.views.ad_profile">
+<code class="descclassname">ad.views.</code><code class="descname">ad_profile</code><span class="sig-paren">(</span><em>request</em>, <em>user_pk</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.views.ad_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will redirect the url to the ad_profile page, where a user can see other user’s profile through ad.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request</strong> (<em>HttpResponse</em>) – Takes the request to show delete_post_tutor.html</li>
+<li><strong>post_pk</strong> (<em>integer</em>) – Takes the id of the user to redirect exact user’s profile.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">returns a request for a html page with form data as dictonary format</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">render request,html page,dictonary</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ad.views.delete_post_student">
+<code class="descclassname">ad.views.</code><code class="descname">delete_post_student</code><span class="sig-paren">(</span><em>request</em>, <em>post_pk</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.views.delete_post_student" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will redirect the url to the delete_post_student page, where a student can delete his own posts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request</strong> (<em>HttpResponse</em>) – Takes the request to show delete_post_student.html</li>
+<li><strong>post_pk</strong> (<em>integer</em>) – Takes the id of the post to delete exact post</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">returns a request for a html page with form data as dictonary format</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">render request,html page,dictonary</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ad.views.delete_post_tutor">
+<code class="descclassname">ad.views.</code><code class="descname">delete_post_tutor</code><span class="sig-paren">(</span><em>request</em>, <em>post_pk</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.views.delete_post_tutor" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will redirect the url to the delete_post_tutor page, where a tutor can delete his own posts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request</strong> (<em>HttpResponse</em>) – Takes the request to show delete_post_tutor.html</li>
+<li><strong>post_pk</strong> (<em>integer</em>) – Takes the id of the post to delete exact post</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">returns a request for a html page with form data as dictonary format</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">render request,html page,dictonary</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ad.views.home">
+<code class="descclassname">ad.views.</code><code class="descname">home</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.views.home" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will redirect the url to the home page, where a logged in user can see posts of other user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> (<em>HttpResponse</em>) – Takes the request to show home.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">returns a request for a html page with form data as dictonary format</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">render request,html page,dictonary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ad.views.my_ad">
+<code class="descclassname">ad.views.</code><code class="descname">my_ad</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.views.my_ad" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will redirect the url to the myad page, where a user can see his own posts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> (<em>HttpResponse</em>) – Takes the request to show myad.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">returns a request for a html page with form data as dictonary format</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">render request,html page,dictonary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ad.views.student_ad">
+<code class="descclassname">ad.views.</code><code class="descname">student_ad</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.views.student_ad" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will redirect the url to the student_ad page, where a logged in student can create a new post to find a tutor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> (<em>HttpResponse</em>) – Takes the request to show student_ad.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">returns a request for a html page with form data as dictonary format</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">render request,html page,dictonary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ad.views.tutor_ad">
+<code class="descclassname">ad.views.</code><code class="descname">tutor_ad</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.views.tutor_ad" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will redirect the url to the student_ad page, where a logged in tutor can create a new post to find a student.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> (<em>HttpResponse</em>) – Takes the request to show tutor_ad.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">returns a request for a html page with form data as dictonary format</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">render request,html page,dictonary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ad.migrations.html" class="btn btn-neutral float-right" title="ad.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="home.tests.html" class="btn btn-neutral float-left" title="home.tests package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Tutor Hub Team.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

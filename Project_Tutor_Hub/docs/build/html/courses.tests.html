@@ -1,0 +1,619 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>courses.tests package &mdash; Tutor Hub 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="About" href="about_us.html" />
+    <link rel="prev" title="courses.migrations package" href="courses.migrations.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Tutor Hub
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ad.html">ad package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="details.html">details package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="courses.html">courses package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="courses.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="courses.migrations.html">courses.migrations package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">courses.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-courses.tests.test_forms">courses.tests.test_forms module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-courses.tests.test_models">courses.tests.test_models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-courses.tests.test_urls">courses.tests.test_urls module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-courses.tests.test_views">courses.tests.test_views module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-courses.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="courses.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="courses.html#module-courses.admin">courses.admin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="courses.html#module-courses.apps">courses.apps module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="courses.html#module-courses.forms">courses.forms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="courses.html#module-courses.models">courses.models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="courses.html#module-courses.urls">courses.urls module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="courses.html#module-courses.utils">courses.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="courses.html#module-courses.views">courses.views module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="courses.html#module-courses">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="about_us.html">About</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Tutor Hub</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="courses.html">courses package</a> &raquo;</li>
+        
+      <li>courses.tests package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/courses.tests.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="courses-tests-package">
+<h1>courses.tests package<a class="headerlink" href="#courses-tests-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-courses.tests.test_forms">
+<span id="courses-tests-test-forms-module"></span><h2>courses.tests.test_forms module<a class="headerlink" href="#module-courses.tests.test_forms" title="Permalink to this headline">¶</a></h2>
+<p>This program will be used to unittest test courses app’s forms.py</p>
+<dl class="class">
+<dt id="courses.tests.test_forms.TestForms">
+<em class="property">class </em><code class="descclassname">courses.tests.test_forms.</code><code class="descname">TestForms</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_forms.TestForms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.SimpleTestCase</span></code></p>
+<p>This is a conceptual Unittest child case for testing forms.py. 
+:param SimpleTestCase: It inherits built-in child functionalities of django <cite>unittest</cite>, which handels all test cases.
+:type SimpleTestCase: functions</p>
+<dl class="method">
+<dt id="courses.tests.test_forms.TestForms.test_create_class_form_with_no_data">
+<code class="descname">test_create_class_form_with_no_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_forms.TestForms.test_create_class_form_with_no_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the CreateClass form with invalidvalid input .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_forms.TestForms.test_create_class_form_with_valid_data">
+<code class="descname">test_create_class_form_with_valid_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_forms.TestForms.test_create_class_form_with_valid_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the CreateClass form with valid input .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_forms.TestForms.test_create_lecture_form_with_no_data">
+<code class="descname">test_create_lecture_form_with_no_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_forms.TestForms.test_create_lecture_form_with_no_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the CreateClass form with invalidvalid input .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_forms.TestForms.test_create_lecture_form_with_valid_data">
+<code class="descname">test_create_lecture_form_with_valid_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_forms.TestForms.test_create_lecture_form_with_valid_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the CreteLecture form with valid input .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-courses.tests.test_models">
+<span id="courses-tests-test-models-module"></span><h2>courses.tests.test_models module<a class="headerlink" href="#module-courses.tests.test_models" title="Permalink to this headline">¶</a></h2>
+<p>This program will be used to unittest test courses app’s models.py</p>
+<dl class="class">
+<dt id="courses.tests.test_models.TestModels">
+<em class="property">class </em><code class="descclassname">courses.tests.test_models.</code><code class="descname">TestModels</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_models.TestModels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>This is a conceptual Unittest child case for testing forms.py. 
+:param TestCase: It inherits built-in child functionalities of django <cite>unittest</cite>, which handels all test cases.
+:type SimpleTestCase: functions</p>
+<dl class="method">
+<dt id="courses.tests.test_models.TestModels.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_models.TestModels.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will be used to initialize to create object of models for testing purpose
+and this will be intialize before tetsting starts .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a nothing. 
+:rtype: none.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_models.TestModels.test_class_image_files">
+<code class="descname">test_class_image_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_models.TestModels.test_class_image_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the class_image_file function to store class image .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_models.TestModels.test_class_slug_on_creation">
+<code class="descname">test_class_slug_on_creation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_models.TestModels.test_class_slug_on_creation" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the class_slug function to initialize sulg_field .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_models.TestModels.test_lecture_files">
+<code class="descname">test_lecture_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_models.TestModels.test_lecture_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the lecture_files function to store lecture files .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_models.TestModels.test_lecture_slug_on_creation">
+<code class="descname">test_lecture_slug_on_creation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_models.TestModels.test_lecture_slug_on_creation" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the lecture_slug function to initialize sulg_field .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-courses.tests.test_urls">
+<span id="courses-tests-test-urls-module"></span><h2>courses.tests.test_urls module<a class="headerlink" href="#module-courses.tests.test_urls" title="Permalink to this headline">¶</a></h2>
+<p>This program will be used to unittest test courses app’s urls.py</p>
+<dl class="class">
+<dt id="courses.tests.test_urls.TestUrls">
+<em class="property">class </em><code class="descclassname">courses.tests.test_urls.</code><code class="descname">TestUrls</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.SimpleTestCase</span></code></p>
+<p>This is a conceptual Unittest child case for testing urls.py. 
+:param SimpleTestCase: It inherits built-in child functionalities of django <cite>unittest</cite>, which handels all test cases.
+:type SimpleTestCase: functions</p>
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_create_class_url_is_resolves">
+<code class="descname">test_create_class_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_create_class_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the create_class url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_create_lecture_url_is_resolves">
+<code class="descname">test_create_lecture_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_create_lecture_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the create_lecture url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_enrolled_students_url_is_resolves">
+<code class="descname">test_enrolled_students_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_enrolled_students_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the enrolled_students url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_join_class_url_is_resolves">
+<code class="descname">test_join_class_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_join_class_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the join_class url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_student_dashboard_url_is_resolves">
+<code class="descname">test_student_dashboard_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_student_dashboard_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the student_dashboard url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_student_lecture_details_url_is_resolves">
+<code class="descname">test_student_lecture_details_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_student_lecture_details_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the student_lecture_details url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_student_lecture_list_view_url_is_resolves">
+<code class="descname">test_student_lecture_list_view_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_student_lecture_list_view_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the student_lecture_list url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_tutor_dashboard_url_is_resolves">
+<code class="descname">test_tutor_dashboard_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_tutor_dashboard_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the tutor_dashboard url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_tutor_lecture_delete_url_is_resolves">
+<code class="descname">test_tutor_lecture_delete_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_tutor_lecture_delete_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the delete_lecture url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_tutor_lecture_details_url_is_resolves">
+<code class="descname">test_tutor_lecture_details_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_tutor_lecture_details_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the tutor_lecture_details url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_tutor_lecture_list_view_url_is_resolves">
+<code class="descname">test_tutor_lecture_list_view_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_tutor_lecture_list_view_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the tutor_lecture_list url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_urls.TestUrls.test_tutor_lecture_update_url_is_resolves">
+<code class="descname">test_tutor_lecture_update_url_is_resolves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_urls.TestUrls.test_tutor_lecture_update_url_is_resolves" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the lecture_update url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-courses.tests.test_views">
+<span id="courses-tests-test-views-module"></span><h2>courses.tests.test_views module<a class="headerlink" href="#module-courses.tests.test_views" title="Permalink to this headline">¶</a></h2>
+<p>This program will be used to unittest test courses app’s views.py</p>
+<dl class="class">
+<dt id="courses.tests.test_views.TestViews">
+<em class="property">class </em><code class="descclassname">courses.tests.test_views.</code><code class="descname">TestViews</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>This is a conceptual Unittest child case for testing forms.py. 
+:param TestCase: It inherits built-in child functionalities of django <cite>unittest</cite>, which handels all test cases.
+:type TestCase: functions</p>
+<dl class="method">
+<dt id="courses.tests.test_views.TestViews.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will be used to initialize to create object of models for testing purpose
+and this will be intialize before tetsting starts .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a nothing. 
+:rtype: none.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_views.TestViews.test_create_class_GET">
+<code class="descname">test_create_class_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews.test_create_class_GET" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the Create_classs view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual ,resolve url, bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_views.TestViews.test_create_lecture_view_GET">
+<code class="descname">test_create_lecture_view_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews.test_create_lecture_view_GET" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the create_lecture view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual ,resolve url, bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_views.TestViews.test_enrolled_students_GET">
+<code class="descname">test_enrolled_students_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews.test_enrolled_students_GET" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the enrolled_student view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual ,resolve url, bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_views.TestViews.test_join_class_GET">
+<code class="descname">test_join_class_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews.test_join_class_GET" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the join_classs view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual ,resolve url, bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_views.TestViews.test_student_dashboard_GET">
+<code class="descname">test_student_dashboard_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews.test_student_dashboard_GET" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the student_dashboard view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual ,resolve url, bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_views.TestViews.test_student_lecture_detail_view_GET">
+<code class="descname">test_student_lecture_detail_view_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews.test_student_lecture_detail_view_GET" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the atudent_lecture_detail view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual ,resolve url, bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_views.TestViews.test_student_lecture_list_view_GET">
+<code class="descname">test_student_lecture_list_view_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews.test_student_lecture_list_view_GET" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the student_lecture_list view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual ,resolve url, bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_views.TestViews.test_tutor_dashboard_GET">
+<code class="descname">test_tutor_dashboard_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews.test_tutor_dashboard_GET" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the tutor_dashboard view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual ,resolve url, bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_views.TestViews.test_tutor_lecture_detail_view_GET">
+<code class="descname">test_tutor_lecture_detail_view_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews.test_tutor_lecture_detail_view_GET" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the tutor_lecture_detail view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual ,resolve url, bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="courses.tests.test_views.TestViews.test_tutor_lecture_list_view_GET">
+<code class="descname">test_tutor_lecture_list_view_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#courses.tests.test_views.TestViews.test_tutor_lecture_list_view_GET" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the tutor_lecture_list view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual ,resolve url, bool</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-courses.tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-courses.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="about_us.html" class="btn btn-neutral float-right" title="About" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="courses.migrations.html" class="btn btn-neutral float-left" title="courses.migrations package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Tutor Hub Team.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

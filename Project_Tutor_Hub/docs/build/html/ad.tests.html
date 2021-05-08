@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ad.tests package &mdash; Tutor Hub 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="details package" href="details.html" />
+    <link rel="prev" title="ad.templatetags package" href="ad.templatetags.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Tutor Hub
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">home</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="ad.html">ad package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ad.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ad.migrations.html">ad.migrations package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad.templatetags.html">ad.templatetags package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ad.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.tests.test_forms">ad.tests.test_forms module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.tests.test_models">ad.tests.test_models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.tests.test_urls">ad.tests.test_urls module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.tests.test_views">ad.tests.test_views module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.admin">ad.admin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.apps">ad.apps module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.forms">ad.forms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.models">ad.models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.urls">ad.urls module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.views">ad.views module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="details.html">details package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="courses.html">courses package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_us.html">About</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Tutor Hub</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="ad.html">ad package</a> &raquo;</li>
+        
+      <li>ad.tests package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/ad.tests.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ad-tests-package">
+<h1>ad.tests package<a class="headerlink" href="#ad-tests-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-ad.tests.test_forms">
+<span id="ad-tests-test-forms-module"></span><h2>ad.tests.test_forms module<a class="headerlink" href="#module-ad.tests.test_forms" title="Permalink to this headline">¶</a></h2>
+<p>This program will use unittest to test ad app’s forms.py.</p>
+<dl class="class">
+<dt id="ad.tests.test_forms.TestForms">
+<em class="property">class </em><code class="descclassname">ad.tests.test_forms.</code><code class="descname">TestForms</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_forms.TestForms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>This is a conceptual Unittest child case class for testing forms.py. 
+:param SimpleTestCase: It inherits built-in child functionalities of django <cite>unittest</cite>, which handels all test cases.
+:type SimpleTestCase: functions</p>
+<dl class="method">
+<dt id="ad.tests.test_forms.TestForms.test_AdStudentForm_no_data">
+<code class="descname">test_AdStudentForm_no_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_forms.TestForms.test_AdStudentForm_no_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the AdStudentForm form with invalid/blank input.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ad.tests.test_forms.TestForms.test_AdStudentForm_valid_data">
+<code class="descname">test_AdStudentForm_valid_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_forms.TestForms.test_AdStudentForm_valid_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the AdStudentForm form with valid input.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ad.tests.test_forms.TestForms.test_AdTutorForm_no_data">
+<code class="descname">test_AdTutorForm_no_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_forms.TestForms.test_AdTutorForm_no_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the AdTutorForm form with invalid/blank input.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ad.tests.test_forms.TestForms.test_AdTutorForm_valid_data">
+<code class="descname">test_AdTutorForm_valid_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_forms.TestForms.test_AdTutorForm_valid_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the AdTutorForm form with valid input.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the forms field. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.tests.test_models">
+<span id="ad-tests-test-models-module"></span><h2>ad.tests.test_models module<a class="headerlink" href="#module-ad.tests.test_models" title="Permalink to this headline">¶</a></h2>
+<p>This program will use unittest to test ad app’s models.py</p>
+<dl class="class">
+<dt id="ad.tests.test_models.TestModels">
+<em class="property">class </em><code class="descclassname">ad.tests.test_models.</code><code class="descname">TestModels</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_models.TestModels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>This is a conceptual Unittest child case class for testing models.py. 
+:param TestCase: It inherits built-in child functionalities of django <cite>unittest</cite>, which handels all test cases.
+:type SimpleTestCase: functions</p>
+<dl class="method">
+<dt id="ad.tests.test_models.TestModels.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_models.TestModels.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will create some objects of student ad model and tutor ad model.
+:param self: Takes the self content and pass. 
+:type self: object
+:return: returns object to check models are working properly. 
+:rtype: object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ad.tests.test_models.TestModels.test_model_object_student">
+<code class="descname">test_model_object_student</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_models.TestModels.test_model_object_student" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test all the objects of student ad model.
+:param self: Takes the self content and pass. 
+:type self: int
+:return: returns a request to check the title value. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ad.tests.test_models.TestModels.test_model_object_tutor">
+<code class="descname">test_model_object_tutor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_models.TestModels.test_model_object_tutor" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test all the objects of tutor ad model.
+:param self: Takes the self content and pass. 
+:type self: int
+:return: returns a request to check the title value. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ad.tests.test_models.TestModels.test_model_string_student">
+<code class="descname">test_model_string_student</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_models.TestModels.test_model_string_student" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the __str__ function to store student ad title.
+:param self: Takes the self content and pass. 
+:type self: string
+:return: returns a request to check the title value. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ad.tests.test_models.TestModels.test_model_string_tutor">
+<code class="descname">test_model_string_tutor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_models.TestModels.test_model_string_tutor" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the __str__ function to store tutor ad title.
+:param self: Takes the self content and pass. 
+:type self: string
+:return: returns a request to check the title value. 
+:rtype: assertEqual , bool</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.tests.test_urls">
+<span id="ad-tests-test-urls-module"></span><h2>ad.tests.test_urls module<a class="headerlink" href="#module-ad.tests.test_urls" title="Permalink to this headline">¶</a></h2>
+<p>This program will use unittest to test ad app’s urls.py</p>
+<dl class="class">
+<dt id="ad.tests.test_urls.TestUrls">
+<em class="property">class </em><code class="descclassname">ad.tests.test_urls.</code><code class="descname">TestUrls</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_urls.TestUrls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.SimpleTestCase</span></code></p>
+<p>This is a conceptual Unittest child case for testing urls.py. 
+:param SimpleTestCase: It inherits built-in child functionalities of django <cite>unittest</cite>, which handels all test cases.
+:type SimpleTestCase: functions</p>
+<dl class="method">
+<dt id="ad.tests.test_urls.TestUrls.test_find_student_url_is_resolved">
+<code class="descname">test_find_student_url_is_resolved</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_urls.TestUrls.test_find_student_url_is_resolved" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the find_tutor url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ad.tests.test_urls.TestUrls.test_find_tutor_url_is_resolved">
+<code class="descname">test_find_tutor_url_is_resolved</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_urls.TestUrls.test_find_tutor_url_is_resolved" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the find_tutor url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ad.tests.test_urls.TestUrls.test_home_url_is_resolved">
+<code class="descname">test_home_url_is_resolved</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_urls.TestUrls.test_home_url_is_resolved" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the home url.
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the url pattern. 
+:rtype: assertEqual resolve, url</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.tests.test_views">
+<span id="ad-tests-test-views-module"></span><h2>ad.tests.test_views module<a class="headerlink" href="#module-ad.tests.test_views" title="Permalink to this headline">¶</a></h2>
+<p>This program will use unittest to test ad app’s views.py</p>
+<dl class="class">
+<dt id="ad.tests.test_views.TestViews">
+<em class="property">class </em><code class="descclassname">ad.tests.test_views.</code><code class="descname">TestViews</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_views.TestViews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>This is a conceptual Unittest child case class for testing views.py. 
+:param TestCase: It inherits built-in child functionalities of django <cite>unittest</cite>, which handels all test cases.
+:type TestCase: functions</p>
+<dl class="method">
+<dt id="ad.tests.test_views.TestViews.test_find_student_get">
+<code class="descname">test_find_student_get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_views.TestViews.test_find_student_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the find_student view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual, resolve url, bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ad.tests.test_views.TestViews.test_find_tutor_get">
+<code class="descname">test_find_tutor_get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_views.TestViews.test_find_tutor_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the find_tutor view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual, resolve url, bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ad.tests.test_views.TestViews.test_home_get">
+<code class="descname">test_home_get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ad.tests.test_views.TestViews.test_home_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will test the home view with proper request .
+:param self: Takes the self content and pass. 
+:type self: Boolean
+:return: returns a request to check the template via view. 
+:rtype: assertEqual, resolve url, bool</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ad.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="details.html" class="btn btn-neutral float-right" title="details package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ad.templatetags.html" class="btn btn-neutral float-left" title="ad.templatetags package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Tutor Hub Team.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

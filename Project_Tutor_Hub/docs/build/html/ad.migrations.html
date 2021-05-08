@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ad.migrations package &mdash; Tutor Hub 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ad.templatetags package" href="ad.templatetags.html" />
+    <link rel="prev" title="ad package" href="ad.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Tutor Hub
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">home</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="ad.html">ad package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ad.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ad.migrations package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.migrations.0001_initial">ad.migrations.0001_initial module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.migrations.0002_auto_20210411_0952">ad.migrations.0002_auto_20210411_0952 module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.migrations.0003_auto_20210414_0423">ad.migrations.0003_auto_20210414_0423 module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.migrations.0004_ad_tutor">ad.migrations.0004_ad_tutor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.migrations.0005_auto_20210428_1015">ad.migrations.0005_auto_20210428_1015 module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.migrations.0006_auto_20210505_1416">ad.migrations.0006_auto_20210505_1416 module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ad.migrations">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ad.templatetags.html">ad.templatetags package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad.tests.html">ad.tests package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.admin">ad.admin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.apps">ad.apps module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.forms">ad.forms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.models">ad.models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.urls">ad.urls module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad.views">ad.views module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ad.html#module-ad">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="details.html">details package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="courses.html">courses package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_us.html">About</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Tutor Hub</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="ad.html">ad package</a> &raquo;</li>
+        
+      <li>ad.migrations package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/ad.migrations.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ad-migrations-package">
+<h1>ad.migrations package<a class="headerlink" href="#ad-migrations-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-ad.migrations.0001_initial">
+<span id="ad-migrations-0001-initial-module"></span><h2>ad.migrations.0001_initial module<a class="headerlink" href="#module-ad.migrations.0001_initial" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ad.migrations.0001_initial.Migration">
+<em class="property">class </em><code class="descclassname">ad.migrations.0001_initial.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.migrations.0001_initial.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="ad.migrations.0001_initial.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('auth', '__first__')]</em><a class="headerlink" href="#ad.migrations.0001_initial.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.migrations.0001_initial.Migration.initial">
+<code class="descname">initial</code><em class="property"> = True</em><a class="headerlink" href="#ad.migrations.0001_initial.Migration.initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.migrations.0001_initial.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;CreateModel  name='Ad_Tutor', fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('title', &lt;django.db.models.fields.CharField&gt;), ('expected_area', &lt;django.db.models.fields.CharField&gt;), ('subject', &lt;django.db.models.fields.CharField&gt;), ('class_level', &lt;django.db.models.fields.CharField&gt;), ('days', &lt;django.db.models.fields.DecimalField&gt;), ('extecpted_salary', &lt;django.db.models.fields.DecimalField&gt;), ('gender', &lt;django.db.models.fields.CharField&gt;), ('description', &lt;django.db.models.fields.TextField&gt;), ('request_confirmation', &lt;django.db.models.fields.BooleanField&gt;), ('ad_created', &lt;django.db.models.fields.DateTimeField&gt;), ('user', &lt;django.db.models.fields.related.OneToOneField&gt;)]&gt;, &lt;CreateModel  name='Ad_Student', fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('title', &lt;django.db.models.fields.CharField&gt;), ('area', &lt;django.db.models.fields.CharField&gt;), ('subject', &lt;django.db.models.fields.CharField&gt;), ('class_level', &lt;django.db.models.fields.CharField&gt;), ('days', &lt;django.db.models.fields.DecimalField&gt;), ('salary', &lt;django.db.models.fields.DecimalField&gt;), ('gender', &lt;django.db.models.fields.CharField&gt;), ('description', &lt;django.db.models.fields.TextField&gt;), ('request_confirmation', &lt;django.db.models.fields.BooleanField&gt;), ('ad_created', &lt;django.db.models.fields.DateTimeField&gt;), ('user', &lt;django.db.models.fields.related.OneToOneField&gt;)]&gt;]</em><a class="headerlink" href="#ad.migrations.0001_initial.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.migrations.0002_auto_20210411_0952">
+<span id="ad-migrations-0002-auto-20210411-0952-module"></span><h2>ad.migrations.0002_auto_20210411_0952 module<a class="headerlink" href="#module-ad.migrations.0002_auto_20210411_0952" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ad.migrations.0002_auto_20210411_0952.Migration">
+<em class="property">class </em><code class="descclassname">ad.migrations.0002_auto_20210411_0952.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.migrations.0002_auto_20210411_0952.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="ad.migrations.0002_auto_20210411_0952.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('ad', '0001_initial')]</em><a class="headerlink" href="#ad.migrations.0002_auto_20210411_0952.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.migrations.0002_auto_20210411_0952.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;RenameField  model_name='ad_tutor', old_name='extecpted_salary', new_name='expected_salary'&gt;]</em><a class="headerlink" href="#ad.migrations.0002_auto_20210411_0952.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.migrations.0003_auto_20210414_0423">
+<span id="ad-migrations-0003-auto-20210414-0423-module"></span><h2>ad.migrations.0003_auto_20210414_0423 module<a class="headerlink" href="#module-ad.migrations.0003_auto_20210414_0423" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ad.migrations.0003_auto_20210414_0423.Migration">
+<em class="property">class </em><code class="descclassname">ad.migrations.0003_auto_20210414_0423.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.migrations.0003_auto_20210414_0423.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="ad.migrations.0003_auto_20210414_0423.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('ad', '0002_auto_20210411_0952')]</em><a class="headerlink" href="#ad.migrations.0003_auto_20210414_0423.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.migrations.0003_auto_20210414_0423.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterField  model_name='ad_student', name='days', field=&lt;django.db.models.fields.DecimalField&gt;&gt;, &lt;AlterField  model_name='ad_student', name='salary', field=&lt;django.db.models.fields.DecimalField&gt;&gt;, &lt;DeleteModel  name='Ad_Tutor'&gt;]</em><a class="headerlink" href="#ad.migrations.0003_auto_20210414_0423.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.migrations.0004_ad_tutor">
+<span id="ad-migrations-0004-ad-tutor-module"></span><h2>ad.migrations.0004_ad_tutor module<a class="headerlink" href="#module-ad.migrations.0004_ad_tutor" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ad.migrations.0004_ad_tutor.Migration">
+<em class="property">class </em><code class="descclassname">ad.migrations.0004_ad_tutor.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.migrations.0004_ad_tutor.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="ad.migrations.0004_ad_tutor.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('auth', '__first__'), ('ad', '0003_auto_20210414_0423')]</em><a class="headerlink" href="#ad.migrations.0004_ad_tutor.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.migrations.0004_ad_tutor.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;CreateModel  name='Ad_Tutor', fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('title', &lt;django.db.models.fields.CharField&gt;), ('expected_area', &lt;django.db.models.fields.CharField&gt;), ('subject', &lt;django.db.models.fields.CharField&gt;), ('class_level', &lt;django.db.models.fields.CharField&gt;), ('days', &lt;django.db.models.fields.DecimalField&gt;), ('expected_salary', &lt;django.db.models.fields.DecimalField&gt;), ('gender', &lt;django.db.models.fields.CharField&gt;), ('description', &lt;django.db.models.fields.TextField&gt;), ('request_confirmation', &lt;django.db.models.fields.BooleanField&gt;), ('ad_created', &lt;django.db.models.fields.DateTimeField&gt;), ('user', &lt;django.db.models.fields.related.OneToOneField&gt;)]&gt;]</em><a class="headerlink" href="#ad.migrations.0004_ad_tutor.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.migrations.0005_auto_20210428_1015">
+<span id="ad-migrations-0005-auto-20210428-1015-module"></span><h2>ad.migrations.0005_auto_20210428_1015 module<a class="headerlink" href="#module-ad.migrations.0005_auto_20210428_1015" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ad.migrations.0005_auto_20210428_1015.Migration">
+<em class="property">class </em><code class="descclassname">ad.migrations.0005_auto_20210428_1015.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.migrations.0005_auto_20210428_1015.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="ad.migrations.0005_auto_20210428_1015.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('ad', '0004_ad_tutor')]</em><a class="headerlink" href="#ad.migrations.0005_auto_20210428_1015.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.migrations.0005_auto_20210428_1015.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterField  model_name='ad_tutor', name='expected_salary', field=&lt;django.db.models.fields.DecimalField&gt;&gt;]</em><a class="headerlink" href="#ad.migrations.0005_auto_20210428_1015.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.migrations.0006_auto_20210505_1416">
+<span id="ad-migrations-0006-auto-20210505-1416-module"></span><h2>ad.migrations.0006_auto_20210505_1416 module<a class="headerlink" href="#module-ad.migrations.0006_auto_20210505_1416" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ad.migrations.0006_auto_20210505_1416.Migration">
+<em class="property">class </em><code class="descclassname">ad.migrations.0006_auto_20210505_1416.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="headerlink" href="#ad.migrations.0006_auto_20210505_1416.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="ad.migrations.0006_auto_20210505_1416.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('auth', '__first__'), ('ad', '0005_auto_20210428_1015')]</em><a class="headerlink" href="#ad.migrations.0006_auto_20210505_1416.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ad.migrations.0006_auto_20210505_1416.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;CreateModel  name='AdStudent', fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('title', &lt;django.db.models.fields.CharField&gt;), ('area', &lt;django.db.models.fields.CharField&gt;), ('subject', &lt;django.db.models.fields.CharField&gt;), ('class_level', &lt;django.db.models.fields.CharField&gt;), ('days', &lt;django.db.models.fields.DecimalField&gt;), ('salary', &lt;django.db.models.fields.CharField&gt;), ('gender', &lt;django.db.models.fields.CharField&gt;), ('description', &lt;django.db.models.fields.TextField&gt;), ('request_confirmation', &lt;django.db.models.fields.BooleanField&gt;), ('ad_created', &lt;django.db.models.fields.DateTimeField&gt;), ('user', &lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;, &lt;CreateModel  name='AdTutor', fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('title', &lt;django.db.models.fields.CharField&gt;), ('expected_area', &lt;django.db.models.fields.CharField&gt;), ('subject', &lt;django.db.models.fields.CharField&gt;), ('class_level', &lt;django.db.models.fields.CharField&gt;), ('days', &lt;django.db.models.fields.DecimalField&gt;), ('expected_salary', &lt;django.db.models.fields.CharField&gt;), ('gender', &lt;django.db.models.fields.CharField&gt;), ('description', &lt;django.db.models.fields.TextField&gt;), ('request_confirmation', &lt;django.db.models.fields.BooleanField&gt;), ('ad_created', &lt;django.db.models.fields.DateTimeField&gt;), ('user', &lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;, &lt;RemoveField  model_name='ad_tutor', name='user'&gt;, &lt;DeleteModel  name='Ad_Student'&gt;, &lt;DeleteModel  name='Ad_Tutor'&gt;]</em><a class="headerlink" href="#ad.migrations.0006_auto_20210505_1416.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ad.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ad.migrations" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ad.templatetags.html" class="btn btn-neutral float-right" title="ad.templatetags package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ad.html" class="btn btn-neutral float-left" title="ad package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Tutor Hub Team.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
